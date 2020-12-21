@@ -1,4 +1,4 @@
-module.exports = (componentName) => ({
+module.exports = componentName => ({
   content: `// Generated with util/create-component.js
 @import "../variables.scss";
 @import "../typography.scss";
@@ -9,5 +9,5 @@ module.exports = (componentName) => ({
   color: $green;
 }
 `,
-  extension: `.scss`
+  extension: `.scss`,
 })
