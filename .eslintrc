@@ -18,6 +18,7 @@
         ]
       }
     ],
+    "import/no-anonymous-default-export": "off",
     "@typescript-eslint/no-use-before-define": "warn",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",

@@ -1,9 +1,9 @@
 // Generated with util/create-component.js
-import React from "react"
-import Test from "./Test"
+import React from 'react'
+import Test from './Test'
 
 export default {
-    title: "Test"
+  title: 'Test',
 }
 
 export const WithBar = () => <Test foo="bar" />
