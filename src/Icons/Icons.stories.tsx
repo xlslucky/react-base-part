@@ -3,7 +3,7 @@ import React from 'react'
 import * as icons from './Icons'
 
 export default {
-  title: 'Icons',
+  title: 'inner/Icons',
 }
 
 export const Default = () => (
