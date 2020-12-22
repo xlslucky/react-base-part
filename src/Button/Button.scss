@@ -6,12 +6,14 @@
   text-align: center;
   border: none;
   outline: none;
-  height: 40px;
+  height: 32px;
   font-size: 14px;
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 2px;
   white-space: nowrap;
+  padding: 4px 15px;
+  line-height: 1.5;
 
   > span {
     display: inline-block;
@@ -20,15 +22,6 @@
   > a {
     text-decoration: none;
     color: inherit;
-  }
-
-  &.rbp-btn-circle {
-    border-radius: 40px;
-  }
-
-  &.rbp-btn-block {
-    display: flex;
-    width: 100%;
   }
 
   &.rbp-btn-theme-default {
@@ -44,10 +37,10 @@
   &.rbp-btn-theme-primary {
     border-color: $primary;
     background-color: $primary;
-    color: #000;
+    color: #fff;
 
     .loading-icon {
-      color: #000;
+      color: #fff;
     }
   }
 
@@ -72,7 +65,19 @@
   }
 }
 
-// 禁用/加载中
+// 属性 圆角/块元素
+.rbp-btn {
+  &.rbp-btn-circle {
+    border-radius: 32px;
+  }
+
+  &.rbp-btn-block {
+    display: flex;
+    width: 100%;
+  }
+}
+
+// 属性 禁用/加载中
 .rbp-btn {
   &.rbp-btn-disabled,
   &[disabled],
@@ -87,7 +92,7 @@
       right: -1px;
       bottom: -1px;
       z-index: 1;
-      opacity: 0.3;
+      opacity: 0.35;
       background-color: #fff;
       pointer-events: none;
     }

@@ -1,6 +1,8 @@
+export type ButtonType = 'primary' | 'ghost' | 'danger' | 'default'
+
 export interface ButtonProps {
   children: React.ReactNode
-  type?: 'primary' | 'ghost' | 'danger' | 'default'
+  type?: ButtonType
   htmlType?: 'submit' | 'reset' | 'button'
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   style?: React.CSSProperties
