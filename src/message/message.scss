@@ -1,0 +1,102 @@
+@import "../style/common.scss";
+@import "../style/variables.scss";
+
+.rbp-message-container {
+  position: fixed;
+  left: 0;
+  top: 8px;
+  z-index: 1001;
+  font-size: 14px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.rbp-message-notice {
+  padding: 8px;
+  text-align: center;
+  pointer-events: none;
+
+  &.rbp-message-move-appear {
+    animation: showMove .1s ease-out;
+  }
+
+  &.rbp-message-move-leave {
+    animation: hideMove .25s ease-out;
+  }
+}
+
+.rbp-message-notice-content {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  background: #fff;
+  border-radius: 1px;
+  pointer-events: all;
+
+  .rbp-message-icon {
+    margin-right: 12px;
+    font-size: 22px;
+  }
+
+  &.rbp-message-info {
+    background-color: rgba($primary, .1);
+    border: 1px solid $primary;
+
+    .rbp-message-icon {
+      color: $primary;
+    }
+  }
+
+  &.rbp-message-success {
+    background-color: rgba($green, .1);
+    border: 1px solid $green;
+
+    .rbp-message-icon {
+      color: $green;
+    }
+  }
+
+  &.rbp-message-error {
+    background-color: rgba($danger, .1);
+    border: 1px solid $danger;
+
+    .rbp-message-icon {
+      color: $danger;
+    }
+  }
+
+  &.rbp-message-warn {
+    background-color: rgba($yellow, .1);
+    border: 1px solid $yellow;
+
+    .rbp-message-icon {
+      color: $yellow;
+    }
+  }
+
+  .rbp-message-content {
+    text-align: left;
+  }
+}
+
+@keyframes showMove {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hideMove {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
