@@ -23,10 +23,13 @@ fs.mkdirSync(componentDirectory)
 const generatedTemplates = templates.map(template => template(componentName))
 
 generatedTemplates.forEach(template => {
-  fs.writeFileSync(
-    `${componentDirectory}/${componentName}${template.extension}`,
-    template.content
-  )
+  let name
+  if (template.full) {
+    name = `${componentDirectory}/${template.full}`
+  } else {
+    name = `${componentDirectory}/${componentName}${template.extension}`
+  }
+  fs.writeFileSync(name, template.content)
 })
 
 console.log('Successfully created component under: ' + componentDirectory.green)
