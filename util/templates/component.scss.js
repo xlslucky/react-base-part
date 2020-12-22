@@ -1,6 +1,6 @@
 module.exports = () => ({
-  content: `@import "../variables.scss";
-@import "../typography.scss";
+  content: `@import "../style/common.scss";
+@import "../style/variables.scss";
 
 // .foo-bar {
 //   @include font-defaults;
