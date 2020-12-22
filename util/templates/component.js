@@ -5,10 +5,8 @@ import { ${componentName}Props } from './${componentName}.types'
 
 import './${componentName}.scss'
 
-const ${componentName}: React.FC<${componentName}Props> = ({ foo }) => (
-  <div data-testid="${componentName}" className="foo-bar">
-    {foo}
-  </div>
+const ${componentName}: React.FC<${componentName}Props> = () => (
+  <div data-testid="${componentName}">${componentName}</div>
 )
 
 export default ${componentName}

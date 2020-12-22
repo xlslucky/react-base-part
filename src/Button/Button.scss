@@ -1,5 +1,4 @@
-module.exports = () => ({
-  content: `@import "../variables.scss";
+@import "../variables.scss";
 @import "../typography.scss";
 
 // .foo-bar {
@@ -7,6 +6,3 @@ module.exports = () => ({
 
 //   color: $green;
 // }
-`,
-  extension: `.scss`,
-})
