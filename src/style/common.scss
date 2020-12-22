@@ -1,0 +1,10 @@
+[class*=rbp-],
+[class*=rbp-] *,
+[class*=rbp-] :after,
+[class*=rbp-] :before,
+[class^=rbp-],
+[class^=rbp-] *,
+[class^=rbp-] :after,
+[class^=rbp-] :before {
+  box-sizing: border-box;
+}

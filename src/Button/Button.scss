@@ -1,8 +1,124 @@
-@import "../variables.scss";
-@import "../typography.scss";
+@import '../style/common.scss';
+@import '../style/variables.scss';
 
-// .foo-bar {
-//   @include font-defaults;
+.rbp-btn {
+  display: inline-block;
+  text-align: center;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  white-space: nowrap;
 
-//   color: $green;
-// }
+  > span {
+    display: inline-block;
+  }
+
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &.rbp-btn-circle {
+    border-radius: 40px;
+  }
+
+  &.rbp-btn-block {
+    display: flex;
+    width: 100%;
+  }
+
+  &.rbp-btn-theme-default {
+    border-color: #f0f0f0;
+    background-color: #f0f0f0;
+    color: #000;
+
+    .loading-icon {
+      color: #000;
+    }
+  }
+
+  &.rbp-btn-theme-primary {
+    border-color: $primary;
+    background-color: $primary;
+    color: #000;
+
+    .loading-icon {
+      color: #000;
+    }
+  }
+
+  &.rbp-btn-theme-ghost {
+    border-color: $primary;
+    background-color: transparent;
+    color: $primary;
+
+    .loading-icon {
+      color: $primary;
+    }
+  }
+
+  &.rbp-btn-theme-danger {
+    border-color: $danger;
+    background-color: $danger;
+    color: #fff;
+
+    .loading-icon {
+      color: #fff;
+    }
+  }
+}
+
+// 禁用/加载中
+.rbp-btn {
+  &.rbp-btn-disabled,
+  &[disabled],
+  &.rbp-btn-loading {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      z-index: 1;
+      opacity: 0.3;
+      background-color: #fff;
+      pointer-events: none;
+    }
+  }
+
+  &.rbp-btn-disabled,
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &.rbp-btn-loading {
+    cursor: progress;
+  }
+
+  .loading-icon {
+    display: inline-block;
+    margin-right: 8px;
+    background-size: cover;
+    font-size: 18px;
+
+    > svg {
+      animation: loading 1s linear infinite;
+    }
+  }
+}
+
+@keyframes loading {
+  form {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

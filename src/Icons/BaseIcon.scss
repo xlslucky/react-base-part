@@ -1,0 +1,24 @@
+@import '../style/common.scss';
+
+.rbp-icon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  flex-shrink: 0;
+  vertical-align: middle;
+
+  &.default-fill {
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+  }
+}
