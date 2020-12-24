@@ -290,7 +290,8 @@ function useTriggerStyle(_a) {
         }
     }, [popupRef, visible]);
     var _c = React.useMemo(function () {
-        if (!childrenRef.current) {
+        // 需要加visible 不然childrenRef不更新
+        if (!visible || !childrenRef.current) {
             return [0, 0];
         }
         var _a = childrenRef.current.getBoundingClientRect(), childrenLeft = _a.left, childrenTop = _a.top;
@@ -299,7 +300,7 @@ function useTriggerStyle(_a) {
         var fullTop = Math.round(childrenTop - containerTop + containerScrollTop);
         var fullLeft = Math.round(childrenLeft - containerLeft + containerScrollLeft);
         return [fullLeft, fullTop];
-    }, [childrenRef, container]), childrenFullLeft = _c[0], childrenFullTop = _c[1];
+    }, [childrenRef, container, visible]), childrenFullLeft = _c[0], childrenFullTop = _c[1];
     var triggerStyle = React.useMemo(function () {
         var style = {
             display: 'none',
@@ -308,7 +309,7 @@ function useTriggerStyle(_a) {
             style.display = 'block';
             style.visibility = 'hidden';
         }
-        if (!calcStart || !childrenRef.current || !container || !popupRef.current) {
+        if (!calcStart || !childrenRef.current || !popupRef.current) {
             return style;
         }
         style.visibility = 'visible';
@@ -356,7 +357,6 @@ function useTriggerStyle(_a) {
         childrenFullLeft,
         childrenFullTop,
         childrenRef,
-        container,
         placement,
         popupRef,
         visible,
@@ -388,10 +388,10 @@ var Trigger = function (_a) {
         setVisible(!visible);
     }
     function onMouseEnter(event) {
-        setVisible(true);
+        // setVisible(true)
     }
     function onMouseLeave(event) {
-        setVisible(false);
+        // setVisible(false)
     }
     // TODO 取消不销毁dom，加动画
     return (jsxs(Fragment, { children: [React.cloneElement(children, {
