@@ -26,7 +26,7 @@ const LIST: Array<Partial<TriggerProps>> = [
 export const Default = () => {
   const domRef = React.useRef<HTMLDivElement>(null)
   return (
-    <div ref={domRef} style={{ marginLeft: 50 }}>
+    <div ref={domRef} style={{ marginLeft: 50, height: 200, overflow: 'auto' }}>
       {LIST.map(item => (
         <Trigger
           key={item.placement}

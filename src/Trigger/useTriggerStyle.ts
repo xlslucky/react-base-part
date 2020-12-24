@@ -29,7 +29,8 @@ function useTriggerStyle({
   }, [popupRef, visible])
 
   const [childrenFullLeft, childrenFullTop] = React.useMemo(() => {
-    if (!childrenRef.current) {
+    // 需要加visible 不然childrenRef不更新
+    if (!visible || !childrenRef.current) {
       return [0, 0]
     }
     const {
@@ -49,7 +50,7 @@ function useTriggerStyle({
       childrenLeft - containerLeft + containerScrollLeft
     )
     return [fullLeft, fullTop]
-  }, [childrenRef, container])
+  }, [childrenRef, container, visible])
 
   const triggerStyle = React.useMemo(() => {
     let style: React.CSSProperties = {
@@ -59,7 +60,7 @@ function useTriggerStyle({
       style.display = 'block'
       style.visibility = 'hidden'
     }
-    if (!calcStart || !childrenRef.current || !container || !popupRef.current) {
+    if (!calcStart || !childrenRef.current || !popupRef.current) {
       return style
     }
     style.visibility = 'visible'
@@ -113,7 +114,6 @@ function useTriggerStyle({
     childrenFullLeft,
     childrenFullTop,
     childrenRef,
-    container,
     placement,
     popupRef,
     visible,

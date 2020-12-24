@@ -48,11 +48,11 @@ const Trigger: React.FC<TriggerProps> = ({
   }
 
   function onMouseEnter(event: React.MouseEventHandler<HTMLElement>) {
-    setVisible(true)
+    // setVisible(true)
   }
 
   function onMouseLeave(event: React.MouseEventHandler<HTMLElement>) {
-    setVisible(false)
+    // setVisible(false)
   }
 
   // TODO 取消不销毁dom，加动画
