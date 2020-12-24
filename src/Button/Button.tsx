@@ -20,6 +20,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       block,
       circle,
+      ...restProps
     },
     ref
   ) => {
@@ -41,6 +42,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={buttonClassName}
         onClick={onClick}
         ref={ref}
+        {...restProps}
       >
         {loading ? <IconLoading className="loading-icon" /> : null}
         <span>{children}</span>

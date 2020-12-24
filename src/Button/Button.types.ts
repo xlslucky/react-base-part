@@ -1,6 +1,6 @@
 export type ButtonType = 'primary' | 'ghost' | 'danger' | 'default'
 
-export interface ButtonProps {
+export interface BaseButtonProps {
   children: React.ReactNode
   type?: ButtonType
   htmlType?: 'submit' | 'reset' | 'button'
@@ -12,3 +12,6 @@ export interface ButtonProps {
   block?: boolean
   circle?: boolean
 }
+
+export type ButtonProps = BaseButtonProps &
+  React.RefAttributes<HTMLButtonElement>
