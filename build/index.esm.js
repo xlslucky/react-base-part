@@ -28,6 +28,18 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -134,21 +146,11 @@ function IconExclamationCircleFilled(props) {
     return (jsx(BaseIcon, __assign({}, props, { children: jsx("svg", __assign({ viewBox: "0 0 1024 1024" }, { children: jsx("path", { d: "M512 8c278.36307647 0 504 225.63692353 504 504s-225.63692353 504-504 504S8 790.36307647 8 512 233.63692353 8 512 8z m0 736.61538431a38.76923039 38.76923039 0 1 0 0 77.53846177 38.76923039 38.76923039 0 0 0 0-77.53846177z m0-542.76923039a38.76923039 38.76923039 0 0 0-38.76923039 38.76923039v387.69230785a38.76923039 38.76923039 0 0 0 77.53846078 0V240.61538431a38.76923039 38.76923039 0 0 0-38.76923039-38.76923039z" }, void 0) }), void 0) }), void 0));
 }
 
-
-
-var icons = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    IconLoading: IconLoading,
-    IconCheckCircleFilled: IconCheckCircleFilled,
-    IconCloseCircleFilled: IconCloseCircleFilled,
-    IconExclamationCircleFilled: IconExclamationCircleFilled
-});
-
 var css_248z$1 = "[class*=rbp-],\n[class*=rbp-] *,\n[class*=rbp-] :after,\n[class*=rbp-] :before,\n[class^=rbp-],\n[class^=rbp-] *,\n[class^=rbp-] :after,\n[class^=rbp-] :before {\n  box-sizing: border-box; }\n\n.rbp-btn {\n  display: inline-block;\n  text-align: center;\n  border: none;\n  outline: none;\n  height: 32px;\n  font-size: 14px;\n  border: 1px solid transparent;\n  cursor: pointer;\n  border-radius: 2px;\n  white-space: nowrap;\n  padding: 4px 15px;\n  line-height: 1.5; }\n  .rbp-btn > span {\n    display: inline-block; }\n  .rbp-btn > a {\n    text-decoration: none;\n    color: inherit; }\n  .rbp-btn.rbp-btn-theme-default {\n    border-color: #f0f0f0;\n    background-color: #f0f0f0;\n    color: #000; }\n    .rbp-btn.rbp-btn-theme-default .loading-icon {\n      color: #000; }\n  .rbp-btn.rbp-btn-theme-primary {\n    border-color: #13c2c2;\n    background-color: #13c2c2;\n    color: #fff; }\n    .rbp-btn.rbp-btn-theme-primary .loading-icon {\n      color: #fff; }\n  .rbp-btn.rbp-btn-theme-ghost {\n    border-color: #13c2c2;\n    background-color: transparent;\n    color: #13c2c2; }\n    .rbp-btn.rbp-btn-theme-ghost .loading-icon {\n      color: #13c2c2; }\n  .rbp-btn.rbp-btn-theme-danger {\n    border-color: #f5222d;\n    background-color: #f5222d;\n    color: #fff; }\n    .rbp-btn.rbp-btn-theme-danger .loading-icon {\n      color: #fff; }\n\n.rbp-btn.rbp-btn-circle {\n  border-radius: 32px; }\n\n.rbp-btn.rbp-btn-block {\n  display: flex;\n  width: 100%; }\n\n.rbp-btn.rbp-btn-disabled, .rbp-btn[disabled], .rbp-btn.rbp-btn-loading {\n  position: relative; }\n  .rbp-btn.rbp-btn-disabled::before, .rbp-btn[disabled]::before, .rbp-btn.rbp-btn-loading::before {\n    content: \"\";\n    position: absolute;\n    left: -1px;\n    top: -1px;\n    right: -1px;\n    bottom: -1px;\n    z-index: 1;\n    opacity: 0.35;\n    background-color: #fff;\n    pointer-events: none; }\n\n.rbp-btn.rbp-btn-disabled, .rbp-btn[disabled] {\n  cursor: not-allowed; }\n\n.rbp-btn.rbp-btn-loading {\n  cursor: progress; }\n\n.rbp-btn .loading-icon {\n  display: inline-block;\n  margin-right: 8px;\n  background-size: cover;\n  font-size: 18px; }\n  .rbp-btn .loading-icon > svg {\n    animation: loading 1s linear infinite; }\n\n@keyframes loading {\n  form {\n    transform: rotateZ(0); }\n  to {\n    transform: rotateZ(360deg); } }\n";
 styleInject(css_248z$1);
 
 var Button = React.forwardRef(function (_a, ref) {
-    var children = _a.children, style = _a.style, disabled = _a.disabled, htmlType = _a.htmlType, onClick = _a.onClick, loading = _a.loading, _b = _a.type, type = _b === void 0 ? 'default' : _b, className = _a.className, block = _a.block, circle = _a.circle;
+    var children = _a.children, style = _a.style, disabled = _a.disabled, htmlType = _a.htmlType, onClick = _a.onClick, loading = _a.loading, _b = _a.type, type = _b === void 0 ? 'default' : _b, className = _a.className, block = _a.block, circle = _a.circle, restProps = __rest(_a, ["children", "style", "disabled", "htmlType", "onClick", "loading", "type", "className", "block", "circle"]);
     var buttonClassName = React.useMemo(function () {
         var _a;
         return classnames('rbp-btn', className, (_a = {},
@@ -159,7 +161,7 @@ var Button = React.forwardRef(function (_a, ref) {
             _a['rbp-btn-circle'] = circle,
             _a));
     }, [className, disabled, loading, type, block, circle]);
-    return (jsxs("button", __assign({ style: style, disabled: disabled, type: htmlType, className: buttonClassName, onClick: onClick, ref: ref }, { children: [loading ? jsx(IconLoading, { className: "loading-icon" }, void 0) : null,
+    return (jsxs("button", __assign({ style: style, disabled: disabled, type: htmlType, className: buttonClassName, onClick: onClick, ref: ref }, restProps, { children: [loading ? jsx(IconLoading, { className: "loading-icon" }, void 0) : null,
             jsx("span", { children: children }, void 0)] }), void 0));
 });
 
@@ -252,12 +254,154 @@ var message = (function () {
     };
 })();
 
-var index = (function () {
-    return (jsx("div", { children: Object.entries(icons).map(function (_a) {
-            var iconName = _a[0], icon = _a[1];
-            return jsx("div", { children: React.createElement(icon) }, iconName);
-        }) }, void 0));
-});
+// lib
+function Portal(_a) {
+    var children = _a.children, getContainer = _a.getContainer;
+    var containerRef = React.useRef();
+    var initRef = React.useRef(false);
+    if (!initRef.current) {
+        containerRef.current = getContainer();
+        initRef.current = true;
+    }
+    React.useEffect(function () {
+        // return () => {
+        //   containerRef.current?.parentNode?.removeChild(containerRef.current)
+        // }
+    }, []);
+    return containerRef.current
+        ? ReactDOM.createPortal(children, containerRef.current)
+        : null;
+}
 
-export { Button, index as Icons, message };
+var css_248z$3 = "[class*=rbp-],\n[class*=rbp-] *,\n[class*=rbp-] :after,\n[class*=rbp-] :before,\n[class^=rbp-],\n[class^=rbp-] *,\n[class^=rbp-] :after,\n[class^=rbp-] :before {\n  box-sizing: border-box; }\n\n.rbp-trigger-portal {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%; }\n\n.rbp-trigger-container {\n  position: absolute; }\n";
+styleInject(css_248z$3);
+
+function useTriggerStyle(_a) {
+    var placement = _a.placement, visible = _a.visible, childrenRef = _a.childrenRef, popupRef = _a.popupRef, container = _a.container;
+    var _b = React.useState(false), calcStart = _b[0], setCalcStart = _b[1];
+    React.useEffect(function () {
+        if (visible) {
+            setTimeout(function () {
+                setCalcStart(true);
+            }, 0);
+        }
+        else {
+            setCalcStart(false);
+        }
+    }, [popupRef, visible]);
+    var _c = React.useMemo(function () {
+        if (!childrenRef.current) {
+            return [0, 0];
+        }
+        var _a = childrenRef.current.getBoundingClientRect(), childrenLeft = _a.left, childrenTop = _a.top;
+        var _b = container.getBoundingClientRect(), containerLeft = _b.left, containerTop = _b.top;
+        var containerScrollTop = container.scrollTop, containerScrollLeft = container.scrollLeft;
+        var fullTop = Math.round(childrenTop - containerTop + containerScrollTop);
+        var fullLeft = Math.round(childrenLeft - containerLeft + containerScrollLeft);
+        return [fullLeft, fullTop];
+    }, [childrenRef, container]), childrenFullLeft = _c[0], childrenFullTop = _c[1];
+    var triggerStyle = React.useMemo(function () {
+        var style = {
+            display: 'none',
+        };
+        if (visible) {
+            style.display = 'block';
+            style.visibility = 'hidden';
+        }
+        if (!calcStart || !childrenRef.current || !container || !popupRef.current) {
+            return style;
+        }
+        style.visibility = 'visible';
+        var _a = childrenRef.current.getBoundingClientRect(), childrenWidth = _a.width, childrenHeight = _a.height;
+        var _b = popupRef.current.getBoundingClientRect(), PopupWidth = _b.width, PopupHeight = _b.height;
+        if (['topLeft', 'bottomLeft'].includes(placement)) {
+            style.left = childrenFullLeft;
+        }
+        if (['bottomLeft', 'bottomCenter', 'bottomRight'].includes(placement)) {
+            style.top = Math.round(childrenFullTop + childrenHeight);
+        }
+        if (['rightTop', 'rightCenter', 'rightBottom'].includes(placement)) {
+            style.left = Math.round(childrenFullLeft + childrenWidth);
+        }
+        if (['rightTop', 'leftTop'].includes(placement)) {
+            style.top = childrenFullTop;
+        }
+        if (['topLeft', 'topCenter', 'topRight'].includes(placement)) {
+            // top fulltop - height
+            style.top = childrenFullTop - PopupHeight;
+        }
+        if (['topCenter', 'bottomCenter'].includes(placement)) {
+            // left fullleft - width / 2 + childrenW / 2
+            style.left = childrenFullLeft - PopupWidth / 2 + childrenWidth / 2;
+        }
+        if (['rightBottom', 'leftBottom'].includes(placement)) {
+            // top fulltop - height + childrenH
+            style.top = childrenFullTop - PopupHeight + childrenHeight;
+        }
+        if (['rightCenter', 'leftCenter'].includes(placement)) {
+            // top fulltop - height / 2 + childrenH / 2
+            style.top = childrenFullTop - PopupHeight / 2 + childrenHeight / 2;
+        }
+        if (['topRight', 'bottomRight'].includes(placement)) {
+            // left fullleft - width + childrenW
+            style.left = childrenFullLeft - PopupWidth + childrenWidth;
+        }
+        if (['leftTop', 'leftCenter', 'leftBottom'].includes(placement)) {
+            // left fullleft - width
+            style.left = childrenFullLeft - PopupWidth;
+        }
+        return style;
+    }, [
+        calcStart,
+        childrenFullLeft,
+        childrenFullTop,
+        childrenRef,
+        container,
+        placement,
+        popupRef,
+        visible,
+    ]);
+    return { triggerStyle: triggerStyle };
+}
+
+var Trigger = function (_a) {
+    var children = _a.children, placement = _a.placement, trigger = _a.trigger, popup = _a.popup, _b = _a.getPopupContainer, getPopupContainer = _b === void 0 ? function () { return document.body; } : _b;
+    var _c = React.useState(false), visible = _c[0], setVisible = _c[1];
+    var childrenRef = React.useRef(null);
+    var popupRef = React.useRef(null);
+    var container = getPopupContainer();
+    React.useEffect(function () {
+        if (container) {
+            if (!['relative', 'absolute', 'fixed'].includes(window.getComputedStyle(container, null).position)) {
+                container.style.position = 'relative';
+            }
+        }
+    }, [container]);
+    var triggerStyle = useTriggerStyle({
+        placement: placement,
+        visible: visible,
+        childrenRef: childrenRef,
+        popupRef: popupRef,
+        container: container,
+    }).triggerStyle;
+    function onClick(event) {
+        setVisible(!visible);
+    }
+    function onMouseEnter(event) {
+        setVisible(true);
+    }
+    function onMouseLeave(event) {
+        setVisible(false);
+    }
+    // TODO 取消不销毁dom，加动画
+    return (jsxs(Fragment, { children: [React.cloneElement(children, {
+                ref: childrenRef,
+                onClick: onClick,
+                onMouseEnter: onMouseEnter,
+                onMouseLeave: onMouseLeave,
+            }),
+            visible ? (jsx(Portal, __assign({ getContainer: function () { return container; } }, { children: jsx("div", __assign({ className: "rbp-trigger-portal" }, { children: jsx("div", __assign({ ref: popupRef, style: __assign({}, triggerStyle), className: "rbp-trigger-container" }, { children: popup }), void 0) }), void 0) }), void 0)) : null] }, void 0));
+};
+
+export { Button, Trigger, message };
 //# sourceMappingURL=index.esm.js.map
