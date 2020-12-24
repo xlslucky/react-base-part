@@ -1,0 +1,13 @@
+@import "../style/common.scss";
+@import "../style/variables.scss";
+
+.rbp-trigger-portal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.rbp-trigger-container {
+  position: absolute;
+}
