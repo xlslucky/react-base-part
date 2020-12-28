@@ -86,6 +86,8 @@ const Trigger: React.FC<TriggerProps> = ({
     }
   }, [enterClassName, leaveClassName, calcStyleEnd, visible])
 
+  // TODO 优化 onClick onMouseEnter onMouseLeave 目前不是很流畅
+
   function onClick(event: React.MouseEvent<HTMLElement, MouseEvent>) {
     if (trigger.includes('click')) {
       setVisible(!visible)

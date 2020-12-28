@@ -280,23 +280,18 @@ function Portal(_a) {
         : null;
 }
 
-var css_248z$3 = "[class*=rbp-],\n[class*=rbp-] *,\n[class*=rbp-] :after,\n[class*=rbp-] :before,\n[class^=rbp-],\n[class^=rbp-] *,\n[class^=rbp-] :after,\n[class^=rbp-] :before {\n  box-sizing: border-box; }\n\n.rbp-trigger-portal {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%; }\n\n.rbp-trigger-container {\n  position: absolute; }\n";
+var css_248z$3 = "[class*=rbp-],\n[class*=rbp-] *,\n[class*=rbp-] :after,\n[class*=rbp-] :before,\n[class^=rbp-],\n[class^=rbp-] *,\n[class^=rbp-] :after,\n[class^=rbp-] :before {\n  box-sizing: border-box; }\n\n.rbp-trigger-portal {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%; }\n\n.rbp-trigger-container {\n  position: absolute; }\n\n.trigger-hidden {\n  display: none; }\n";
 styleInject(css_248z$3);
 
 function useTriggerStyle(_a) {
     var placement = _a.placement, visible = _a.visible, childrenRef = _a.childrenRef, popupRef = _a.popupRef, container = _a.container;
-    var _b = React__default.useState(false), calcStart = _b[0], setCalcStart = _b[1];
-    React__default.useEffect(function () {
-        if (visible) {
-            setTimeout(function () {
-                setCalcStart(true);
-            }, 0);
-        }
-        else {
-            setCalcStart(false);
-        }
-    }, [popupRef, visible]);
-    var _c = React__default.useMemo(function () {
+    var _b = React__default.useState({
+        display: 'block',
+        visibility: 'hidden',
+    }), triggerStyle = _b[0], setTriggerStyle = _b[1];
+    // 计算属性后，加动画，不然popup高度，宽度计算不准确
+    var _c = React__default.useState(false), calcStyleEnd = _c[0], setCalcStyleEnd = _c[1];
+    var _d = React__default.useMemo(function () {
         // 需要加visible 不然childrenRef不更新
         if (!visible || !childrenRef.current) {
             return [0, 0];
@@ -307,19 +302,12 @@ function useTriggerStyle(_a) {
         var fullTop = Math.round(childrenTop - containerTop + containerScrollTop);
         var fullLeft = Math.round(childrenLeft - containerLeft + containerScrollLeft);
         return [fullLeft, fullTop];
-    }, [childrenRef, container, visible]), childrenFullLeft = _c[0], childrenFullTop = _c[1];
-    var triggerStyle = React__default.useMemo(function () {
-        var style = {
-            display: 'none',
-        };
-        if (visible) {
-            style.display = 'block';
-            style.visibility = 'hidden';
+    }, [childrenRef, container, visible]), childrenFullLeft = _d[0], childrenFullTop = _d[1];
+    var getTriggerStyle = React__default.useCallback(function () {
+        if (!childrenRef.current || !popupRef.current) {
+            return {};
         }
-        if (!calcStart || !childrenRef.current || !popupRef.current) {
-            return style;
-        }
-        style.visibility = 'visible';
+        var style = {};
         var _a = childrenRef.current.getBoundingClientRect(), childrenWidth = _a.width, childrenHeight = _a.height;
         var _b = popupRef.current.getBoundingClientRect(), PopupWidth = _b.width, PopupHeight = _b.height;
         if (['topLeft', 'bottomLeft'].includes(placement)) {
@@ -359,24 +347,52 @@ function useTriggerStyle(_a) {
             style.left = childrenFullLeft - PopupWidth;
         }
         return style;
-    }, [
-        calcStart,
-        childrenFullLeft,
-        childrenFullTop,
-        childrenRef,
-        placement,
-        popupRef,
-        visible,
-    ]);
-    return { triggerStyle: triggerStyle };
+    }, [childrenFullLeft, childrenFullTop, childrenRef, placement, popupRef]);
+    React__default.useEffect(function () {
+        if (visible) {
+            setTimeout(function () {
+                // setTimeout 为了childrenRef.current和popupRef.current能取到值
+                setTriggerStyle(getTriggerStyle());
+                setCalcStyleEnd(true);
+            }, 0);
+        }
+        else {
+            setCalcStyleEnd(false);
+        }
+    }, [getTriggerStyle, visible]);
+    return { triggerStyle: triggerStyle, calcStyleEnd: calcStyleEnd };
 }
 
 var Trigger = function (_a) {
-    var children = _a.children, placement = _a.placement, trigger = _a.trigger, popup = _a.popup, _b = _a.getPopupContainer, getPopupContainer = _b === void 0 ? function () { return document.body; } : _b;
-    var _c = React__default.useState(false), visible = _c[0], setVisible = _c[1];
+    var children = _a.children, placement = _a.placement, _b = _a.destroyPopupOnHide, destroyPopupOnHide = _b === void 0 ? false : _b, trigger = _a.trigger, popup = _a.popup, _c = _a.getPopupContainer, getPopupContainer = _c === void 0 ? function () { return document.body; } : _c, enterClassName = _a.enterClassName, leaveClassName = _a.leaveClassName;
+    var _d = React__default.useState(false), visible = _d[0], setVisible = _d[1];
+    var _e = React__default.useState(false), showOverlay = _e[0], setShowOverlay = _e[1];
     var childrenRef = React__default.useRef(null);
     var popupRef = React__default.useRef(null);
     var container = getPopupContainer();
+    React__default.useEffect(function () {
+        if (visible) {
+            setShowOverlay(true);
+        }
+    }, [visible]);
+    React__default.useEffect(function () {
+        if (showOverlay && enterClassName && leaveClassName) {
+            var node_1 = popupRef.current;
+            node_1 === null || node_1 === void 0 ? void 0 : node_1.addEventListener('animationend', function () {
+                // 动画结束删除className
+                if (node_1.classList.contains(enterClassName)) {
+                    node_1.classList.remove(enterClassName);
+                }
+                if (node_1.classList.contains(leaveClassName)) {
+                    node_1.classList.remove(leaveClassName);
+                    node_1.classList.add('trigger-hidden');
+                    if (destroyPopupOnHide) {
+                        setShowOverlay(false);
+                    }
+                }
+            });
+        }
+    }, [destroyPopupOnHide, enterClassName, leaveClassName, showOverlay]);
     React__default.useEffect(function () {
         if (container) {
             if (!['relative', 'absolute', 'fixed'].includes(window.getComputedStyle(container, null).position)) {
@@ -384,30 +400,51 @@ var Trigger = function (_a) {
             }
         }
     }, [container]);
-    var triggerStyle = useTriggerStyle({
+    var _f = useTriggerStyle({
         placement: placement,
         visible: visible,
         childrenRef: childrenRef,
         popupRef: popupRef,
         container: container,
-    }).triggerStyle;
+    }), triggerStyle = _f.triggerStyle, calcStyleEnd = _f.calcStyleEnd;
+    React__default.useEffect(function () {
+        if (visible) {
+            var node = popupRef.current;
+            node === null || node === void 0 ? void 0 : node.classList.remove('trigger-hidden');
+            if (enterClassName && calcStyleEnd) {
+                node === null || node === void 0 ? void 0 : node.classList.add(enterClassName);
+            }
+        }
+        else {
+            if (leaveClassName) {
+                var node = popupRef.current;
+                node === null || node === void 0 ? void 0 : node.classList.add(leaveClassName);
+            }
+        }
+    }, [enterClassName, leaveClassName, calcStyleEnd, visible]);
+    // TODO 优化 onClick onMouseEnter onMouseLeave 目前不是很流畅
     function onClick(event) {
-        setVisible(!visible);
+        if (trigger.includes('click')) {
+            setVisible(!visible);
+        }
     }
     function onMouseEnter(event) {
-        // setVisible(true)
+        if (trigger.includes('hover')) {
+            setVisible(true);
+        }
     }
     function onMouseLeave(event) {
-        // setVisible(false)
+        if (trigger.includes('hover')) {
+            setVisible(false);
+        }
     }
-    // TODO 取消不销毁dom，加动画
     return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [React__default.cloneElement(children, {
                 ref: childrenRef,
                 onClick: onClick,
                 onMouseEnter: onMouseEnter,
                 onMouseLeave: onMouseLeave,
             }),
-            visible ? (jsxRuntime.jsx(Portal, __assign({ getContainer: function () { return container; } }, { children: jsxRuntime.jsx("div", __assign({ className: "rbp-trigger-portal" }, { children: jsxRuntime.jsx("div", __assign({ ref: popupRef, style: __assign({}, triggerStyle), className: "rbp-trigger-container" }, { children: popup }), void 0) }), void 0) }), void 0)) : null] }, void 0));
+            visible || showOverlay ? (jsxRuntime.jsx(Portal, __assign({ getContainer: function () { return container; } }, { children: jsxRuntime.jsx("div", __assign({ className: "rbp-trigger-portal" }, { children: jsxRuntime.jsx("div", __assign({ onClick: onClick, onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, ref: popupRef, style: triggerStyle, className: 'rbp-trigger-container' }, { children: popup }), void 0) }), void 0) }), void 0)) : null] }, void 0));
 };
 
 exports.Button = Button;
