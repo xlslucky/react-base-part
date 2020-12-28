@@ -16,17 +16,12 @@ function useTriggerStyle({
   popupRef,
   container,
 }: Props) {
-  const [calcStart, setCalcStart] = React.useState(false)
-
-  React.useEffect(() => {
-    if (visible) {
-      setTimeout(() => {
-        setCalcStart(true)
-      }, 0)
-    } else {
-      setCalcStart(false)
-    }
-  }, [popupRef, visible])
+  const [triggerStyle, setTriggerStyle] = React.useState<React.CSSProperties>({
+    display: 'block',
+    visibility: 'hidden',
+  })
+  // 计算属性后，加动画，不然popup高度，宽度计算不准确
+  const [calcStyleEnd, setCalcStyleEnd] = React.useState(false)
 
   const [childrenFullLeft, childrenFullTop] = React.useMemo(() => {
     // 需要加visible 不然childrenRef不更新
@@ -52,18 +47,11 @@ function useTriggerStyle({
     return [fullLeft, fullTop]
   }, [childrenRef, container, visible])
 
-  const triggerStyle = React.useMemo(() => {
-    let style: React.CSSProperties = {
-      display: 'none',
+  const getTriggerStyle = React.useCallback((): React.CSSProperties => {
+    if (!childrenRef.current || !popupRef.current) {
+      return {}
     }
-    if (visible) {
-      style.display = 'block'
-      style.visibility = 'hidden'
-    }
-    if (!calcStart || !childrenRef.current || !popupRef.current) {
-      return style
-    }
-    style.visibility = 'visible'
+    let style: React.CSSProperties = {}
     const {
       width: childrenWidth,
       height: childrenHeight,
@@ -109,17 +97,21 @@ function useTriggerStyle({
       style.left = childrenFullLeft - PopupWidth
     }
     return style
-  }, [
-    calcStart,
-    childrenFullLeft,
-    childrenFullTop,
-    childrenRef,
-    placement,
-    popupRef,
-    visible,
-  ])
+  }, [childrenFullLeft, childrenFullTop, childrenRef, placement, popupRef])
 
-  return { triggerStyle }
+  React.useEffect(() => {
+    if (visible) {
+      setTimeout(() => {
+        // setTimeout 为了childrenRef.current和popupRef.current能取到值
+        setTriggerStyle(getTriggerStyle())
+        setCalcStyleEnd(true)
+      }, 0)
+    } else {
+      setCalcStyleEnd(false)
+    }
+  }, [getTriggerStyle, visible])
+
+  return { triggerStyle, calcStyleEnd }
 }
 
 export default useTriggerStyle

@@ -15,7 +15,10 @@ export type PlacementType =
 export interface TriggerProps {
   placement: PlacementType
   children: React.ReactElement
+  destroyPopupOnHide?: boolean
   getPopupContainer?: () => HTMLElement
   trigger: Array<'hover' | 'click' | 'contextMenu'> // contextMenu 暂时没实现
   popup: React.ReactElement | (() => React.ReactElement)
+  enterClassName?: string
+  leaveClassName?: string
 }
