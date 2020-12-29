@@ -72,7 +72,7 @@ const message = (() => {
 
   function renderMessage() {
     ReactDOM.render(
-      <>
+      <React.Fragment>
         {queue.map(message => (
           <Message
             {...message}
@@ -83,7 +83,7 @@ const message = (() => {
             }}
           />
         ))}
-      </>,
+      </React.Fragment>,
       container
     )
   }

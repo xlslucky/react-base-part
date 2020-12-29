@@ -107,7 +107,7 @@ const Trigger: React.FC<TriggerProps> = ({
   }
 
   return (
-    <>
+    <React.Fragment>
       {React.cloneElement(children, {
         ref: childrenRef,
         onClick,
@@ -130,7 +130,7 @@ const Trigger: React.FC<TriggerProps> = ({
           </div>
         </Portal>
       ) : null}
-    </>
+    </React.Fragment>
   )
 }
 
