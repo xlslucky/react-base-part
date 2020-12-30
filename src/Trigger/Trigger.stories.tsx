@@ -67,12 +67,15 @@ export const Default = () => {
         <Trigger
           key={item.placement}
           popup={
-            <div style={{ border: '1px solid red', padding: '10px 15px' }}>
+            <div
+              style={{ border: '1px solid red', padding: '10px 15px' }}
+              onClick={e => e.stopPropagation()}
+            >
               i am a popup
             </div>
           }
           placement={item.placement}
-          trigger={['hover']}
+          trigger={['click']}
           getPopupContainer={() => domRef.current as HTMLElement}
           {...item}
         >
