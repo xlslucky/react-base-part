@@ -1,0 +1,22 @@
+.rbp-arrow-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+
+  &.rbp-arrow-icon-top {
+    border-bottom-color: currentColor;
+  }
+
+  &.rbp-arrow-icon-bottom {
+    border-top-color: currentColor;
+  }
+
+  &.rbp-arrow-icon-left {
+    border-right-color: currentColor;
+  }
+
+  &.rbp-arrow-icon-right {
+    border-left-color: currentColor;
+  }
+}

@@ -8,6 +8,8 @@ import './Trigger.scss'
 
 import useTriggerStyle from './useTriggerStyle'
 
+import useClickAway from '../hooks/useClickAway'
+
 const Trigger: React.FC<TriggerProps> = ({
   children,
   placement,
@@ -26,6 +28,10 @@ const Trigger: React.FC<TriggerProps> = ({
 
   const container = getPopupContainer()
 
+  useClickAway([childrenRef, popupRef], () => {
+    setVisible(false)
+  })
+
   React.useEffect(() => {
     if (visible) {
       setShowOverlay(true)
@@ -33,21 +39,28 @@ const Trigger: React.FC<TriggerProps> = ({
   }, [visible])
 
   React.useEffect(() => {
-    if (showOverlay && enterClassName && leaveClassName) {
-      const node = popupRef.current
-      node?.addEventListener('animationend', () => {
-        // 动画结束删除className
-        if (node.classList.contains(enterClassName)) {
-          node.classList.remove(enterClassName)
+    const node = popupRef.current
+    function popupAnimationend({ target }: any) {
+      if (!enterClassName || !leaveClassName) {
+        return
+      }
+      // 动画结束删除className
+      if (target.classList.contains(enterClassName)) {
+        target.classList.remove(enterClassName)
+      }
+      if (target.classList.contains(leaveClassName)) {
+        target.classList.remove(leaveClassName)
+        target.classList.add('trigger-hidden')
+        if (destroyPopupOnHide) {
+          setShowOverlay(false)
         }
-        if (node.classList.contains(leaveClassName)) {
-          node.classList.remove(leaveClassName)
-          node.classList.add('trigger-hidden')
-          if (destroyPopupOnHide) {
-            setShowOverlay(false)
-          }
-        }
-      })
+      }
+    }
+    if (showOverlay) {
+      node?.addEventListener('animationend', popupAnimationend)
+    }
+    return () => {
+      node?.removeEventListener('animationend', popupAnimationend)
     }
   }, [destroyPopupOnHide, enterClassName, leaveClassName, showOverlay])
 
@@ -75,13 +88,20 @@ const Trigger: React.FC<TriggerProps> = ({
     if (visible) {
       const node = popupRef.current
       node?.classList.remove('trigger-hidden')
-      if (enterClassName && calcStyleEnd) {
+      if (enterClassName && leaveClassName && calcStyleEnd) {
+        // 进入、离开是需要删除另外一种样式
+        node?.classList.remove(leaveClassName)
         node?.classList.add(enterClassName)
       }
     } else {
-      if (leaveClassName) {
-        const node = popupRef.current
+      const node = popupRef.current
+      if (leaveClassName && enterClassName) {
+        // 进入、离开是需要删除另外一种样式
+        node?.classList.remove(enterClassName)
         node?.classList.add(leaveClassName)
+      } else {
+        // 没设置动画 直接隐藏
+        node?.classList.add('trigger-hidden')
       }
     }
   }, [enterClassName, leaveClassName, calcStyleEnd, visible])
@@ -107,7 +127,7 @@ const Trigger: React.FC<TriggerProps> = ({
   }
 
   return (
-    <>
+    <React.Fragment>
       {React.cloneElement(children, {
         ref: childrenRef,
         onClick,
@@ -130,7 +150,7 @@ const Trigger: React.FC<TriggerProps> = ({
           </div>
         </Portal>
       ) : null}
-    </>
+    </React.Fragment>
   )
 }
 

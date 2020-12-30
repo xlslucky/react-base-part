@@ -1,0 +1,97 @@
+$translate: 5px;
+
+.rbp-trigger-arrow {
+  position: absolute;
+}
+
+.rbp-trigger-arrow-top-left,
+.rbp-trigger-arrow-bottom-left {
+  left: $translate;
+}
+
+.rbp-trigger-arrow-top-right,
+.rbp-trigger-arrow-bottom-right {
+  right: $translate;
+}
+
+.rbp-trigger-arrow-left-top,
+.rbp-trigger-arrow-right-top {
+  top: $translate;
+}
+
+.rbp-trigger-arrow-left-bottom,
+.rbp-trigger-arrow-right-bottom {
+  bottom: $translate;
+}
+
+// --------上方箭头 start--------
+.rbp-trigger-arrow-top-left,
+.rbp-trigger-arrow-top-center,
+.rbp-trigger-arrow-top-right {
+  bottom: 0;
+}
+.rbp-trigger-arrow-top-left {
+  transform: translateY(100%);
+}
+.rbp-trigger-arrow-top-center {
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+.rbp-trigger-arrow-top-right {
+  transform: translateY(100%);
+}
+// --------上方箭头 end--------
+
+// --------下方箭头 start--------
+.rbp-trigger-arrow-bottom-left,
+.rbp-trigger-arrow-bottom-center,
+.rbp-trigger-arrow-bottom-right {
+  top: 0;
+}
+.rbp-trigger-arrow-bottom-left {
+  transform: translateY(-100%);
+}
+.rbp-trigger-arrow-bottom-center {
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+}
+.rbp-trigger-arrow-bottom-right {
+  transform: translateY(-100%);
+}
+// --------下方箭头 end--------
+
+// --------右侧箭头 start--------
+.rbp-trigger-arrow-left-top,
+.rbp-trigger-arrow-left-center,
+.rbp-trigger-arrow-left-bottom {
+  right: 0;
+}
+.rbp-trigger-arrow-left-top {
+  transform: translateX(100%);
+}
+.rbp-trigger-arrow-left-center {
+  top: 50%;
+  transform: translateX(100%) translateY(-50%);
+}
+.rbp-trigger-arrow-left-bottom {
+  transform: translateX(100%);
+}
+// --------左侧箭头 end--------
+
+// --------右侧箭头 start--------
+.rbp-trigger-arrow-right-top,
+.rbp-trigger-arrow-right-center,
+.rbp-trigger-arrow-right-bottom {
+  left: 0;
+}
+.rbp-trigger-arrow-right-top {
+  transform: translateX(-100%);
+}
+.rbp-trigger-arrow-right-center {
+  top: 50%;
+  transform: translateX(-100%) translateY(-50%);
+}
+.rbp-trigger-arrow-right-bottom {
+  transform: translateX(-100%);
+}
+// --------右侧箭头 end--------
