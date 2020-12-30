@@ -85,9 +85,11 @@ const Trigger: React.FC<TriggerProps> = ({
         node?.classList.add(enterClassName)
       }
     } else {
+      const node = popupRef.current
       if (leaveClassName) {
-        const node = popupRef.current
         node?.classList.add(leaveClassName)
+      } else {
+        node?.classList.add('trigger-hidden')
       }
     }
   }, [enterClassName, leaveClassName, calcStyleEnd, visible])
