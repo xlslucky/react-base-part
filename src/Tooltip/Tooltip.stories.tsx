@@ -3,6 +3,7 @@ import Tooltip from './Tooltip'
 import Button from '../Button/Button'
 
 import { TooltipProps } from './Tooltip.types'
+import { TriggerArrayType } from '../Trigger/Trigger.types'
 
 export default {
   title: 'Tooltip',
@@ -12,25 +13,27 @@ type GroupType = Partial<TooltipProps & { label: string }>[]
 
 const TITLE = '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
 
+const trigger: TriggerArrayType = ['hover']
+
 const TOP_GROUP: GroupType = [
-  { label: 'TL', placement: 'topLeft' },
-  { label: 'Top', placement: 'topCenter' },
-  { label: 'TR', placement: 'topRight' },
+  { label: 'TL', trigger, placement: 'topLeft' },
+  { label: 'Top', trigger, placement: 'topCenter' },
+  { label: 'TR', trigger, placement: 'topRight' },
 ]
 const BOTTOM_GROUP: GroupType = [
-  { label: 'BL', placement: 'bottomLeft' },
-  { label: 'Bottom', placement: 'bottomCenter' },
-  { label: 'BR', placement: 'bottomRight' },
+  { label: 'BL', trigger, placement: 'bottomLeft' },
+  { label: 'Bottom', trigger, placement: 'bottomCenter' },
+  { label: 'BR', trigger, placement: 'bottomRight' },
 ]
 const LEFT_GROUP: GroupType = [
-  { label: 'LT', placement: 'leftTop' },
-  { label: 'Left', placement: 'leftCenter' },
-  { label: 'LB', placement: 'leftBottom' },
+  { label: 'LT', trigger, placement: 'leftTop' },
+  { label: 'Left', trigger, placement: 'leftCenter' },
+  { label: 'LB', trigger, placement: 'leftBottom' },
 ]
 const RIGHT_GROUP: GroupType = [
-  { label: 'RT', placement: 'rightTop' },
-  { label: 'Right', placement: 'rightCenter' },
-  { label: 'RB', placement: 'rightBottom' },
+  { label: 'RT', trigger, placement: 'rightTop' },
+  { label: 'Right', trigger, placement: 'rightCenter' },
+  { label: 'RB', trigger, placement: 'rightBottom' },
 ]
 
 export const Default = () => {

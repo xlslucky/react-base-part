@@ -12,14 +12,16 @@ export type PlacementType =
   | 'leftCenter' // 左居中
   | 'leftBottom' // 左居下
 
-export type TriggerType = Array<'hover' | 'click' | 'contextMenu'> // contextMenu 暂时没实现
+export type TriggerType = 'hover' | 'click' | 'contextMenu' // contextMenu 暂时没实现
+
+export type TriggerArrayType = Array<TriggerType>
 
 export interface TriggerProps {
   placement: PlacementType
   children: React.ReactElement
   destroyPopupOnHide?: boolean
   getPopupContainer?: () => HTMLElement
-  trigger: TriggerType
+  trigger: TriggerArrayType
   popup: React.ReactElement | (() => React.ReactElement)
   enterClassName?: string
   leaveClassName?: string

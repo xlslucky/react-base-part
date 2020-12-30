@@ -3,7 +3,7 @@ import { PlacementType } from './Trigger.types'
 
 interface Props {
   placement: PlacementType
-  visible: boolean
+  finalVisible: boolean
   childrenRef: React.RefObject<HTMLElement>
   popupRef: React.RefObject<HTMLDivElement>
   container: HTMLElement
@@ -11,7 +11,7 @@ interface Props {
 
 function useTriggerStyle({
   placement,
-  visible,
+  finalVisible,
   childrenRef,
   popupRef,
   container,
@@ -25,7 +25,7 @@ function useTriggerStyle({
 
   const [childrenFullLeft, childrenFullTop] = React.useMemo(() => {
     // 需要加visible 不然childrenRef不更新
-    if (!visible || !childrenRef.current) {
+    if (!finalVisible || !childrenRef.current) {
       return [0, 0]
     }
     const {
@@ -45,7 +45,7 @@ function useTriggerStyle({
       childrenLeft - containerLeft + containerScrollLeft
     )
     return [fullLeft, fullTop]
-  }, [childrenRef, container, visible])
+  }, [childrenRef, container, finalVisible])
 
   const getTriggerStyle = React.useCallback((): React.CSSProperties => {
     if (!childrenRef.current || !popupRef.current) {
@@ -100,7 +100,7 @@ function useTriggerStyle({
   }, [childrenFullLeft, childrenFullTop, childrenRef, placement, popupRef])
 
   React.useEffect(() => {
-    if (visible) {
+    if (finalVisible) {
       setTimeout(() => {
         // setTimeout 为了childrenRef.current和popupRef.current能取到值
         setTriggerStyle(getTriggerStyle())
@@ -109,7 +109,7 @@ function useTriggerStyle({
     } else {
       setCalcStyleEnd(false)
     }
-  }, [getTriggerStyle, visible])
+  }, [getTriggerStyle, finalVisible])
 
   return { triggerStyle, calcStyleEnd }
 }
