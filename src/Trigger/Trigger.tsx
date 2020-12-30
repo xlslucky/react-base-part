@@ -115,8 +115,9 @@ const Trigger: React.FC<TriggerProps> = ({
     }
   }, [enterClassName, leaveClassName, calcStyleEnd, finalVisible])
 
+  // 点击子元素、浮层都走这个方法 切换显示、隐藏状态
+  // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
   function onClick() {
-    // event: React.MouseEvent<HTMLElement, MouseEvent>
     if (trigger.includes('click')) {
       updateVisible(!finalVisible)
     }
