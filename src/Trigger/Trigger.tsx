@@ -8,6 +8,8 @@ import './Trigger.scss'
 
 import useTriggerStyle from './useTriggerStyle'
 
+import useClickAway from '../hooks/useClickAway'
+
 const Trigger: React.FC<TriggerProps> = ({
   children,
   placement,
@@ -25,6 +27,10 @@ const Trigger: React.FC<TriggerProps> = ({
   const popupRef = React.useRef<HTMLDivElement>(null)
 
   const container = getPopupContainer()
+
+  useClickAway([childrenRef, popupRef], () => {
+    setVisible(false)
+  })
 
   React.useEffect(() => {
     if (visible) {
