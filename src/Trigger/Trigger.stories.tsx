@@ -57,7 +57,7 @@ export const Default = () => {
             </div>
           }
           placement={item.placement}
-          trigger={['click']}
+          trigger={['hover']}
           getPopupContainer={() => domRef.current as HTMLElement}
           {...item}
         >
