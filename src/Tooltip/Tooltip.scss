@@ -1,0 +1,43 @@
+@import "../style/variables.scss";
+
+$bg-color: rgba(0, 0, 0, .75);
+
+.rbp-tooltip {
+  &.rbp-tooltip-top-left,
+  &.rbp-tooltip-top-center,
+  &.rbp-tooltip-top-right {
+    padding-bottom: 8px;
+  }
+  &.rbp-tooltip-right-top,
+  &.rbp-tooltip-right-center,
+  &.rbp-tooltip-right-bottom {
+    padding-left: 8px;
+  }
+  &.rbp-tooltip-bottom-left,
+  &.rbp-tooltip-bottom-center,
+  &.rbp-tooltip-bottom-right {
+    padding-top: 8px;
+  }
+  &.rbp-tooltip-left-top,
+  &.rbp-tooltip-left-center,
+  &.rbp-tooltip-left-bottom {
+    padding-right: 8px;
+  }
+}
+
+.rbp-tooltip-content {
+  position: relative;
+  max-width: 250px;
+}
+
+.rbp-tooltip-arrow {
+  color: $bg-color;
+  border-width: 3px;
+}
+
+.rbp-tooltip-inner {
+  background-color: $bg-color;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
