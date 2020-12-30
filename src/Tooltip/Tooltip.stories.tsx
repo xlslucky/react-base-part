@@ -13,7 +13,7 @@ type GroupType = Partial<TooltipProps & { label: string }>[]
 
 const TITLE = '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
 
-const trigger: TriggerArrayType = ['click']
+const trigger: TriggerArrayType = ['hover']
 
 const TOP_GROUP: GroupType = [
   { label: 'TL', trigger, placement: 'topLeft' },
