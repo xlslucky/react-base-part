@@ -1,6 +1,6 @@
 import './style/common.scss'
 
-export { Button } from './Button'
-export { message } from './message'
+export { default as Button } from './Button'
+export { default as message } from './message'
 // export { Trigger } from './Trigger'
-export { Tooltip } from './Tooltip'
+export { default as Tooltip } from './Tooltip'

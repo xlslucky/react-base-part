@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "declaration": true, // 生成*.d.ts
+    "declarationDir": "build",
+    "rootDir": "src",
+    "sourceMap": true,
     "target": "es5",
     "lib": [
       "dom",
