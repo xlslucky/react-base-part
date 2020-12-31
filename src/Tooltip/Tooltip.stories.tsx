@@ -1,6 +1,6 @@
 import React from 'react'
 import Tooltip from './Tooltip'
-import Button from '../Button/Button'
+import Button from '../Button'
 
 import { TooltipProps } from './Tooltip.types'
 import { TriggerArrayType } from '../Trigger/Trigger.types'
