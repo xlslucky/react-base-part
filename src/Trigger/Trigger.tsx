@@ -117,19 +117,28 @@ const Trigger: React.FC<TriggerProps> = ({
 
   // 点击子元素、浮层都走这个方法 切换显示、隐藏状态
   // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
-  function onClick() {
+  function onClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    if (typeof children.props.onClick === 'function') {
+      children.props.onClick(event)
+    }
     if (trigger.includes('click')) {
       updateVisible(!finalVisible)
     }
   }
 
-  function onMouseEnter() {
+  function onMouseEnter(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    if (typeof children.props.onMouseEnter === 'function') {
+      children.props.onMouseEnter(event)
+    }
     if (trigger.includes('hover')) {
       updateVisible(true)
     }
   }
 
-  function onMouseLeave() {
+  function onMouseLeave(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    if (typeof children.props.onMouseLeave === 'function') {
+      children.props.onMouseLeave(event)
+    }
     if (trigger.includes('hover')) {
       updateVisible(false)
     }
