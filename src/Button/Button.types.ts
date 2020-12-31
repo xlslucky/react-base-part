@@ -11,6 +11,7 @@ export interface BaseButtonProps {
   loading?: boolean
   block?: boolean
   circle?: boolean
+  prefixCls?: string
 }
 
 export type ButtonProps = BaseButtonProps &

@@ -7,6 +7,8 @@ import { IconLoading } from '../Icons/Icons'
 
 import './Button.scss'
 
+import { PREFIX_CLASS } from '../constants'
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -20,19 +22,20 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       block,
       circle,
+      prefixCls = PREFIX_CLASS,
       ...restProps
     },
     ref
   ) => {
     const buttonClassName = React.useMemo(() => {
-      return classnames('rbp-btn', className, {
-        [`rbp-btn-theme-${type}`]: type,
-        'rbp-btn-disabled': disabled,
-        'rbp-btn-loading': loading,
-        'rbp-btn-block': block,
-        'rbp-btn-circle': circle,
+      return classnames(`${prefixCls}-btn`, className, {
+        [`${prefixCls}-btn-theme-${type}`]: type,
+        [`${prefixCls}-btn-disabled`]: disabled,
+        [`${prefixCls}-btn-loading`]: loading,
+        [`${prefixCls}-btn-block`]: block,
+        [`${prefixCls}-btn-circle`]: circle,
       })
-    }, [className, disabled, loading, type, block, circle])
+    }, [prefixCls, className, type, disabled, loading, block, circle])
 
     return (
       <button
