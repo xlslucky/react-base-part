@@ -50,7 +50,6 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
-    "classnames": "^2.2.6",
     "cz-customizable": "^6.3.0",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
@@ -93,5 +92,8 @@
     "cz-customizable": {
       "config": "config/cz.config.js"
     }
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
   }
 }
