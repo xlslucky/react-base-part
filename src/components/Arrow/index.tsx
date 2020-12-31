@@ -7,12 +7,18 @@ import { ArrowProps } from './Arrow.types'
 // styles
 import './Arrow.scss'
 
-export default function Arrow({ place, className }: ArrowProps) {
+import { PREFIX_CLASS } from '../../constants'
+
+export default function Arrow({
+  place,
+  className,
+  prefixCls = PREFIX_CLASS,
+}: ArrowProps) {
   return (
     <span
       className={classnames(
-        'rbp-arrow-icon',
-        `rbp-arrow-icon-${place}`,
+        `${prefixCls}-arrow-icon`,
+        `${prefixCls}-arrow-icon-${place}`,
         className
       )}
     ></span>

@@ -10,15 +10,18 @@ import { TriggerArrowProps } from './TriggerArrow.types'
 import './TriggerArrow.scss'
 import { getArrowPlace, PLACEMENT_MAP } from '../../utils/trigger'
 
+import { PREFIX_CLASS } from '../../constants'
+
 export default function TriggerArrow({
   placement,
   className,
+  prefixCls = PREFIX_CLASS,
 }: TriggerArrowProps) {
   return (
     <Arrow
       className={classnames(
-        'rbp-trigger-arrow',
-        `rbp-trigger-arrow-${PLACEMENT_MAP[placement]}`,
+        `${prefixCls}-trigger-arrow`,
+        `${prefixCls}-trigger-arrow-${PLACEMENT_MAP[placement]}`,
         className
       )}
       place={getArrowPlace(placement)}
