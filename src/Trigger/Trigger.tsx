@@ -2,11 +2,13 @@ import React from 'react'
 
 import { TriggerProps } from './Trigger.types'
 
+import useTriggerStyle from './useTriggerStyle'
+import useClickAway from '../hooks/useClickAway'
 import Portal from '../utils/Portal'
 
 import './Trigger.scss'
 
-import useTriggerStyle from './useTriggerStyle'
+const HIDDEN_CLASS_NAME = 'rbp-trigger-hidden'
 
 const Trigger: React.FC<TriggerProps> = ({
   children,
@@ -18,7 +20,7 @@ const Trigger: React.FC<TriggerProps> = ({
   enterClassName,
   leaveClassName,
 }) => {
-  const [visible, setVisible] = React.useState(false)
+  const [innerVisible, setVisible] = React.useState(false)
   const [showOverlay, setShowOverlay] = React.useState(false)
 
   const childrenRef = React.useRef<HTMLElement>(null)
@@ -26,28 +28,48 @@ const Trigger: React.FC<TriggerProps> = ({
 
   const container = getPopupContainer()
 
-  React.useEffect(() => {
-    if (visible) {
-      setShowOverlay(true)
-    }
-  }, [visible])
+  const finalVisible = React.useMemo(() => {
+    return innerVisible
+  }, [innerVisible])
+
+  function updateVisible(nextVisible: boolean) {
+    setVisible(nextVisible)
+  }
+
+  // 点击子元素、浮层以外元素 关闭浮层
+  useClickAway([childrenRef, popupRef], () => {
+    updateVisible(false)
+  })
 
   React.useEffect(() => {
-    if (showOverlay && enterClassName && leaveClassName) {
-      const node = popupRef.current
-      node?.addEventListener('animationend', () => {
-        // 动画结束删除className
-        if (node.classList.contains(enterClassName)) {
-          node.classList.remove(enterClassName)
+    if (finalVisible) {
+      setShowOverlay(true)
+    }
+  }, [finalVisible])
+
+  React.useEffect(() => {
+    const node = popupRef.current
+    function popupAnimationend({ target }: any) {
+      if (!enterClassName || !leaveClassName) {
+        return
+      }
+      // 动画结束删除className
+      if (target.classList.contains(enterClassName)) {
+        target.classList.remove(enterClassName)
+      }
+      if (target.classList.contains(leaveClassName)) {
+        target.classList.remove(leaveClassName)
+        target.classList.add(HIDDEN_CLASS_NAME)
+        if (destroyPopupOnHide) {
+          setShowOverlay(false)
         }
-        if (node.classList.contains(leaveClassName)) {
-          node.classList.remove(leaveClassName)
-          node.classList.add('trigger-hidden')
-          if (destroyPopupOnHide) {
-            setShowOverlay(false)
-          }
-        }
-      })
+      }
+    }
+    if (showOverlay) {
+      node?.addEventListener('animationend', popupAnimationend)
+    }
+    return () => {
+      node?.removeEventListener('animationend', popupAnimationend)
     }
   }, [destroyPopupOnHide, enterClassName, leaveClassName, showOverlay])
 
@@ -64,57 +86,66 @@ const Trigger: React.FC<TriggerProps> = ({
   }, [container])
 
   const { triggerStyle, calcStyleEnd } = useTriggerStyle({
+    finalVisible,
     placement,
-    visible,
     childrenRef,
     popupRef,
     container,
   })
 
   React.useEffect(() => {
-    if (visible) {
+    if (finalVisible) {
       const node = popupRef.current
-      node?.classList.remove('trigger-hidden')
-      if (enterClassName && calcStyleEnd) {
+      node?.classList.remove(HIDDEN_CLASS_NAME)
+      if (enterClassName && leaveClassName && calcStyleEnd) {
+        // 进入、离开是需要删除另外一种样式
+        node?.classList.remove(leaveClassName)
         node?.classList.add(enterClassName)
       }
     } else {
-      if (leaveClassName) {
-        const node = popupRef.current
+      const node = popupRef.current
+      if (leaveClassName && enterClassName) {
+        // 进入、离开是需要删除另外一种样式
+        node?.classList.remove(enterClassName)
         node?.classList.add(leaveClassName)
+      } else {
+        // 没设置动画 直接隐藏
+        node?.classList.add(HIDDEN_CLASS_NAME)
       }
     }
-  }, [enterClassName, leaveClassName, calcStyleEnd, visible])
+  }, [enterClassName, leaveClassName, calcStyleEnd, finalVisible])
 
-  // TODO 优化 onClick onMouseEnter onMouseLeave 目前不是很流畅
-
-  function onClick(event: React.MouseEvent<HTMLElement, MouseEvent>) {
+  // 点击子元素、浮层都走这个方法 切换显示、隐藏状态
+  // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
+  function onClick() {
     if (trigger.includes('click')) {
-      setVisible(!visible)
+      updateVisible(!finalVisible)
     }
   }
 
-  function onMouseEnter(event: React.MouseEvent<HTMLElement, MouseEvent>) {
+  function onMouseEnter() {
     if (trigger.includes('hover')) {
-      setVisible(true)
+      updateVisible(true)
     }
   }
 
-  function onMouseLeave(event: React.MouseEvent<HTMLElement, MouseEvent>) {
+  function onMouseLeave() {
     if (trigger.includes('hover')) {
-      setVisible(false)
+      updateVisible(false)
     }
   }
+
+  const showPortal = finalVisible || showOverlay
 
   return (
-    <>
+    <React.Fragment>
       {React.cloneElement(children, {
         ref: childrenRef,
         onClick,
         onMouseEnter,
         onMouseLeave,
       })}
-      {visible || showOverlay ? (
+      {showPortal ? (
         <Portal getContainer={() => container}>
           <div className="rbp-trigger-portal">
             <div
@@ -130,7 +161,7 @@ const Trigger: React.FC<TriggerProps> = ({
           </div>
         </Portal>
       ) : null}
-    </>
+    </React.Fragment>
   )
 }
 

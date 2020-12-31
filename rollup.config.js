@@ -4,7 +4,12 @@ import typescript from 'rollup-plugin-typescript2'
 import sass from 'rollup-plugin-sass'
 
 export default {
-  input: ['src/index.ts', './src/Button/index.tsx'],
+  input: [
+    './src/index.tsx',
+    './src/Button/index.tsx',
+    './src/message/index.tsx',
+    './src/Tooltip/index.tsx',
+  ],
   output: [
     {
       dir: 'build',
