@@ -3,11 +3,10 @@ import classnames from 'classnames'
 
 import { ButtonProps } from './Button.types'
 
-import { IconLoading } from '../Icons/Icons'
-
 import './Button.scss'
 
 import { PREFIX_CLASS } from '../constants'
+import Loading from '../components/Loading'
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -47,7 +46,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...restProps}
       >
-        {loading ? <IconLoading className="loading-icon" /> : null}
+        {loading ? (
+          <Loading className={`${prefixCls}-btn-loading-icon`} />
+        ) : null}
         <span>{children}</span>
       </button>
     )

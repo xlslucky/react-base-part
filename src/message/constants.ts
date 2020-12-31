@@ -4,7 +4,7 @@ import {
   IconCheckCircleFilled,
   IconCloseCircleFilled,
   IconExclamationCircleFilled,
-} from '../Icons/Icons'
+} from '../components/Icons'
 
 export const MESSAGE_TYPE_CLASSNAME = {
   [MessageType.Success]: 'rbp-message-success',

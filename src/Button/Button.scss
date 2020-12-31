@@ -106,23 +106,10 @@
     cursor: progress;
   }
 
-  .loading-icon {
+  .rbp-btn-loading-icon {
     display: inline-block;
     margin-right: 8px;
     background-size: cover;
     font-size: 18px;
-
-    > svg {
-      animation: loading 1s linear infinite;
-    }
-  }
-}
-
-@keyframes loading {
-  0% {
-    transform: rotateZ(0);
-  }
-  100% {
-    transform: rotateZ(360deg);
   }
 }
