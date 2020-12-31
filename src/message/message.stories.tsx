@@ -1,6 +1,6 @@
 import React from 'react'
 import message from './message'
-import { Button } from '../Button'
+import Button from '../Button'
 
 export default {
   title: 'message',
