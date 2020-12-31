@@ -1,14 +1,14 @@
 {
   "name": "react-base-part",
   "version": "0.0.1",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "files": [
-    "build"
+    "dist"
   ],
-  "types": "build/index.d.ts",
+  "types": "dist/index.d.ts",
   "description": "react-base-part",
   "scripts": {
-    "build": "rm -rf build && rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "storybook": "start-storybook -p 8888",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",

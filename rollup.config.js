@@ -12,7 +12,7 @@ export default {
   ],
   output: [
     {
-      dir: 'build',
+      dir: 'dist',
       format: 'cjs',
       sourcemap: true,
     },
