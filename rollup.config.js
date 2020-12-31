@@ -25,7 +25,8 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript(),
+    // typescript({ useTsconfigDeclarationDir: true }),
     postcss(),
     copy({
       targets: [
