@@ -9,7 +9,7 @@
   "description": "react-base-part",
   "scripts": {
     "build": "rm -rf build && rollup -c",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 8888",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build"
