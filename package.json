@@ -2,16 +2,13 @@
   "name": "react-base-part",
   "version": "0.0.1",
   "main": "build/index.js",
-  "module": "build/index.esm.js",
   "files": [
     "build"
   ],
   "types": "build/index.d.ts",
   "description": "react-base-part",
   "scripts": {
-    "build": "rollup -c",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "build": "rm -rf build && rollup -c",
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
@@ -72,9 +69,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup": "^1.27.4",
-    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^3.1.2",
+    "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-typescript2": "^0.27.0",
     "sass-loader": "^8.0.0",
     "typescript": "^4.1.3"

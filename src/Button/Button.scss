@@ -120,10 +120,10 @@
 }
 
 @keyframes loading {
-  form {
+  0% {
     transform: rotateZ(0);
   }
-  to {
+  100% {
     transform: rotateZ(360deg);
   }
 }

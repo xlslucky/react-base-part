@@ -1,5 +1,3 @@
-import { Button } from './Button'
-import { message } from './message'
-import { Trigger } from './Trigger'
-
-export { Button, message, Trigger }
+export { default as Button } from './Button'
+export { message } from './message'
+export { Trigger } from './Trigger'
