@@ -11,25 +11,25 @@ export const Default = () => {
     <div>
       <Button
         style={{ marginRight: 10 }}
-        onClick={() => message.info('This is an info message')}
+        onClick={() => message.info('This is an info message', 1000000)}
       >
         Info
       </Button>
       <Button
         style={{ marginRight: 10 }}
-        onClick={() => message.success('This is an success message')}
+        onClick={() => message.success('This is an success message', 1000000)}
       >
         Success
       </Button>
       <Button
         style={{ marginRight: 10 }}
-        onClick={() => message.error('This is an error message')}
+        onClick={() => message.error('This is an error message', 1000000)}
       >
         Error
       </Button>
       <Button
         style={{ marginRight: 10 }}
-        onClick={() => message.warn('This is an warn message')}
+        onClick={() => message.warn('This is an warn message', 1000000)}
       >
         Warn
       </Button>

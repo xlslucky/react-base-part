@@ -40,7 +40,7 @@ $message-prefix-cls: '#{$rbp-prefix}-message';
   }
 
   &.#{$message-prefix-cls}-info {
-    background-color: rgba($primary, .1);
+    background-color: $primary-light;
     border: 1px solid $primary;
 
     .#{$message-prefix-cls}-icon {
@@ -49,16 +49,16 @@ $message-prefix-cls: '#{$rbp-prefix}-message';
   }
 
   &.#{$message-prefix-cls}-success {
-    background-color: rgba($green, .1);
-    border: 1px solid $green;
+    background-color: $success-light;
+    border: 1px solid $success;
 
     .#{$message-prefix-cls}-icon {
-      color: $green;
+      color: $success;
     }
   }
 
   &.#{$message-prefix-cls}-error {
-    background-color: rgba($danger, .1);
+    background-color: $danger-light;
     border: 1px solid $danger;
 
     .#{$message-prefix-cls}-icon {
@@ -67,11 +67,11 @@ $message-prefix-cls: '#{$rbp-prefix}-message';
   }
 
   &.#{$message-prefix-cls}-warn {
-    background-color: rgba($yellow, .1);
-    border: 1px solid $yellow;
+    background-color: $warn-light;
+    border: 1px solid $warn;
 
     .#{$message-prefix-cls}-icon {
-      color: $yellow;
+      color: $warn;
     }
   }
 
