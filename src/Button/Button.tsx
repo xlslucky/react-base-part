@@ -36,13 +36,22 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       })
     }, [prefixCls, className, type, disabled, loading, block, circle])
 
+    function handleBtn(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+      if (loading || disabled) {
+        return
+      }
+      if (typeof onClick === 'function') {
+        onClick(event)
+      }
+    }
+
     return (
       <button
         style={style}
         disabled={disabled}
         type={htmlType}
         className={buttonClassName}
-        onClick={onClick}
+        onClick={handleBtn}
         ref={ref}
         {...restProps}
       >
