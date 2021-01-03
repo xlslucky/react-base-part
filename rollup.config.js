@@ -9,6 +9,7 @@ export default {
     './src/Button/index.tsx',
     './src/message/index.tsx',
     './src/Tooltip/index.tsx',
+    './src/ConfigProvider/index.tsx',
   ],
   output: [
     {

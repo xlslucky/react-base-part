@@ -1,5 +1,7 @@
 module.exports = componentName => ({
-  content: `export { default as ${componentName} } from './${componentName}'
+  content: `import ${componentName} from './${componentName}'
+
+export default ${componentName}
 `,
   extension: '.stories.tsx',
   full: 'index.tsx',

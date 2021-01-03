@@ -1,15 +1,15 @@
-@import './color.scss';
+// 全局变量
 
 $rbp-prefix: 'rbp';
 
-$primary: $cyan-6;
-$primary-light: $cyan-1;
+$primary: var(--primary);
+$primary-light: var(--primary-light);
 
-$danger: #f5222d;
-$danger-light: #ffeaea;
+$danger: var(--danger);
+$danger-light: var(--danger-light);
 
-$warn: #fadb14;
-$warn-light: #fefbeb;
+$warn: var(--warn);
+$warn-light: var(--warn-light);
 
-$success: #52c41a;
-$success-light: #efffe8;
+$success: var(--success);
+$success-light: var(--success-light);

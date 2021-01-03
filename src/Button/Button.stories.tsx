@@ -3,6 +3,8 @@ import Button from './Button'
 
 import { ButtonProps } from './Button.types'
 
+import '../style/storybook.scss'
+
 export default {
   title: 'Button',
 }

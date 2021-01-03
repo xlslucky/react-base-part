@@ -5,6 +5,8 @@ import Button from '../Button'
 import { TooltipProps } from './Tooltip.types'
 import { TriggerArrayType } from '../Trigger/Trigger.types'
 
+import '../style/storybook.scss'
+
 export default {
   title: 'Tooltip',
 }

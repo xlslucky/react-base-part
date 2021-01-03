@@ -5,6 +5,8 @@ import Button from '../Button'
 import { TriggerProps } from './Trigger.types'
 import '../style/animation.scss'
 
+import '../style/storybook.scss'
+
 export default {
   title: 'Trigger',
 }
