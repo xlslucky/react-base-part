@@ -73,7 +73,13 @@ const Trigger: React.FC<TriggerProps> = ({
     return () => {
       node?.removeEventListener('animationend', popupAnimationend)
     }
-  }, [destroyPopupOnHide, enterClassName, leaveClassName, showOverlay])
+  }, [
+    HIDDEN_CLASS_NAME,
+    destroyPopupOnHide,
+    enterClassName,
+    leaveClassName,
+    showOverlay,
+  ])
 
   React.useEffect(() => {
     if (container) {
@@ -115,7 +121,13 @@ const Trigger: React.FC<TriggerProps> = ({
         node?.classList.add(HIDDEN_CLASS_NAME)
       }
     }
-  }, [enterClassName, leaveClassName, calcStyleEnd, finalVisible])
+  }, [
+    enterClassName,
+    leaveClassName,
+    calcStyleEnd,
+    finalVisible,
+    HIDDEN_CLASS_NAME,
+  ])
 
   // 点击子元素、浮层都走这个方法 切换显示、隐藏状态
   // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
