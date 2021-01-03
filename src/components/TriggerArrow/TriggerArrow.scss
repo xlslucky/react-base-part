@@ -1,97 +1,101 @@
+@import '../../style/variables.scss';
+
+$trigger-arrow-prefix-cls: '#{$rbp-prefix}-trigger-arrow';
+
 $translate: 5px;
 
-.rbp-trigger-arrow {
+.#{$trigger-arrow-prefix-cls} {
   position: absolute;
 }
 
-.rbp-trigger-arrow-top-left,
-.rbp-trigger-arrow-bottom-left {
+.#{$trigger-arrow-prefix-cls}-top-left,
+.#{$trigger-arrow-prefix-cls}-bottom-left {
   left: $translate;
 }
 
-.rbp-trigger-arrow-top-right,
-.rbp-trigger-arrow-bottom-right {
+.#{$trigger-arrow-prefix-cls}-top-right,
+.#{$trigger-arrow-prefix-cls}-bottom-right {
   right: $translate;
 }
 
-.rbp-trigger-arrow-left-top,
-.rbp-trigger-arrow-right-top {
+.#{$trigger-arrow-prefix-cls}-left-top,
+.#{$trigger-arrow-prefix-cls}-right-top {
   top: $translate;
 }
 
-.rbp-trigger-arrow-left-bottom,
-.rbp-trigger-arrow-right-bottom {
+.#{$trigger-arrow-prefix-cls}-left-bottom,
+.#{$trigger-arrow-prefix-cls}-right-bottom {
   bottom: $translate;
 }
 
 // --------上方箭头 start--------
-.rbp-trigger-arrow-top-left,
-.rbp-trigger-arrow-top-center,
-.rbp-trigger-arrow-top-right {
+.#{$trigger-arrow-prefix-cls}-top-left,
+.#{$trigger-arrow-prefix-cls}-top-center,
+.#{$trigger-arrow-prefix-cls}-top-right {
   bottom: 0;
 }
-.rbp-trigger-arrow-top-left {
+.#{$trigger-arrow-prefix-cls}-top-left {
   transform: translateY(100%);
 }
-.rbp-trigger-arrow-top-center {
+.#{$trigger-arrow-prefix-cls}-top-center {
   left: 50%;
   transform: translateX(-50%) translateY(100%);
 }
-.rbp-trigger-arrow-top-right {
+.#{$trigger-arrow-prefix-cls}-top-right {
   transform: translateY(100%);
 }
 // --------上方箭头 end--------
 
 // --------下方箭头 start--------
-.rbp-trigger-arrow-bottom-left,
-.rbp-trigger-arrow-bottom-center,
-.rbp-trigger-arrow-bottom-right {
+.#{$trigger-arrow-prefix-cls}-bottom-left,
+.#{$trigger-arrow-prefix-cls}-bottom-center,
+.#{$trigger-arrow-prefix-cls}-bottom-right {
   top: 0;
 }
-.rbp-trigger-arrow-bottom-left {
+.#{$trigger-arrow-prefix-cls}-bottom-left {
   transform: translateY(-100%);
 }
-.rbp-trigger-arrow-bottom-center {
+.#{$trigger-arrow-prefix-cls}-bottom-center {
   left: 50%;
   transform: translateX(-50%) translateY(-100%);
 }
-.rbp-trigger-arrow-bottom-right {
+.#{$trigger-arrow-prefix-cls}-bottom-right {
   transform: translateY(-100%);
 }
 // --------下方箭头 end--------
 
 // --------右侧箭头 start--------
-.rbp-trigger-arrow-left-top,
-.rbp-trigger-arrow-left-center,
-.rbp-trigger-arrow-left-bottom {
+.#{$trigger-arrow-prefix-cls}-left-top,
+.#{$trigger-arrow-prefix-cls}-left-center,
+.#{$trigger-arrow-prefix-cls}-left-bottom {
   right: 0;
 }
-.rbp-trigger-arrow-left-top {
+.#{$trigger-arrow-prefix-cls}-left-top {
   transform: translateX(100%);
 }
-.rbp-trigger-arrow-left-center {
+.#{$trigger-arrow-prefix-cls}-left-center {
   top: 50%;
   transform: translateX(100%) translateY(-50%);
 }
-.rbp-trigger-arrow-left-bottom {
+.#{$trigger-arrow-prefix-cls}-left-bottom {
   transform: translateX(100%);
 }
 // --------左侧箭头 end--------
 
 // --------右侧箭头 start--------
-.rbp-trigger-arrow-right-top,
-.rbp-trigger-arrow-right-center,
-.rbp-trigger-arrow-right-bottom {
+.#{$trigger-arrow-prefix-cls}-right-top,
+.#{$trigger-arrow-prefix-cls}-right-center,
+.#{$trigger-arrow-prefix-cls}-right-bottom {
   left: 0;
 }
-.rbp-trigger-arrow-right-top {
+.#{$trigger-arrow-prefix-cls}-right-top {
   transform: translateX(-100%);
 }
-.rbp-trigger-arrow-right-center {
+.#{$trigger-arrow-prefix-cls}-right-center {
   top: 50%;
   transform: translateX(-100%) translateY(-50%);
 }
-.rbp-trigger-arrow-right-bottom {
+.#{$trigger-arrow-prefix-cls}-right-bottom {
   transform: translateX(-100%);
 }
 // --------右侧箭头 end--------

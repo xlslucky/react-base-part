@@ -8,6 +8,7 @@ import classnames from 'classnames'
 import './BaseIcon.scss'
 
 import { BaseIconProps } from './Icons.types'
+import { PREFIX_CLASS } from '../../constants'
 
 export default function BaseIcon({
   children,
@@ -15,11 +16,12 @@ export default function BaseIcon({
   onClick,
   style,
   defaultFill = true,
+  prefixCls = PREFIX_CLASS,
 }: BaseIconProps) {
   return (
     <span
       style={style}
-      className={classnames(['rbp-icon'], className, {
+      className={classnames(`${prefixCls}-icon`, className, {
         'default-fill': defaultFill,
       })}
       onClick={onClick}

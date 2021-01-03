@@ -1,6 +1,8 @@
 @import '../style/variables.scss';
 
-.rbp-btn {
+$btn-prefix-cls: '#{$rbp-prefix}-btn';
+
+.#{$btn-prefix-cls} {
   display: inline-block;
   text-align: center;
   border: none;
@@ -23,7 +25,7 @@
     color: inherit;
   }
 
-  &.rbp-btn-theme-default {
+  &.#{$btn-prefix-cls}-theme-default {
     border-color: #f0f0f0;
     background-color: #f0f0f0;
     color: #000;
@@ -33,7 +35,7 @@
     }
   }
 
-  &.rbp-btn-theme-primary {
+  &.#{$btn-prefix-cls}-theme-primary {
     border-color: $primary;
     background-color: $primary;
     color: #fff;
@@ -43,7 +45,7 @@
     }
   }
 
-  &.rbp-btn-theme-ghost {
+  &.#{$btn-prefix-cls}-theme-ghost {
     border-color: $primary;
     background-color: transparent;
     color: $primary;
@@ -53,7 +55,7 @@
     }
   }
 
-  &.rbp-btn-theme-danger {
+  &.#{$btn-prefix-cls}-theme-danger {
     border-color: $danger;
     background-color: $danger;
     color: #fff;
@@ -65,22 +67,22 @@
 }
 
 // 属性 圆角/块元素
-.rbp-btn {
-  &.rbp-btn-circle {
+.#{$btn-prefix-cls} {
+  &.#{$btn-prefix-cls}-circle {
     border-radius: 32px;
   }
 
-  &.rbp-btn-block {
+  &.#{$btn-prefix-cls}-block {
     display: flex;
     width: 100%;
   }
 }
 
 // 属性 禁用/加载中
-.rbp-btn {
-  &.rbp-btn-disabled,
+.#{$btn-prefix-cls} {
+  &.#{$btn-prefix-cls}-disabled,
   &[disabled],
-  &.rbp-btn-loading {
+  &.#{$btn-prefix-cls}-loading {
     position: relative;
 
     &::before {
@@ -97,16 +99,16 @@
     }
   }
 
-  &.rbp-btn-disabled,
+  &.#{$btn-prefix-cls}-disabled,
   &[disabled] {
     cursor: not-allowed;
   }
 
-  &.rbp-btn-loading {
+  &.#{$btn-prefix-cls}-loading {
     cursor: progress;
   }
 
-  .rbp-btn-loading-icon {
+  .#{$btn-prefix-cls}-loading-icon {
     display: inline-block;
     margin-right: 8px;
     background-size: cover;

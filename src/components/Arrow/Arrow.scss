@@ -1,22 +1,26 @@
-.rbp-arrow-icon {
+@import '../../style/variables.scss';
+
+$arrow-prefix-cls: '#{$rbp-prefix}-arrow';
+
+.#{$arrow-prefix-cls}-icon {
   width: 0;
   height: 0;
   border-style: solid;
   border-color: transparent;
 
-  &.rbp-arrow-icon-top {
+  &.#{$arrow-prefix-cls}-icon-top {
     border-bottom-color: currentColor;
   }
 
-  &.rbp-arrow-icon-bottom {
+  &.#{$arrow-prefix-cls}-icon-bottom {
     border-top-color: currentColor;
   }
 
-  &.rbp-arrow-icon-left {
+  &.#{$arrow-prefix-cls}-icon-left {
     border-right-color: currentColor;
   }
 
-  &.rbp-arrow-icon-right {
+  &.#{$arrow-prefix-cls}-icon-right {
     border-left-color: currentColor;
   }
 }

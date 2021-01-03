@@ -7,8 +7,7 @@ import useClickAway from '../hooks/useClickAway'
 import Portal from '../utils/Portal'
 
 import './Trigger.scss'
-
-const HIDDEN_CLASS_NAME = 'rbp-trigger-hidden'
+import { PREFIX_CLASS } from '../constants'
 
 const Trigger: React.FC<TriggerProps> = ({
   children,
@@ -19,12 +18,15 @@ const Trigger: React.FC<TriggerProps> = ({
   getPopupContainer = () => document.body,
   enterClassName,
   leaveClassName,
+  prefixCls = PREFIX_CLASS,
 }) => {
   const [innerVisible, setVisible] = React.useState(false)
   const [showOverlay, setShowOverlay] = React.useState(false)
 
   const childrenRef = React.useRef<HTMLElement>(null)
   const popupRef = React.useRef<HTMLDivElement>(null)
+
+  const HIDDEN_CLASS_NAME = `${prefixCls}-trigger-hidden`
 
   const container = getPopupContainer()
 
@@ -156,14 +158,14 @@ const Trigger: React.FC<TriggerProps> = ({
       })}
       {showPortal ? (
         <Portal getContainer={() => container}>
-          <div className="rbp-trigger-portal">
+          <div className={`${prefixCls}-trigger-portal`}>
             <div
               onClick={onClick}
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
               ref={popupRef}
               style={triggerStyle}
-              className={'rbp-trigger-container'}
+              className={`${prefixCls}-trigger-container`}
             >
               {popup}
             </div>

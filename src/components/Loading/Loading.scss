@@ -1,12 +1,14 @@
 @import "../../style/variables.scss";
 
-.rbp-loading-icon {
+$loading-prefix-cls: '#{$rbp-prefix}-loading';
+
+.#{$loading-prefix-cls}-icon {
   > svg {
     animation: loading 1s linear infinite;
   }
 }
 
-.rbp-loading-melody {
+.#{$loading-prefix-cls}-melody {
   height: 16px;
   display: flex;
   align-items: flex-end;
@@ -63,7 +65,7 @@
   }
 }
 
-.rbp-loading-ellipsis {
+.#{$loading-prefix-cls}-ellipsis {
   position: relative;
   width: 56px;
   height: 13px;

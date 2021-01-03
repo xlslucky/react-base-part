@@ -1,6 +1,8 @@
 @import "../style/variables.scss";
 
-.rbp-message-container {
+$message-prefix-cls: '#{$rbp-prefix}-message';
+
+.#{$message-prefix-cls}-container {
   position: fixed;
   left: 0;
   top: 8px;
@@ -10,21 +12,21 @@
   pointer-events: none;
 }
 
-.rbp-message-notice {
+.#{$message-prefix-cls}-notice {
   padding: 8px;
   text-align: center;
   pointer-events: none;
 
-  &.rbp-message-move-appear {
+  &.#{$message-prefix-cls}-move-appear {
     animation: showMove .1s ease-out;
   }
 
-  &.rbp-message-move-leave {
+  &.#{$message-prefix-cls}-move-leave {
     animation: hideMove .25s ease-out;
   }
 }
 
-.rbp-message-notice-content {
+.#{$message-prefix-cls}-notice-content {
   display: inline-flex;
   align-items: center;
   padding: 10px 22px;
@@ -32,48 +34,48 @@
   border-radius: 1px;
   pointer-events: all;
 
-  .rbp-message-icon {
+  .#{$message-prefix-cls}-icon {
     margin-right: 12px;
     font-size: 22px;
   }
 
-  &.rbp-message-info {
+  &.#{$message-prefix-cls}-info {
     background-color: rgba($primary, .1);
     border: 1px solid $primary;
 
-    .rbp-message-icon {
+    .#{$message-prefix-cls}-icon {
       color: $primary;
     }
   }
 
-  &.rbp-message-success {
+  &.#{$message-prefix-cls}-success {
     background-color: rgba($green, .1);
     border: 1px solid $green;
 
-    .rbp-message-icon {
+    .#{$message-prefix-cls}-icon {
       color: $green;
     }
   }
 
-  &.rbp-message-error {
+  &.#{$message-prefix-cls}-error {
     background-color: rgba($danger, .1);
     border: 1px solid $danger;
 
-    .rbp-message-icon {
+    .#{$message-prefix-cls}-icon {
       color: $danger;
     }
   }
 
-  &.rbp-message-warn {
+  &.#{$message-prefix-cls}-warn {
     background-color: rgba($yellow, .1);
     border: 1px solid $yellow;
 
-    .rbp-message-icon {
+    .#{$message-prefix-cls}-icon {
       color: $yellow;
     }
   }
 
-  .rbp-message-content {
+  .#{$message-prefix-cls}-content {
     text-align: left;
   }
 }

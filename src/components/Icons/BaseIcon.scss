@@ -1,4 +1,8 @@
-.rbp-icon {
+@import '../../style/variables.scss';
+
+$icon-prefix-cls: '#{$rbp-prefix}-icon';
+
+.#{$icon-prefix-cls} {
   display: inline-block;
   color: inherit;
   font-style: normal;

@@ -5,4 +5,5 @@ export type BaseIconProps = React.PropsWithChildren<{
   onClick?: (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void
   style?: React.CSSProperties
   defaultFill?: boolean
+  prefixCls?: string
 }>

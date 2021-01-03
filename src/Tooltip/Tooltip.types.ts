@@ -6,4 +6,5 @@ export interface TooltipProps {
   trigger?: TriggerArrayType
   title: React.ReactNode
   getPopupContainer?: () => HTMLElement
+  prefixCls?: string
 }

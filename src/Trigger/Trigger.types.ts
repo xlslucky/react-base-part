@@ -25,4 +25,5 @@ export interface TriggerProps {
   popup: React.ReactElement | (() => React.ReactElement)
   enterClassName?: string
   leaveClassName?: string
+  prefixCls?: string
 }

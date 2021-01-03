@@ -10,6 +10,7 @@ import { getSlideAnimationClassNames, PLACEMENT_MAP } from '../utils/trigger'
 
 import './Tooltip.scss'
 import '../style/animation.scss'
+import { PREFIX_CLASS } from '../constants'
 
 const Tooltip: React.FC<TooltipProps> = ({
   children,
@@ -17,6 +18,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   trigger = ['hover'],
   title,
   getPopupContainer,
+  prefixCls = PREFIX_CLASS,
 }) => {
   const [enterClassName, leaveClassName] = getSlideAnimationClassNames(
     placement
@@ -32,13 +34,16 @@ const Tooltip: React.FC<TooltipProps> = ({
       popup={
         <div
           className={classnames(
-            'rbp-tooltip',
-            `rbp-tooltip-${PLACEMENT_MAP[placement]}`
+            `${prefixCls}-tooltip`,
+            `${prefixCls}-tooltip-${PLACEMENT_MAP[placement]}`
           )}
         >
-          <div className="rbp-tooltip-content">
-            <TriggerArrow placement={placement} className="rbp-tooltip-arrow" />
-            <div className="rbp-tooltip-inner">{title}</div>
+          <div className={`${prefixCls}-tooltip-content`}>
+            <TriggerArrow
+              placement={placement}
+              className={`${prefixCls}-tooltip-arrow`}
+            />
+            <div className={`${prefixCls}-tooltip-inner`}>{title}</div>
           </div>
         </div>
       }

@@ -1,4 +1,8 @@
-.rbp-trigger-portal {
+@import '../style/variables.scss';
+
+$trigger-prefix-cls: '#{$rbp-prefix}-trigger';
+
+.#{$trigger-prefix-cls}-portal {
   position: absolute;
   left: 0;
   top: 0;
@@ -6,10 +10,10 @@
   z-index: 999;
 }
 
-.rbp-trigger-container {
+.#{$trigger-prefix-cls}-container {
   position: absolute;
 }
 
-.rbp-trigger-hidden {
+.#{$trigger-prefix-cls}-hidden {
   display: none;
 }
