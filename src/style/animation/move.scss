@@ -1,0 +1,137 @@
+.move-up-enter {
+	animation: moveUpIn .2s ease-out;
+}
+
+.move-up-leave {
+	animation: moveUpOut .2s ease-out;
+}
+
+.move-down-enter {
+	animation: moveDownIn .2s ease-out;
+}
+
+.move-down-leave {
+	animation: moveDownOut .2s ease-out;
+}
+
+.move-left-enter {
+	animation: moveLeftIn .2s ease-out;
+}
+
+.move-left-leave {
+	animation: moveLeftOut .2s ease-out;
+}
+
+.move-right-enter {
+	animation: moveRightIn .2s ease-out;
+}
+
+.move-right-leave {
+	animation: moveRightOut .2s ease-out;
+}
+
+// ----------位移动画 start----------
+@keyframes moveDownIn {
+	0% {
+		transform: translateY(100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveDownOut {
+	0% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateY(100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+
+@keyframes moveLeftIn {
+	0% {
+		transform: translateX(-100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveLeftOut {
+	0% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateX(-100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+
+@keyframes moveRightIn {
+	0% {
+		transform: translateX(100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveRightOut {
+	0% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateX(100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+
+@keyframes moveUpIn {
+	0% {
+		transform: translateY(-100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveUpOut {
+	0% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateY(-100%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+// ----------位移动画 end----------

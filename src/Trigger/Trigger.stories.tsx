@@ -3,7 +3,7 @@ import Trigger from './Trigger'
 import Button from '../Button'
 
 import { TriggerProps } from './Trigger.types'
-import '../style/animation.scss'
+import '../style/animation/slide.scss'
 
 import '../style/storybook.scss'
 

@@ -1,0 +1,137 @@
+.move-up-enter-10 {
+	animation: moveUpIn .2s ease-out;
+}
+
+.move-up-leave-10 {
+	animation: moveUpOut .2s ease-out;
+}
+
+.move-down-enter-10 {
+	animation: moveDownIn .2s ease-out;
+}
+
+.move-down-leave-10 {
+	animation: moveDownOut .2s ease-out;
+}
+
+.move-left-enter-10 {
+	animation: moveLeftIn .2s ease-out;
+}
+
+.move-left-leave-10 {
+	animation: moveLeftOut .2s ease-out;
+}
+
+.move-right-enter-10 {
+	animation: moveRightIn .2s ease-out;
+}
+
+.move-right-leave-10 {
+	animation: moveRightOut .2s ease-out;
+}
+
+// ----------位移动画 start----------
+@keyframes moveDownIn {
+	0% {
+		transform: translateY(10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveDownOut {
+	0% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateY(10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+
+@keyframes moveLeftIn {
+	0% {
+		transform: translateX(-10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveLeftOut {
+	0% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateX(-10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+
+@keyframes moveRightIn {
+	0% {
+		transform: translateX(10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveRightOut {
+	0% {
+		transform: translateX(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateX(10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+
+@keyframes moveUpIn {
+	0% {
+		transform: translateY(-10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+	100% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+}
+
+@keyframes moveUpOut {
+	0% {
+		transform: translateY(0);
+		transform-origin: 0 0;
+		opacity: 1
+	}
+	100% {
+		transform: translateY(-10%);
+		transform-origin: 0 0;
+		opacity: 0
+	}
+}
+// ----------位移动画 end----------

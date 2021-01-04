@@ -9,7 +9,7 @@ import TriggerArrow from '../components/TriggerArrow'
 import { getSlideAnimationClassNames, PLACEMENT_MAP } from '../utils/trigger'
 
 import './Tooltip.scss'
-import '../style/animation.scss'
+import '../style/animation/slide.scss'
 import { PREFIX_CLASS } from '../constants'
 
 const Tooltip: React.FC<TooltipProps> = ({
