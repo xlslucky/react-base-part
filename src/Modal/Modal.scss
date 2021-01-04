@@ -1,0 +1,58 @@
+@import '../style/variables.scss';
+
+$modal-prefix-cls: '#{$rbp-prefix}-modal';
+
+.#{$modal-prefix-cls}-header {
+  padding: 16px 24px;
+  color: rgba(0,0,0,.85);
+  background-color: #fff;
+  border-bottom: 1px solid $border-color;
+  border-radius: 2px 2px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.#{$modal-prefix-cls}-body {
+  padding: 16px 24px;
+}
+
+.#{$modal-prefix-cls}-footer {
+  padding: 10px 16px;
+  text-align: right;
+  background: transparent;
+  border-top: 1px solid $border-color;
+  border-radius: 0 0 2px 2px;
+}
+
+.#{$modal-prefix-cls}-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 6px;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+
+  .#{$modal-prefix-cls}-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 50%;
+
+    .#{$modal-prefix-cls}-close-icon {
+      color: #979797;
+      font-size: 10px;
+    }
+  }
+}
+
+.#{$modal-prefix-cls}-opt-btn {
+  padding: 0 22px;
+  margin-left: 12px;
+  height: 34px;
+}

@@ -1,0 +1,43 @@
+@import '../../../style/variables.scss';
+
+$modal-confirm-prefix-cls: '#{$rbp-prefix}-modal-confirm';
+
+.#{$modal-confirm-prefix-cls} {
+  padding: 32px 32px 24px;
+}
+
+.#{$modal-confirm-prefix-cls}-body {
+  .#{$modal-confirm-prefix-cls}-body-header {
+    display: flex;
+  }
+
+  .#{$modal-confirm-prefix-cls}-exclamation-icon {
+    color: $primary;
+    font-size: 22px;
+  }
+
+  .#{$modal-confirm-prefix-cls}-body-title {
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .#{$modal-confirm-prefix-cls}-body-content {
+    margin: 8px 0 0 32px;
+  }
+}
+
+.#{$modal-confirm-prefix-cls}-btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.#{$modal-confirm-prefix-cls}-btn {
+  padding: 0 25px;
+
+  & + .#{$modal-confirm-prefix-cls}-btn {
+    margin-left: 10px;
+  }
+}

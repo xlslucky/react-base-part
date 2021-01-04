@@ -7,6 +7,7 @@ export type VariablesType = {
   'warn-light': string
   success: string
   'success-light': string
+  'border-color': string
 }
 
 const variables: VariablesType = {
@@ -18,6 +19,7 @@ const variables: VariablesType = {
   'warn-light': '#fefbeb',
   success: '#52c41a',
   'success-light': '#efffe8',
+  'border-color': '#eee',
 }
 
 export default variables
