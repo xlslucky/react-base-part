@@ -2,16 +2,26 @@
 
 ## 引用
 
+### 安装yalc
+
+> [文档](https://github.com/wclr/yalc) [参考资料](https://www.jianshu.com/p/a9175c773208)
+
+```shell
+$ yarn global add yalc
+# or
+$ npm i yalc -g
+```
+
 ### 进入 `react-base-part` 文件夹
 
 ```shell
 $ cd xxxx/react-base-part
 ```
 
-### 本地建立映射关系
+### 本地发布
 
 ```shell
-$ yarn link
+$ yalc publish
 ```
 
 ### 进入项目文件夹
@@ -29,7 +39,7 @@ $ yarn link react-base-part
 ### 项目中使用
 
 ```json
-// 如果遇到
+// yarn link 如果遇到
 // Error: Invalid hook call. Hooks can only be called inside of the body of a function component
 // 就在package.json中添加以下代码
 // https://zju.date/package-json-resolutions/
