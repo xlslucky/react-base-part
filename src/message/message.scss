@@ -16,14 +16,6 @@ $message-prefix-cls: '#{$rbp-prefix}-message';
   padding: 8px;
   text-align: center;
   pointer-events: none;
-
-  &.#{$message-prefix-cls}-move-appear {
-    animation: showMove .1s ease-out;
-  }
-
-  &.#{$message-prefix-cls}-move-leave {
-    animation: hideMove .25s ease-out;
-  }
 }
 
 .#{$message-prefix-cls}-notice-content {
@@ -77,27 +69,5 @@ $message-prefix-cls: '#{$rbp-prefix}-message';
 
   .#{$message-prefix-cls}-content {
     text-align: left;
-  }
-}
-
-@keyframes showMove {
-  0% {
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes hideMove {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-50%);
-    opacity: 0;
   }
 }

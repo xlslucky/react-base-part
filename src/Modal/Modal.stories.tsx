@@ -14,17 +14,18 @@ export const Default = () => {
 
   return (
     <div>
-      <Button onClick={() => setVisible(!visible)}>测试</Button>
-      <Modal visible={visible} onCancel={() => setVisible(false)}>
-        modal
-      </Modal>
+      <Button onClick={() => setVisible(!visible)}>测试 Modal</Button>
+      &emsp;
       <Button
         onClick={() => {
           Modal.confirm({ title: '测试' })
         }}
       >
-        测试confirm
+        测试 Modal.confirm
       </Button>
+      <Modal visible={visible} onCancel={() => setVisible(false)}>
+        modal
+      </Modal>
     </div>
   )
 }

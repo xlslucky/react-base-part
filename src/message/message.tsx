@@ -10,7 +10,11 @@ import {
 } from './constants'
 
 import './message.scss'
+import '../style/animation/move-50.scss'
 import { MessageType, OptionProps, MessageProps } from './message.types'
+
+const moveUpEnter = 'move-up-enter-50'
+const moveLeaveEnter = 'move-up-leave-50'
 
 function Message({
   option,
@@ -22,17 +26,17 @@ function Message({
   React.useEffect(() => {
     setTimeout(() => {
       const notice = thisRef.current
-      notice?.classList.add('rbp-message-move-leave')
+      notice?.classList.add(moveLeaveEnter)
     }, option.duration)
   }, [option.duration])
 
   React.useEffect(() => {
     const notice = thisRef.current
     notice?.addEventListener('animationend', () => {
-      if (notice.classList.contains('rbp-message-move-appear')) {
-        notice.classList.remove('rbp-message-move-appear')
-      } else if (notice.classList.contains('rbp-message-move-leave')) {
-        notice.classList.remove('rbp-message-move-leave')
+      if (notice.classList.contains(moveUpEnter)) {
+        notice.classList.remove(moveUpEnter)
+      } else if (notice.classList.contains(moveLeaveEnter)) {
+        notice.classList.remove(moveLeaveEnter)
         onClose()
         if (typeof option.onClose === 'function') {
           option.onClose()
@@ -43,7 +47,7 @@ function Message({
 
   return (
     <div
-      className={classnames('rbp-message-notice', 'rbp-message-move-appear')}
+      className={classnames('rbp-message-notice', moveUpEnter)}
       ref={thisRef}
     >
       <div
