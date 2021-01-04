@@ -32,6 +32,8 @@ $ yarn link react-base-part
 // 如果遇到
 // Error: Invalid hook call. Hooks can only be called inside of the body of a function component
 // 就在package.json中添加以下代码
+// https://zju.date/package-json-resolutions/
+// 必须要 yarn link
 "resolutions": {
   "**/react": "^17.0.1",
   "**/react-dom": "^17.0.1"
