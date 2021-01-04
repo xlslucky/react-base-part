@@ -132,7 +132,12 @@ const Trigger: React.FC<TriggerProps> = ({
   // 点击子元素、浮层都走这个方法 切换显示、隐藏状态
   // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
   function onClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    if (typeof children.props.onClick === 'function') {
+    const { props } = children
+    if (typeof props.onClick === 'function') {
+      // 解决button loading | disabled 状态 点击问题
+      if (props.loading || props.disabled) {
+        return
+      }
       children.props.onClick(event)
     }
     if (trigger.includes('click')) {
