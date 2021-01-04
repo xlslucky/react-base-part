@@ -16,6 +16,12 @@ export type TriggerType = 'hover' | 'click' | 'contextMenu' // contextMenu 暂�
 
 export type TriggerArrayType = Array<TriggerType>
 
+type OffsetOneType = number | undefined
+
+export type OffsetType = [offsetX?: OffsetOneType, offsetY?: OffsetOneType]
+
+export type StretchType = 'width' | 'minWidth' | 'height' | 'minHeight'
+
 export interface TriggerProps {
   placement: PlacementType
   children: React.ReactElement
@@ -26,4 +32,8 @@ export interface TriggerProps {
   enterClassName?: string
   leaveClassName?: string
   prefixCls?: string
+  // 偏移
+  offset?: OffsetType
+  // 拉伸
+  stretch?: StretchType
 }

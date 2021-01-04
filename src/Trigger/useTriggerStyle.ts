@@ -1,5 +1,7 @@
 import React from 'react'
-import { PlacementType } from './Trigger.types'
+import { PlacementType, OffsetType, StretchType } from './Trigger.types'
+
+import { getBaseStyle, getFullStyle } from './utils'
 
 interface Props {
   placement: PlacementType
@@ -7,6 +9,8 @@ interface Props {
   childrenRef: React.RefObject<HTMLElement>
   popupRef: React.RefObject<HTMLDivElement>
   container: HTMLElement
+  offset?: OffsetType
+  stretch?: StretchType
 }
 
 function useTriggerStyle({
@@ -15,6 +19,8 @@ function useTriggerStyle({
   childrenRef,
   popupRef,
   container,
+  offset,
+  stretch,
 }: Props) {
   const [triggerStyle, setTriggerStyle] = React.useState<React.CSSProperties>({
     display: 'block',
@@ -51,7 +57,6 @@ function useTriggerStyle({
     if (!childrenRef.current || !popupRef.current) {
       return {}
     }
-    let style: React.CSSProperties = {}
     const {
       width: childrenWidth,
       height: childrenHeight,
@@ -60,44 +65,32 @@ function useTriggerStyle({
       width: PopupWidth,
       height: PopupHeight,
     } = popupRef.current.getBoundingClientRect()
-    if (['topLeft', 'bottomLeft'].includes(placement)) {
-      style.left = childrenFullLeft
-    }
-    if (['bottomLeft', 'bottomCenter', 'bottomRight'].includes(placement)) {
-      style.top = Math.round(childrenFullTop + childrenHeight)
-    }
-    if (['rightTop', 'rightCenter', 'rightBottom'].includes(placement)) {
-      style.left = Math.round(childrenFullLeft + childrenWidth)
-    }
-    if (['rightTop', 'leftTop'].includes(placement)) {
-      style.top = childrenFullTop
-    }
-    if (['topLeft', 'topCenter', 'topRight'].includes(placement)) {
-      // top fulltop - height
-      style.top = childrenFullTop - PopupHeight
-    }
-    if (['topCenter', 'bottomCenter'].includes(placement)) {
-      // left fullleft - width / 2 + childrenW / 2
-      style.left = childrenFullLeft - PopupWidth / 2 + childrenWidth / 2
-    }
-    if (['rightBottom', 'leftBottom'].includes(placement)) {
-      // top fulltop - height + childrenH
-      style.top = childrenFullTop - PopupHeight + childrenHeight
-    }
-    if (['rightCenter', 'leftCenter'].includes(placement)) {
-      // top fulltop - height / 2 + childrenH / 2
-      style.top = childrenFullTop - PopupHeight / 2 + childrenHeight / 2
-    }
-    if (['topRight', 'bottomRight'].includes(placement)) {
-      // left fullleft - width + childrenW
-      style.left = childrenFullLeft - PopupWidth + childrenWidth
-    }
-    if (['leftTop', 'leftCenter', 'leftBottom'].includes(placement)) {
-      // left fullleft - width
-      style.left = childrenFullLeft - PopupWidth
-    }
+    const baseStyle = getBaseStyle({
+      placement,
+      childrenFullLeft,
+      childrenFullTop,
+      childrenHeight,
+      childrenWidth,
+      PopupHeight,
+      PopupWidth,
+    })
+    const style = getFullStyle({
+      style: baseStyle,
+      offset,
+      stretch,
+      childrenHeight,
+      childrenWidth,
+    })
     return style
-  }, [childrenFullLeft, childrenFullTop, childrenRef, placement, popupRef])
+  }, [
+    childrenRef,
+    popupRef,
+    placement,
+    childrenFullLeft,
+    childrenFullTop,
+    offset,
+    stretch,
+  ])
 
   React.useEffect(() => {
     if (finalVisible) {

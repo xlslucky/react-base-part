@@ -19,6 +19,8 @@ const Trigger: React.FC<TriggerProps> = ({
   enterClassName,
   leaveClassName,
   prefixCls = PREFIX_CLASS,
+  offset,
+  stretch,
 }) => {
   const [innerVisible, setVisible] = React.useState(false)
   const [showOverlay, setShowOverlay] = React.useState(false)
@@ -99,6 +101,8 @@ const Trigger: React.FC<TriggerProps> = ({
     childrenRef,
     popupRef,
     container,
+    offset,
+    stretch,
   })
 
   React.useEffect(() => {
