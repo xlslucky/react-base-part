@@ -1,4 +1,4 @@
-import { PlacementType } from '../Trigger/Trigger.types'
+import { PlacementType, OffsetType } from '../Trigger/Trigger.types'
 
 // 动画名称 移入 移出
 export function getSlideAnimationClassNames(placement: PlacementType) {
@@ -49,4 +49,23 @@ export const PLACEMENT_MAP: Record<PlacementType, string> = {
   leftTop: 'left-top',
   leftCenter: 'left-center',
   leftBottom: 'left-bottom',
+}
+
+export const getOffsetByPlacement = (
+  placement: PlacementType,
+  offset: number
+): OffsetType => {
+  if (['topLeft', 'topCenter', 'topRight'].includes(placement)) {
+    return [0, -offset]
+  }
+  if (['rightTop', 'rightCenter', 'rightBottom'].includes(placement)) {
+    return [offset, 0]
+  }
+  if (['bottomLeft', 'bottomCenter', 'bottomRight'].includes(placement)) {
+    return [0, offset]
+  }
+  if (['leftTop', 'leftCenter', 'leftBottom'].includes(placement)) {
+    return [-offset, 0]
+  }
+  return []
 }
