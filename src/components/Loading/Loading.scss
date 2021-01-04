@@ -1,6 +1,6 @@
 @import "../../style/variables.scss";
 
-$loading-prefix-cls: '#{$rbp-prefix}-loading';
+$loading-prefix-cls: '#{$prefix-class}-loading';
 
 .#{$loading-prefix-cls}-icon {
   > svg {

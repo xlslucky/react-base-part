@@ -1,3 +1,5 @@
+import { PREFIX_CLASS } from '../constants'
+
 import { MessageType } from './message.types'
 
 import {
@@ -7,10 +9,10 @@ import {
 } from '../components/Icons'
 
 export const MESSAGE_TYPE_CLASSNAME = {
-  [MessageType.Success]: 'rbp-message-success',
-  [MessageType.Warn]: 'rbp-message-warn',
-  [MessageType.Error]: 'rbp-message-error',
-  [MessageType.Info]: 'rbp-message-info',
+  [MessageType.Success]: `${PREFIX_CLASS}-message-success`,
+  [MessageType.Warn]: `${PREFIX_CLASS}-message-warn`,
+  [MessageType.Error]: `${PREFIX_CLASS}-message-error`,
+  [MessageType.Info]: `${PREFIX_CLASS}-message-info`,
 }
 
 export const MESSAGE_TYPE_ICON = {

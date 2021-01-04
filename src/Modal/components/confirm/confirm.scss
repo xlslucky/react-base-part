@@ -1,6 +1,6 @@
 @import '../../../style/variables.scss';
 
-$modal-confirm-prefix-cls: '#{$rbp-prefix}-modal-confirm';
+$modal-confirm-prefix-cls: '#{$prefix-class}-modal-confirm';
 
 .#{$modal-confirm-prefix-cls} {
   padding: 32px 32px 24px;

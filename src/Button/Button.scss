@@ -1,6 +1,6 @@
 @import '../style/variables.scss';
 
-$btn-prefix-cls: '#{$rbp-prefix}-btn';
+$btn-prefix-cls: '#{$prefix-class}-btn';
 
 .#{$btn-prefix-cls} {
   display: inline-block;

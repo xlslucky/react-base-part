@@ -1,6 +1,6 @@
 @import '../style/variables.scss';
 
-$modal-prefix-cls: '#{$rbp-prefix}-modal';
+$modal-prefix-cls: '#{$prefix-class}-modal';
 
 .#{$modal-prefix-cls}-header {
   padding: 16px 24px;

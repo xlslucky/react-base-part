@@ -1,6 +1,6 @@
 @import "../style/variables.scss";
 
-$message-prefix-cls: '#{$rbp-prefix}-message';
+$message-prefix-cls: '#{$prefix-class}-message';
 
 .#{$message-prefix-cls}-container {
   position: fixed;

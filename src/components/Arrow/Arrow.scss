@@ -1,6 +1,6 @@
 @import '../../style/variables.scss';
 
-$arrow-prefix-cls: '#{$rbp-prefix}-arrow';
+$arrow-prefix-cls: '#{$prefix-class}-arrow';
 
 .#{$arrow-prefix-cls}-icon {
   width: 0;

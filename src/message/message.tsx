@@ -12,6 +12,7 @@ import {
 import './message.scss'
 import '../style/animation/move-50.scss'
 import { MessageType, OptionProps, MessageProps } from './message.types'
+import { PREFIX_CLASS } from '../constants'
 
 const moveUpEnter = 'move-up-enter-50'
 const moveLeaveEnter = 'move-up-leave-50'
@@ -47,12 +48,12 @@ function Message({
 
   return (
     <div
-      className={classnames('rbp-message-notice', moveUpEnter)}
+      className={classnames(`${PREFIX_CLASS}-message-notice`, moveUpEnter)}
       ref={thisRef}
     >
       <div
         className={classnames(
-          'rbp-message-notice-content',
+          `${PREFIX_CLASS}-message-notice-content`,
           MESSAGE_TYPE_CLASSNAME[type],
           option.className
         )}
@@ -60,9 +61,11 @@ function Message({
         {option.icon
           ? option.icon
           : React.createElement(MESSAGE_TYPE_ICON[type], {
-              className: classnames('rbp-message-icon'),
+              className: `${PREFIX_CLASS}-message-icon`,
             })}
-        <span className="rbp-message-content">{option.content}</span>
+        <span className={`${PREFIX_CLASS}-message-content`}>
+          {option.content}
+        </span>
       </div>
     </div>
   )
@@ -96,7 +99,7 @@ const message = (() => {
     queue.push({ option, type, id: guid() })
 
     if (!document.body.contains(container)) {
-      container.className = 'rbp-message-container'
+      container.className = `${PREFIX_CLASS}-message-container`
       document.body.appendChild(container)
     }
 

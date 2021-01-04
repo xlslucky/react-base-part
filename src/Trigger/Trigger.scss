@@ -1,6 +1,6 @@
 @import '../style/variables.scss';
 
-$trigger-prefix-cls: '#{$rbp-prefix}-trigger';
+$trigger-prefix-cls: '#{$prefix-class}-trigger';
 
 .#{$trigger-prefix-cls}-portal {
   position: absolute;

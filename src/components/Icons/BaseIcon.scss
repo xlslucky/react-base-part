@@ -1,6 +1,6 @@
 @import '../../style/variables.scss';
 
-$icon-prefix-cls: '#{$rbp-prefix}-icon';
+$icon-prefix-cls: '#{$prefix-class}-icon';
 
 .#{$icon-prefix-cls} {
   display: inline-block;

@@ -1,12 +1,13 @@
 // 公共样式
+@import './variables.scss';
 
-[class*=rbp-],
-[class*=rbp-] *,
-[class*=rbp-] :after,
-[class*=rbp-] :before,
-[class^=rbp-],
-[class^=rbp-] *,
-[class^=rbp-] :after,
-[class^=rbp-] :before {
+[class*=#{$prefix-class}-],
+[class*=#{$prefix-class}-] *,
+[class*=#{$prefix-class}-] :after,
+[class*=#{$prefix-class}-] :before,
+[class^=#{$prefix-class}-],
+[class^=#{$prefix-class}-] *,
+[class^=#{$prefix-class}-] :after,
+[class^=#{$prefix-class}-] :before {
   box-sizing: border-box;
 }
