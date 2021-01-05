@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import './Loading.scss';
 interface LoadingProps {
     className?: string;

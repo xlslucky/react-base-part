@@ -25,7 +25,8 @@ var index = require('./message/index.js');
 var index$2 = require('./Tooltip/index.js');
 var index$3 = require('./Modal/index.js');
 var index$4 = require('./Dropdown/index.js');
-var index$5 = require('./ConfigProvider/index.js');
+var index$5 = require('./Input/index.js');
+var index$6 = require('./ConfigProvider/index.js');
 
 
 
@@ -34,5 +35,6 @@ exports.message = index;
 exports.Tooltip = index$2;
 exports.Modal = index$3;
 exports.Dropdown = index$4;
-exports.ConfigProvider = index$5;
+exports.Input = index$5;
+exports.ConfigProvider = index$6;
 //# sourceMappingURL=index.js.map

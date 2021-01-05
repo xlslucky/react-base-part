@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import './ModalContent.scss';
 import { ContentType } from './ModalContent.types';
 import '../../../style/animation/move-10.scss';
