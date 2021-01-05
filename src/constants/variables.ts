@@ -9,6 +9,8 @@ export type VariablesType = {
   'success-light': string
   'border-color': string
   'background-disabled': string
+  'text-strong': string
+  'text-second': string
 }
 
 const variables: VariablesType = {
@@ -22,6 +24,8 @@ const variables: VariablesType = {
   'success-light': '#efffe8',
   'border-color': '#d9d9d9',
   'background-disabled': '#f5f5f5',
+  'text-strong': '#000',
+  'text-second': 'rgba(0, 0, 0, .5)',
 }
 
 export default variables

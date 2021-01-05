@@ -1,0 +1,24 @@
+@import "../style/variables.scss";
+
+$empty-prefix-cls: '#{$prefix-class}-empty';
+
+.#{$empty-prefix-cls} {
+  text-align: center;
+}
+
+.#{$empty-prefix-cls}-image {
+  height: 100px;
+  margin-bottom: 10px;
+
+  > img {
+    height: 100%;
+  }
+}
+
+.#{$empty-prefix-cls}-description {
+  color: $text-second;
+}
+
+.#{$empty-prefix-cls}-footer {
+  margin-top: 15px;
+}
