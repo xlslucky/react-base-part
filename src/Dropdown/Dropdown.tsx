@@ -13,7 +13,6 @@ import {
 import { PREFIX_CLASS } from '../constants'
 
 const Dropdown: React.FC<DropdownProps> = ({
-  // TODO disabled
   disabled,
   children,
   overlay,
@@ -40,7 +39,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       offset={getOffsetByPlacement(placement, 4)}
       stretch="minWidth"
     >
-      {children}
+      {React.cloneElement(children, { disabled })}
     </Trigger>
   )
 }
