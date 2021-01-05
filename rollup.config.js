@@ -10,6 +10,7 @@ export default {
     './src/message/index.tsx',
     './src/Tooltip/index.tsx',
     './src/Modal/index.tsx',
+    './src/Dropdown/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [

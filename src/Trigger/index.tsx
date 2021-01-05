@@ -1,1 +1,3 @@
-export { default as Trigger } from './Trigger'
+import Trigger from './Trigger'
+
+export default Trigger

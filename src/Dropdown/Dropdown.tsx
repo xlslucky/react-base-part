@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { DropdownProps } from './Dropdown.types'
-import { Trigger } from '../Trigger'
+import Trigger from '../Trigger'
 
 import './Dropdown.scss'
 import '../style/animation/slide.scss'

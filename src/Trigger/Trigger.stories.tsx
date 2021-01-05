@@ -1,5 +1,5 @@
 import React from 'react'
-import Trigger from './Trigger'
+import Trigger from '.'
 import Button from '../Button'
 
 import { TriggerProps } from './Trigger.types'
