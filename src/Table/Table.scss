@@ -1,0 +1,71 @@
+@import '../style/variables.scss';
+
+$table-prefix-cls: '#{$prefix-class}-table';
+
+.word-break {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.#{$table-prefix-cls}-container {
+  flex: 1;
+
+  table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+
+    &.#{$table-prefix-cls}-narrow {
+      tr {
+        th,
+        td {
+          &:first-child {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+
+    tr {
+      th,
+      td {
+        padding: 5px 8px;
+        &:first-child {
+          padding-left: 30px;
+        }
+        &:last-child {
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+
+  thead,
+  tbody {
+    tr {
+      height: 46px;
+    }
+  }
+
+  thead {
+    tr {
+      white-space: nowrap;
+      border-bottom: 1px solid $border-color;
+
+      > th {
+        font-weight: normal;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      @extend .word-break;
+      color: $text-second;
+      
+      &:nth-child(2n) {
+        background-color: $primary-light;
+      }
+    }
+  }
+}

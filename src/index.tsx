@@ -8,5 +8,6 @@ export { default as Pagination } from './Pagination'
 export { default as Checkbox } from './Checkbox'
 export { default as Empty } from './Empty'
 export { default as Spin } from './Spin'
+export { default as Table } from './Table'
 
 export { default as ConfigProvider } from './ConfigProvider'
