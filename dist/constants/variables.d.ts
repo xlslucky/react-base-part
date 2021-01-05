@@ -8,6 +8,9 @@ export declare type VariablesType = {
     success: string;
     'success-light': string;
     'border-color': string;
+    'background-disabled': string;
+    'text-strong': string;
+    'text-second': string;
 };
 declare const variables: VariablesType;
 export default variables;

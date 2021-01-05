@@ -27,7 +27,10 @@ var variables = {
     'warn-light': '#fefbeb',
     success: '#52c41a',
     'success-light': '#efffe8',
-    'border-color': '#eee',
+    'border-color': '#d9d9d9',
+    'background-disabled': '#f5f5f5',
+    'text-strong': '#000',
+    'text-second': 'rgba(0, 0, 0, .5)',
 };
 
 module.exports = variables;
