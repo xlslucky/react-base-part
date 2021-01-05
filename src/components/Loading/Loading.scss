@@ -10,12 +10,13 @@ $loading-prefix-cls: '#{$prefix-class}-loading';
 
 .#{$loading-prefix-cls}-melody {
   height: 16px;
-  display: flex;
+  display: inline-flex;
   align-items: flex-end;
   list-style: none;
   padding: 0;
   margin: 0 10px 0 0;
   overflow: hidden;
+
   & > span {
     float: left;
     width: 4px;
@@ -66,9 +67,11 @@ $loading-prefix-cls: '#{$prefix-class}-loading';
 }
 
 .#{$loading-prefix-cls}-ellipsis {
+  display: inline-block;
   position: relative;
   width: 56px;
   height: 13px;
+
   &::before,
   &::after,
   & > span::before,
@@ -94,7 +97,10 @@ $loading-prefix-cls: '#{$prefix-class}-loading';
   }
 
   & > span {
-    position: relative;
+    position: absolute;
+    left: 0;
+    // fix: 会被 Spin text-align: center; 影响
+    text-align: left;
   }
 
   & > span::before {
