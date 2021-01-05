@@ -1,0 +1,29 @@
+@import "../style/variables.scss";
+
+$input-prefix-cls: '#{$prefix-class}-input';
+
+.#{$input-prefix-cls}-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+
+  &.#{$input-prefix-cls}-border {
+    border: 1px solid $border-color;
+
+    &:focus-within {
+      border: 1px solid $primary;
+    }
+  }
+}
+
+.#{$input-prefix-cls} {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+}

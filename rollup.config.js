@@ -11,6 +11,7 @@ export default {
     './src/Tooltip/index.tsx',
     './src/Modal/index.tsx',
     './src/Dropdown/index.tsx',
+    './src/Input/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [
