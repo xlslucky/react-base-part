@@ -1,5 +1,5 @@
 import React from 'react'
-import Pagination from './Pagination'
+import Pagination from '.'
 
 import '../style/storybook.scss'
 

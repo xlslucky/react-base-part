@@ -1,5 +1,5 @@
 import React from 'react'
-import ConfigProvider from './ConfigProvider'
+import ConfigProvider from '.'
 import Button from '../Button'
 import message from '../message'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import message from './message'
+import message from '.'
 import Button from '../Button'
 
 import '../style/storybook.scss'

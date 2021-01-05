@@ -1,6 +1,6 @@
 module.exports = componentName => ({
   content: `import React from 'react'
-import ${componentName} from './${componentName}'
+import ${componentName} from '.'
 
 import '../style/storybook.scss'
 
