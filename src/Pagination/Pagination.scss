@@ -43,12 +43,12 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
 
   &.#{$pagination-prefix-cls}-item-disabled {
     background-color: var(--background-disabled);
-    border-color: var(--text-disabled);
-    color: var(--text-disabled);
+    border-color: var(--border-color);
+    color: var(--border-color);
     cursor: not-allowed;
 
     &.#{$pagination-prefix-cls}-item-active {
-      background-color: var(--text-disabled);
+      background-color: var(--border-color);
       color: #fff;
     }
   }
