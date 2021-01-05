@@ -1,6 +1,8 @@
+export type EmptyDescriptionType = React.ReactNode
+
 export interface EmptyProps {
   className?: string
-  description?: React.ReactNode
+  description?: EmptyDescriptionType
   image?: React.ReactNode
   imageStyle?: React.CSSProperties
   children?: React.ReactNode

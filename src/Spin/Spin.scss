@@ -1,0 +1,25 @@
+@import "../style/variables.scss";
+
+$spin-prefix-cls: '#{$prefix-class}-spin';
+
+.#{$spin-prefix-cls}-loading {
+  position: relative;
+}
+
+.#{$spin-prefix-cls}-mask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.#{$spin-prefix-cls}-loading-content {
+  width: 100%;
+  text-align: center;
+}

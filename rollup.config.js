@@ -15,6 +15,7 @@ export default {
     './src/Pagination/index.tsx',
     './src/Checkbox/index.tsx',
     './src/Empty/index.tsx',
+    './src/Spin/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [
