@@ -1,5 +1,5 @@
 import React from 'react'
-import Checkbox from './Checkbox'
+import Checkbox from '.'
 
 import '../style/storybook.scss'
 
@@ -8,15 +8,27 @@ export default {
 }
 
 export const Default = () => {
+  const [value, setValue] = React.useState([])
+
   return (
     <div>
-      <Checkbox />
-      <br />
-      <Checkbox disabled />
-      <br />
-      <Checkbox defaultChecked />
-      <br />
-      <Checkbox defaultChecked disabled />
+      <div>
+        <Checkbox />
+        <Checkbox disabled />
+        <Checkbox defaultChecked />
+        <Checkbox defaultChecked disabled />
+      </div>
+      <div>
+        <Checkbox.Group
+          value={value}
+          onChange={v => {
+            setValue(v)
+          }}
+        >
+          <Checkbox value={1}>1</Checkbox>
+          <Checkbox value={2}>2</Checkbox>
+        </Checkbox.Group>
+      </div>
     </div>
   )
 }
