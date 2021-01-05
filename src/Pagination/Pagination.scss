@@ -1,0 +1,55 @@
+@import "../style/common.scss";
+
+$pagination-prefix-cls: '#{$prefix-class}-pagination';
+$btn-prefix-cls: '#{$prefix-class}-btn';
+
+// .#{$pagination-prefix-cls} {
+
+// }
+
+.#{$pagination-prefix-cls}-item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32px;
+  height: 32px;
+  border: 1px solid $border-color;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:not(.#{$pagination-prefix-cls}-item-disabled):not(.#{$pagination-prefix-cls}-item-not-allowed) {
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      font-weight: 500;
+    }
+  }
+
+  &.#{$pagination-prefix-cls}-item-active {
+    border-color: $primary;
+    color: $primary;
+    font-weight: 500;
+  }
+
+  &.#{$pagination-prefix-cls}-item-not-allowed {
+    color: $border-color;
+    cursor: not-allowed;
+  }
+
+  &.#{$pagination-prefix-cls}-item-disabled {
+    background-color: var(--background-disabled);
+    border-color: var(--text-disabled);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+
+    &.#{$pagination-prefix-cls}-item-active {
+      background-color: var(--text-disabled);
+      color: #fff;
+    }
+  }
+}

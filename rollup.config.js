@@ -12,6 +12,7 @@ export default {
     './src/Modal/index.tsx',
     './src/Dropdown/index.tsx',
     './src/Input/index.tsx',
+    './src/Pagination/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [

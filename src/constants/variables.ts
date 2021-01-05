@@ -8,6 +8,8 @@ export type VariablesType = {
   success: string
   'success-light': string
   'border-color': string
+  'text-disabled': string
+  'background-disabled': string
 }
 
 const variables: VariablesType = {
@@ -20,6 +22,8 @@ const variables: VariablesType = {
   success: '#52c41a',
   'success-light': '#efffe8',
   'border-color': '#eee',
+  'text-disabled': '#bfbfbf',
+  'background-disabled': '#f5f5f5',
 }
 
 export default variables
