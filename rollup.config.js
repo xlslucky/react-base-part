@@ -13,6 +13,7 @@ export default {
     './src/Dropdown/index.tsx',
     './src/Input/index.tsx',
     './src/Pagination/index.tsx',
+    './src/Checkbox/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [
