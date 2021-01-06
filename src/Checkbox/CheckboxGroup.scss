@@ -1,0 +1,14 @@
+@import "../style/variables.scss";
+
+$checkbox-group-prefix-cls: '#{$prefix-class}-checkbox-group';
+$checkbox-prefix-cls: '#{$prefix-class}-checkbox';
+
+.#{$checkbox-group-prefix-cls} {
+  & > .#{$checkbox-prefix-cls}-wrapper {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

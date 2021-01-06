@@ -5,4 +5,5 @@ export interface CheckboxGroupProps {
   onChange?: (checkedValue: React.ReactText[]) => void
   children: React.ReactElement[] | React.ReactElement
   className?: string
+  prefixCls?: string
 }

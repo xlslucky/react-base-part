@@ -8,25 +8,22 @@ export default {
 }
 
 export const Default = () => {
-  const [value, setValue] = React.useState([])
-
   return (
     <div>
       <div>
-        <Checkbox />
-        <Checkbox disabled />
-        <Checkbox defaultChecked />
-        <Checkbox defaultChecked disabled />
+        <Checkbox>default</Checkbox>
+        <Checkbox disabled>disabled</Checkbox>
+        <Checkbox defaultChecked>defaultChecked</Checkbox>
+        <Checkbox defaultChecked disabled>
+          defaultChecked disabled
+        </Checkbox>
       </div>
       <div>
-        <Checkbox.Group
-          value={value}
-          onChange={v => {
-            setValue(v)
-          }}
-        >
+        <Checkbox.Group>
           <Checkbox value={1}>1</Checkbox>
           <Checkbox value={2}>2</Checkbox>
+          <Checkbox value={3}>3</Checkbox>
+          <Checkbox value={4}>4</Checkbox>
         </Checkbox.Group>
       </div>
     </div>
