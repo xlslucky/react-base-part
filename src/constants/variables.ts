@@ -11,6 +11,14 @@ export type VariablesType = {
   'background-disabled': string
   'text-strong': string
   'text-second': string
+
+  'height-base': string
+  'height-lg': string
+  'height-sm': string
+
+  'font-size-base': string
+  'font-size-lg': string
+  'font-size-sm': string
 }
 
 const variables: VariablesType = {
@@ -25,7 +33,15 @@ const variables: VariablesType = {
   'border-color': '#d9d9d9',
   'background-disabled': '#f5f5f5',
   'text-strong': '#000',
-  'text-second': 'rgba(0, 0, 0, .5)',
+  'text-second': 'rgba(0, 0, 0, .75)',
+
+  'height-base': '32px',
+  'height-lg': '40px',
+  'height-sm': '24px',
+
+  'font-size-base': '14px',
+  'font-size-lg': '16px',
+  'font-size-sm': '12px',
 }
 
 export default variables
