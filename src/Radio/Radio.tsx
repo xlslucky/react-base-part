@@ -6,6 +6,8 @@ import { RadioProps } from './Radio.types'
 import './Radio.scss'
 import { PREFIX_CLASS } from '../constants'
 
+import { isEmpty } from '../utils'
+
 const Radio: React.FC<RadioProps> = ({
   prefixCls = PREFIX_CLASS,
   children,
@@ -23,7 +25,7 @@ const Radio: React.FC<RadioProps> = ({
           ...event.target,
           // event.target.value 是 string 类型，不符合我们要求
           // @ts-ignore
-          value: value || event.target.value,
+          value: isEmpty(value) ? event.target.value : value,
         },
       })
     }
