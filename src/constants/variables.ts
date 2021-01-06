@@ -11,6 +11,7 @@ export type VariablesType = {
   'background-disabled': string
   'text-strong': string
   'text-second': string
+  'text-third': string
 
   'height-base': string
   'height-lg': string
@@ -34,6 +35,7 @@ const variables: VariablesType = {
   'background-disabled': '#f5f5f5',
   'text-strong': '#000',
   'text-second': 'rgba(0, 0, 0, .75)',
+  'text-third': 'rgba(0, 0, 0, .5)',
 
   'height-base': '32px',
   'height-lg': '40px',
