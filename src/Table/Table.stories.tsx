@@ -38,5 +38,14 @@ export const Default = () => {
       dataIndex: 'age',
     },
   ]
-  return <Table batch showNo columns={columns} dataSource={list} rowKey="id" />
+  return (
+    <Table
+      batch
+      showNo
+      columns={columns}
+      dataSource={list}
+      rowKey="id"
+      pagination={{ pageNo: 1, pageSize: 10, total: 146 }}
+    />
+  )
 }

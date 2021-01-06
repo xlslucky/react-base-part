@@ -1,6 +1,7 @@
 @import "../style/variables.scss";
 
 $spin-prefix-cls: '#{$prefix-class}-spin';
+$pagination-prefix-cls: '#{$prefix-class}-pagination';
 
 .#{$spin-prefix-cls}-loading {
   position: relative;
@@ -22,4 +23,9 @@ $spin-prefix-cls: '#{$prefix-class}-spin';
 .#{$spin-prefix-cls}-loading-content {
   width: 100%;
   text-align: center;
+}
+
+.#{$pagination-prefix-cls} {
+  text-align: center;
+  padding: 32px 0;
 }
