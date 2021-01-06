@@ -8,19 +8,11 @@ import { PREFIX_CLASS } from '../constants'
 
 const Checkbox: React.FC<CheckboxProps> = ({
   disabled,
-  defaultChecked,
-  checked,
-  onChange,
   children,
   className,
   prefixCls = PREFIX_CLASS,
+  ...restProps
 }) => {
-  function onChangeCheckbox(e: React.ChangeEvent<HTMLInputElement>) {
-    if (typeof onChange === 'function') {
-      onChange(e)
-    }
-  }
-
   return (
     <label
       className={classnames(`${prefixCls}-checkbox-wrapper`, className, {
@@ -29,14 +21,11 @@ const Checkbox: React.FC<CheckboxProps> = ({
     >
       <span className={`${prefixCls}-checkbox`}>
         <input
-          disabled={disabled}
           className={`${prefixCls}-checkbox-input`}
           type="checkbox"
-          onChange={onChangeCheckbox}
-          defaultChecked={defaultChecked}
-          checked={checked}
+          {...restProps}
         />
-        <span className={`${prefixCls}-checkbox-inner`}></span>
+        <span className={`${prefixCls}-checkbox-inner`} />
       </span>
       {children ? (
         <span className={`${prefixCls}-checkbox-content`}>{children}</span>
