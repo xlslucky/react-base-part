@@ -1,0 +1,14 @@
+@import "../style/variables.scss";
+
+$radio-group-prefix-cls: '#{$prefix-class}-radio-group';
+$radio-prefix-cls: '#{$prefix-class}-radio';
+
+.#{$radio-group-prefix-cls} {
+  & > .#{$radio-prefix-cls}-wrapper {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

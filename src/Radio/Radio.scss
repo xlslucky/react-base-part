@@ -1,0 +1,86 @@
+@import "../style/variables.scss";
+
+$radio-prefix-cls: '#{$prefix-class}-radio';
+
+.#{$radio-prefix-cls}-wrapper {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &.#{$radio-prefix-cls}-wrapper-disabled {
+    cursor: not-allowed;
+
+    .#{$radio-prefix-cls},
+    .#{$radio-prefix-cls}-input {
+      cursor: not-allowed;
+    }
+
+    .#{$radio-prefix-cls}-input {
+      & + .#{$radio-prefix-cls}-inner {
+        border-color: $border-color;
+        background-color: $background-disabled;
+        &::before {
+          background-color: $border-color;
+        }
+      }
+    }
+  }
+}
+
+.#{$radio-prefix-cls} {
+  position: relative;
+  cursor: pointer;
+}
+
+.#{$radio-prefix-cls}-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+
+  &:checked {
+    & + .#{$radio-prefix-cls}-inner {
+      border-color: $primary;
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+}
+
+.#{$radio-prefix-cls}-inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: none;
+    content: "";
+    width: 9px;
+    height: 9px;
+    background-color: $primary;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+
+.#{$radio-prefix-cls}-content {
+  margin-left: 8px;
+}

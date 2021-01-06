@@ -14,6 +14,7 @@ export default {
     './src/Input/index.tsx',
     './src/Pagination/index.tsx',
     './src/Checkbox/index.tsx',
+    './src/Radio/index.tsx',
     './src/Empty/index.tsx',
     './src/Spin/index.tsx',
     './src/Table/index.tsx',
