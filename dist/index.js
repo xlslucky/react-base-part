@@ -32,7 +32,8 @@ var index$8 = require('./Radio/index.js');
 var index$3$1 = require('./Empty/index.js');
 var index$9 = require('./Spin/index.js');
 var index$a = require('./Table/index.js');
-var index$b = require('./ConfigProvider/index.js');
+var index$b = require('./Select/index.js');
+var index$c = require('./ConfigProvider/index.js');
 
 
 
@@ -48,5 +49,6 @@ exports.Radio = index$8;
 exports.Empty = index$3$1;
 exports.Spin = index$9;
 exports.Table = index$a;
-exports.ConfigProvider = index$b;
+exports.Select = index$b;
+exports.ConfigProvider = index$c;
 //# sourceMappingURL=index.js.map

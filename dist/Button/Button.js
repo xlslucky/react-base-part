@@ -30,7 +30,7 @@ var index = require('../constants/index.js');
 var index$1 = require('../components/Loading/index.js');
 
 var Button = React__default.forwardRef(function (_a, ref) {
-    var children = _a.children, style = _a.style, disabled = _a.disabled, htmlType = _a.htmlType, onClick = _a.onClick, loading = _a.loading, _b = _a.type, type = _b === void 0 ? 'default' : _b, className = _a.className, block = _a.block, circle = _a.circle, _c = _a.prefixCls, prefixCls = _c === void 0 ? index.PREFIX_CLASS : _c, restProps = _tslib.__rest(_a, ["children", "style", "disabled", "htmlType", "onClick", "loading", "type", "className", "block", "circle", "prefixCls"]);
+    var children = _a.children, style = _a.style, disabled = _a.disabled, _b = _a.htmlType, htmlType = _b === void 0 ? 'button' : _b, onClick = _a.onClick, loading = _a.loading, _c = _a.type, type = _c === void 0 ? 'default' : _c, className = _a.className, block = _a.block, circle = _a.circle, _d = _a.prefixCls, prefixCls = _d === void 0 ? index.PREFIX_CLASS : _d, _e = _a.size, size = _e === void 0 ? 'default' : _e, restProps = _tslib.__rest(_a, ["children", "style", "disabled", "htmlType", "onClick", "loading", "type", "className", "block", "circle", "prefixCls", "size"]);
     var buttonClassName = React__default.useMemo(function () {
         var _a;
         return classnames(prefixCls + "-btn", className, (_a = {},
@@ -39,8 +39,10 @@ var Button = React__default.forwardRef(function (_a, ref) {
             _a[prefixCls + "-btn-loading"] = loading,
             _a[prefixCls + "-btn-block"] = block,
             _a[prefixCls + "-btn-circle"] = circle,
+            _a[prefixCls + "-btn-size-lg"] = size === 'large',
+            _a[prefixCls + "-btn-size-sm"] = size === 'small',
             _a));
-    }, [prefixCls, className, type, disabled, loading, block, circle]);
+    }, [prefixCls, className, type, disabled, loading, block, circle, size]);
     function handleBtn(event) {
         if (loading || disabled) {
             return;

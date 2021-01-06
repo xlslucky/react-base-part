@@ -11,6 +11,13 @@ export declare type VariablesType = {
     'background-disabled': string;
     'text-strong': string;
     'text-second': string;
+    'text-third': string;
+    'height-base': string;
+    'height-lg': string;
+    'height-sm': string;
+    'font-size-base': string;
+    'font-size-lg': string;
+    'font-size-sm': string;
 };
 declare const variables: VariablesType;
 export default variables;

@@ -31,6 +31,7 @@ require('../components/Icons/components/IconCheckCircleFilled.js');
 require('../components/Icons/components/IconCloseCircleFilled.js');
 require('../components/Icons/components/IconExclamationCircleFilled.js');
 var IconClose = require('../components/Icons/components/IconClose.js');
+require('../components/Icons/components/IconArrowBottom.js');
 var index$1 = require('../Button/index.js');
 var Portal = require('../utils/Portal.js');
 var index$2 = require('./components/ModalContent/index.js');

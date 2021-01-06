@@ -30,7 +30,14 @@ var variables = {
     'border-color': '#d9d9d9',
     'background-disabled': '#f5f5f5',
     'text-strong': '#000',
-    'text-second': 'rgba(0, 0, 0, .5)',
+    'text-second': 'rgba(0, 0, 0, .75)',
+    'text-third': 'rgba(0, 0, 0, .5)',
+    'height-base': '32px',
+    'height-lg': '40px',
+    'height-sm': '24px',
+    'font-size-base': '14px',
+    'font-size-lg': '16px',
+    'font-size-sm': '12px',
 };
 
 module.exports = variables;

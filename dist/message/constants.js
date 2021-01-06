@@ -26,6 +26,7 @@ var IconCheckCircleFilled = require('../components/Icons/components/IconCheckCir
 var IconCloseCircleFilled = require('../components/Icons/components/IconCloseCircleFilled.js');
 var IconExclamationCircleFilled = require('../components/Icons/components/IconExclamationCircleFilled.js');
 require('../components/Icons/components/IconClose.js');
+require('../components/Icons/components/IconArrowBottom.js');
 var message_types = require('./message.types.js');
 
 var _a, _b;

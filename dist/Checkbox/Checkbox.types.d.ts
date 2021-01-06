@@ -1,11 +1,5 @@
 /// <reference types="react" />
-export interface CheckboxProps {
-    disabled?: boolean;
-    defaultChecked?: boolean;
-    checked?: boolean;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    className?: string;
-    value?: React.ReactText;
+export declare type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
     children?: React.ReactNode;
     prefixCls?: string;
-}
+};

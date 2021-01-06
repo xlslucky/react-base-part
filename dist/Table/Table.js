@@ -41,6 +41,7 @@ var index$9 = require('../Spin/index.js');
 require('./Table.scss.js');
 var context = require('./context.js');
 require('./index.js');
+require('../Select/index.js');
 require('../ConfigProvider/index.js');
 
 // 格式化 columns

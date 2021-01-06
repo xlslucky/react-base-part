@@ -30,6 +30,7 @@ require('../../../components/Icons/components/IconCheckCircleFilled.js');
 require('../../../components/Icons/components/IconCloseCircleFilled.js');
 var IconExclamationCircleFilled = require('../../../components/Icons/components/IconExclamationCircleFilled.js');
 require('../../../components/Icons/components/IconClose.js');
+require('../../../components/Icons/components/IconArrowBottom.js');
 var index$1 = require('../../../Button/index.js');
 var ReactDOM = _interopDefault(require('react-dom'));
 var index$2 = require('../ModalContent/index.js');

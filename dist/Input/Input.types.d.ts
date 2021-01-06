@@ -1,4 +1,5 @@
 /// <reference types="react" />
+declare type InputSizeType = 'default' | 'large' | 'small';
 export declare enum UiEventsKey {
     ArrowUp = "ArrowUp",
     ArrowDown = "ArrowDown",
@@ -7,12 +8,14 @@ export declare enum UiEventsKey {
     Enter = "Enter",
     Escape = "Escape"
 }
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
     bordered?: boolean;
     disabled?: boolean;
     className?: string;
-    addonAfter?: React.ReactNode;
-    addonBefore?: React.ReactNode;
+    suffix?: React.ReactNode;
+    prefix?: React.ReactNode;
     prefixCls?: string;
+    size?: InputSizeType;
     onPressEnter?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
+export {};
