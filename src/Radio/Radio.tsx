@@ -11,8 +11,24 @@ const Radio: React.FC<RadioProps> = ({
   children,
   className,
   disabled,
+  onChange,
+  value,
   ...restProps
 }) => {
+  function onChangeRadio(event: React.ChangeEvent<HTMLInputElement>) {
+    if (typeof onChange === 'function') {
+      onChange({
+        ...event,
+        target: {
+          ...event.target,
+          // event.target.value 是 string 类型，不符合我们要求
+          // @ts-ignore
+          value: value || event.target.value,
+        },
+      })
+    }
+  }
+
   return (
     <label
       className={classnames(`${prefixCls}-radio-wrapper`, className, {
@@ -23,6 +39,8 @@ const Radio: React.FC<RadioProps> = ({
         <input
           className={`${prefixCls}-radio-input`}
           type="radio"
+          value={value}
+          onChange={onChangeRadio}
           {...restProps}
         />
         <span className={`${prefixCls}-radio-inner`} />
