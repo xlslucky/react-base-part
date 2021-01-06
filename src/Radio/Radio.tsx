@@ -11,17 +11,8 @@ const Radio: React.FC<RadioProps> = ({
   children,
   className,
   disabled,
-  defaultChecked,
-  onChange,
-  checked,
-  value,
+  ...restProps
 }) => {
-  function onChangeRadio(event: React.ChangeEvent<HTMLInputElement>) {
-    if (typeof onChange === 'function') {
-      onChange(event)
-    }
-  }
-
   return (
     <label
       className={classnames(`${prefixCls}-radio-wrapper`, className, {
@@ -30,14 +21,11 @@ const Radio: React.FC<RadioProps> = ({
     >
       <span className={`${prefixCls}-radio`}>
         <input
-          disabled={disabled}
           className={`${prefixCls}-radio-input`}
           type="radio"
-          onChange={onChangeRadio}
-          defaultChecked={defaultChecked}
-          checked={checked}
+          {...restProps}
         />
-        <span className={`${prefixCls}-radio-inner`}></span>
+        <span className={`${prefixCls}-radio-inner`} />
       </span>
       {children ? (
         <span className={`${prefixCls}-radio-content`}>{children}</span>
