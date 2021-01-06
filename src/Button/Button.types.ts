@@ -1,5 +1,7 @@
 export type ButtonType = 'primary' | 'ghost' | 'danger' | 'default'
 
+type ButtonSizeType = 'default' | 'large' | 'small'
+
 export interface BaseButtonProps {
   children: React.ReactNode
   type?: ButtonType
@@ -12,6 +14,7 @@ export interface BaseButtonProps {
   block?: boolean
   circle?: boolean
   prefixCls?: string
+  size?: ButtonSizeType
 }
 
 export type ButtonProps = BaseButtonProps &

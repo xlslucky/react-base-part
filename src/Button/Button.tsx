@@ -14,7 +14,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       style,
       disabled,
-      htmlType,
+      htmlType = 'button',
       onClick,
       loading,
       type = 'default',
@@ -22,6 +22,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       block,
       circle,
       prefixCls = PREFIX_CLASS,
+      size = 'default',
       ...restProps
     },
     ref
@@ -33,8 +34,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         [`${prefixCls}-btn-loading`]: loading,
         [`${prefixCls}-btn-block`]: block,
         [`${prefixCls}-btn-circle`]: circle,
+        [`${prefixCls}-btn-size-lg`]: size === 'large',
+        [`${prefixCls}-btn-size-sm`]: size === 'small',
       })
-    }, [prefixCls, className, type, disabled, loading, block, circle])
+    }, [prefixCls, className, type, disabled, loading, block, circle, size])
 
     function handleBtn(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
       if (loading || disabled) {

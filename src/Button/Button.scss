@@ -7,13 +7,10 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
   text-align: center;
   border: none;
   outline: none;
-  height: 32px;
-  font-size: 14px;
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 2px;
   white-space: nowrap;
-  padding: 4px 15px;
   line-height: 1.5;
 
   > span {
@@ -66,10 +63,47 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
   }
 }
 
+// 属性 圆角/大小
+.#{$btn-prefix-cls} {
+  height: $height-base;
+  font-size: $font-size-base;
+  padding: 4px 15px;
+
+  &.#{$btn-prefix-cls}-size-lg {
+    height: $height-lg;
+    font-size: $font-size-lg;
+    padding: 6px 15px;
+
+    &.#{$btn-prefix-cls}-circle {
+      border-radius: $height-lg;
+    }
+
+    .#{$btn-prefix-cls}-loading-icon {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  }
+
+  &.#{$btn-prefix-cls}-size-sm {
+    height: $height-sm;
+    font-size: $font-size-sm;
+    padding: 0 7px;
+
+    &.#{$btn-prefix-cls}-circle {
+      border-radius: $height-sm;
+    }
+
+    .#{$btn-prefix-cls}-loading-icon {
+      margin-right: 6px;
+      font-size: 12px;
+    }
+  }
+}
+
 // 属性 圆角/块元素
 .#{$btn-prefix-cls} {
   &.#{$btn-prefix-cls}-circle {
-    border-radius: 32px;
+    border-radius: $height-base;
   }
 
   &.#{$btn-prefix-cls}-block {
@@ -80,8 +114,6 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
 
 // 属性 禁用/加载中
 .#{$btn-prefix-cls} {
-  &.#{$btn-prefix-cls}-disabled,
-  &[disabled],
   &.#{$btn-prefix-cls}-loading {
     position: relative;
 
@@ -101,17 +133,24 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
 
   &.#{$btn-prefix-cls}-disabled,
   &[disabled] {
-    cursor: not-allowed;
+    background-color: $background-disabled;
+    color: $border-color;
+    border-color: $border-color;
   }
 
   &.#{$btn-prefix-cls}-loading {
     cursor: progress;
   }
 
+  &.#{$btn-prefix-cls}-disabled,
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
   .#{$btn-prefix-cls}-loading-icon {
     display: inline-block;
-    margin-right: 8px;
     background-size: cover;
+    margin-right: 8px;
     font-size: 18px;
   }
 }
