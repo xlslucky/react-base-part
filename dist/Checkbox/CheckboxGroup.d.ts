@@ -1,3 +1,4 @@
 import { CheckboxGroupProps } from './CheckboxGroup.types';
-declare function CheckboxGroup({ children, disabled, defaultValue, value, onChange, className, }: CheckboxGroupProps): JSX.Element;
+import './CheckboxGroup.scss';
+declare function CheckboxGroup({ children, disabled, defaultValue, value, onChange, className, prefixCls, }: CheckboxGroupProps): JSX.Element;
 export default CheckboxGroup;

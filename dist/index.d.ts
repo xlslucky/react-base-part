@@ -6,6 +6,7 @@ export { default as Dropdown } from './Dropdown';
 export { default as Input } from './Input';
 export { default as Pagination } from './Pagination';
 export { default as Checkbox } from './Checkbox';
+export { default as Radio } from './Radio';
 export { default as Empty } from './Empty';
 export { default as Spin } from './Spin';
 export { default as Table } from './Table';

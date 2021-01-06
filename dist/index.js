@@ -28,10 +28,11 @@ var index$5 = require('./Dropdown/index.js');
 var index$6 = require('./Input/index.js');
 var index$2$1 = require('./Pagination/index.js');
 var index$7 = require('./Checkbox/index.js');
+var index$8 = require('./Radio/index.js');
 var index$3$1 = require('./Empty/index.js');
-var index$8 = require('./Spin/index.js');
-var index$9 = require('./Table/index.js');
-var index$a = require('./ConfigProvider/index.js');
+var index$9 = require('./Spin/index.js');
+var index$a = require('./Table/index.js');
+var index$b = require('./ConfigProvider/index.js');
 
 
 
@@ -43,8 +44,9 @@ exports.Dropdown = index$5;
 exports.Input = index$6;
 exports.Pagination = index$2$1;
 exports.Checkbox = index$7;
+exports.Radio = index$8;
 exports.Empty = index$3$1;
-exports.Spin = index$8;
-exports.Table = index$9;
-exports.ConfigProvider = index$a;
+exports.Spin = index$9;
+exports.Table = index$a;
+exports.ConfigProvider = index$b;
 //# sourceMappingURL=index.js.map
