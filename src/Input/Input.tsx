@@ -12,11 +12,12 @@ const Input: React.FC<InputProps> = ({
   // TODO 禁用
   // disabled,
   className,
-  addonAfter,
-  addonBefore,
+  suffix,
+  prefix,
   prefixCls = PREFIX_CLASS,
   type = 'text',
   onPressEnter,
+  size = 'default',
   ...restProps
 }) => {
   return (
@@ -24,10 +25,12 @@ const Input: React.FC<InputProps> = ({
       className={classnames(
         `${prefixCls}-input-wrapper`,
         { [`${prefixCls}-input-border`]: bordered },
+        { [`${prefixCls}-input-size-lg`]: size === 'large' },
+        { [`${prefixCls}-input-size-sm`]: size === 'small' },
         className
       )}
     >
-      {addonBefore}
+      <span className={`${prefixCls}-input-prefix`}>{prefix}</span>
       <input
         onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
           if (event.key === UiEventsKey.Enter) {
@@ -40,7 +43,7 @@ const Input: React.FC<InputProps> = ({
         type={type}
         {...restProps}
       />
-      {addonAfter}
+      <span className={`${prefixCls}-input-suffix`}>{suffix}</span>
     </div>
   )
 }

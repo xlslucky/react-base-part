@@ -7,4 +7,16 @@ export default {
   title: 'Input',
 }
 
-export const Default = () => <Input />
+export const Default = () => (
+  <div>
+    <div>
+      <Input />
+    </div>
+    <div>
+      <Input size="large" />
+    </div>
+    <div>
+      <Input size="small" />
+    </div>
+  </div>
+)
