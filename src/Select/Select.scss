@@ -1,0 +1,55 @@
+@import "../style/variables.scss";
+
+$select-prefix-cls: '#{$prefix-class}-select';
+
+.#{$select-prefix-cls}-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $height-base;
+  border: 1px solid $border-color;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 4px 10px;
+
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+.#{$select-prefix-cls}-selection {
+  background-color: #fff;
+  padding: 2px 0;
+  box-shadow: 
+    0 3px 6px -4px rgba(0, 0, 0, .1),
+    0 6px 16px 0 rgba(0, 0, 0, .08),
+    0 9px 28px 8px rgba(0, 0, 0, .05);
+
+  &::before {
+    position: absolute;
+    z-index: -9999;
+    opacity: .0001;
+    content: " ";
+  }
+
+  &::before {
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+  }
+}
+
+.#{$select-prefix-cls}-value {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.#{$select-prefix-cls}-placeholder {
+  color: $text-third;
+}
+
+.#{$select-prefix-cls}-arrow-icon {
+  color: $text-third;
+}

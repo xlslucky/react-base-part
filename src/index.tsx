@@ -10,5 +10,6 @@ export { default as Radio } from './Radio'
 export { default as Empty } from './Empty'
 export { default as Spin } from './Spin'
 export { default as Table } from './Table'
+export { default as Select } from './Select'
 
 export { default as ConfigProvider } from './ConfigProvider'

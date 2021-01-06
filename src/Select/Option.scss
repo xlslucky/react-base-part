@@ -1,0 +1,26 @@
+@import "../style/variables.scss";
+
+$select-prefix-cls: '#{$prefix-class}-select';
+
+.#{$select-prefix-cls}-selection-item {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-height: 32px;
+  padding: 5px 12px;
+  line-height: 22px;
+  cursor: pointer;
+
+  &.#{$select-prefix-cls}-selection-item-active {
+    background-color: $primary-light;
+  
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
