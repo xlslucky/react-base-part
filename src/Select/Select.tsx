@@ -69,7 +69,7 @@ const Select: React.FC<SelectProps> = ({
       leaveClassName={leaveClassName}
       offset={getOffsetByPlacement('bottomLeft', 4)}
       popup={
-        <div className={classnames(`${prefixCls}-select-selection`, className)}>
+        <div className={`${prefixCls}-select-selection`}>
           {React.Children.map(children, (option: React.ReactElement) => {
             const { props } = option
             const checked = innerValue === props.value
@@ -84,7 +84,10 @@ const Select: React.FC<SelectProps> = ({
         </div>
       }
     >
-      <div className={classnames(`${prefixCls}-select-selector`)} style={style}>
+      <div
+        className={classnames(`${prefixCls}-select-selector`, className)}
+        style={style}
+      >
         <span className={`${prefixCls}-select-value`}>
           {selected || (
             <span className={`${prefixCls}-select-placeholder`}>
