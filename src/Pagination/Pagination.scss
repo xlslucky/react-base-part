@@ -3,20 +3,34 @@
 $pagination-prefix-cls: '#{$prefix-class}-pagination';
 $btn-prefix-cls: '#{$prefix-class}-btn';
 
-// .#{$pagination-prefix-cls} {
+.#{$pagination-prefix-cls} {
+  font-size: $font-size-base;
 
-// }
+  &.#{$pagination-prefix-cls}-size-sm {
+    font-size: $font-size-sm;
+    .#{$pagination-prefix-cls}-item,
+    .#{$pagination-prefix-cls}-item-jump {
+      min-width: $height-sm;
+      height: $height-sm;
+    }
+  }
+}
 
-.#{$pagination-prefix-cls}-item {
+.#{$pagination-prefix-cls}-item,
+.#{$pagination-prefix-cls}-item-jump  {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: 32px;
-  height: 32px;
+  min-width: $height-base;
+  height: $height-base;
+  vertical-align: middle;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.#{$pagination-prefix-cls}-item {
   border: 1px solid $border-color;
   border-radius: 2px;
-  cursor: pointer;
-  margin-right: 8px;
 
   &:last-child {
     margin-right: 0;
@@ -51,5 +65,32 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
       background-color: var(--border-color);
       color: #fff;
     }
+  }
+}
+
+.#{$pagination-prefix-cls}-item-jump {
+  font-weight: 500;
+  position: relative;
+
+  &:hover {
+    .#{$pagination-prefix-cls}-item-more {
+      display: none;
+    }
+    .#{$pagination-prefix-cls}-item-jump-icon {
+      display: block;
+    }
+  }
+
+  .#{$pagination-prefix-cls}-item-jump-icon {
+    color: $primary;
+    display: none;
+  }
+  .#{$pagination-prefix-cls}-item-more {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $border-color;
   }
 }

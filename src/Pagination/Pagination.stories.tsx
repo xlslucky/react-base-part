@@ -7,4 +7,15 @@ export default {
   title: 'Pagination',
 }
 
-export const Default = () => <Pagination pageNo={1} pageSize={10} total={100} />
+export const Default = () => {
+  return (
+    <div>
+      <div>
+        <Pagination pageNo={1} pageSize={10} total={90} />
+      </div>
+      <div>
+        <Pagination size="small" pageNo={1} pageSize={10} total={100} />
+      </div>
+    </div>
+  )
+}
