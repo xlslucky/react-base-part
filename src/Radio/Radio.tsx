@@ -39,6 +39,7 @@ const Radio: React.FC<RadioProps> = ({
     >
       <span className={`${prefixCls}-radio`}>
         <input
+          disabled={disabled}
           className={`${prefixCls}-radio-input`}
           type="radio"
           value={value}

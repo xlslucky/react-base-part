@@ -21,6 +21,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     >
       <span className={`${prefixCls}-checkbox`}>
         <input
+          disabled={disabled}
           className={`${prefixCls}-checkbox-input`}
           type="checkbox"
           {...restProps}
