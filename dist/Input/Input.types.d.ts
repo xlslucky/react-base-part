@@ -16,6 +16,7 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
     prefix?: React.ReactNode;
     prefixCls?: string;
     size?: InputSizeType;
+    style?: React.CSSProperties;
     onPressEnter?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 export {};

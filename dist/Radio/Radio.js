@@ -40,7 +40,7 @@ var Radio = function (_a) {
     }
     return (jsxRuntime.jsxs("label", _tslib.__assign({ className: classnames(prefixCls + "-radio-wrapper", className, (_b = {},
             _b[prefixCls + "-radio-wrapper-disabled"] = disabled,
-            _b)) }, { children: [jsxRuntime.jsxs("span", _tslib.__assign({ className: prefixCls + "-radio" }, { children: [jsxRuntime.jsx("input", _tslib.__assign({ className: prefixCls + "-radio-input", type: "radio", value: value, onChange: onChangeRadio }, restProps), void 0),
+            _b)) }, { children: [jsxRuntime.jsxs("span", _tslib.__assign({ className: prefixCls + "-radio" }, { children: [jsxRuntime.jsx("input", _tslib.__assign({ disabled: disabled, className: prefixCls + "-radio-input", type: "radio", value: value, onChange: onChangeRadio }, restProps), void 0),
                     jsxRuntime.jsx("span", { className: prefixCls + "-radio-inner" }, void 0)] }), void 0),
             children ? (jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-radio-content" }, { children: children }), void 0)) : null] }), void 0));
 };

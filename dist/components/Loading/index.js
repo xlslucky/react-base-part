@@ -30,6 +30,10 @@ require('../Icons/components/IconCloseCircleFilled.js');
 require('../Icons/components/IconExclamationCircleFilled.js');
 require('../Icons/components/IconClose.js');
 require('../Icons/components/IconArrowBottom.js');
+require('../Icons/components/IconArrowLeftLine.js');
+require('../Icons/components/IconArrowRightLine.js');
+require('../Icons/components/IconDoubleLeft.js');
+require('../Icons/components/IconDoubleRight.js');
 require('./Loading.scss.js');
 
 var Melody = function () { return (jsxRuntime.jsxs("div", _tslib.__assign({ className: index.PREFIX_CLASS + "-loading-melody" }, { children: [jsxRuntime.jsx("span", {}, void 0),

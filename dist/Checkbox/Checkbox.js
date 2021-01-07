@@ -31,7 +31,7 @@ var Checkbox = function (_a) {
     var disabled = _a.disabled, children = _a.children, className = _a.className, _c = _a.prefixCls, prefixCls = _c === void 0 ? index.PREFIX_CLASS : _c, restProps = _tslib.__rest(_a, ["disabled", "children", "className", "prefixCls"]);
     return (jsxRuntime.jsxs("label", _tslib.__assign({ className: classnames(prefixCls + "-checkbox-wrapper", className, (_b = {},
             _b[prefixCls + "-checkbox-wrapper-disabled"] = disabled,
-            _b)) }, { children: [jsxRuntime.jsxs("span", _tslib.__assign({ className: prefixCls + "-checkbox" }, { children: [jsxRuntime.jsx("input", _tslib.__assign({ className: prefixCls + "-checkbox-input", type: "checkbox" }, restProps), void 0),
+            _b)) }, { children: [jsxRuntime.jsxs("span", _tslib.__assign({ className: prefixCls + "-checkbox" }, { children: [jsxRuntime.jsx("input", _tslib.__assign({ disabled: disabled, className: prefixCls + "-checkbox-input", type: "checkbox" }, restProps), void 0),
                     jsxRuntime.jsx("span", { className: prefixCls + "-checkbox-inner" }, void 0)] }), void 0),
             children ? (jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-checkbox-content" }, { children: children }), void 0)) : null] }), void 0));
 };

@@ -31,7 +31,7 @@ var Portal = require('../utils/Portal.js');
 require('./Trigger.scss.js');
 
 var Trigger = function (_a) {
-    var children = _a.children, placement = _a.placement, _b = _a.destroyPopupOnHide, destroyPopupOnHide = _b === void 0 ? false : _b, trigger = _a.trigger, popup = _a.popup, _c = _a.getPopupContainer, getPopupContainer = _c === void 0 ? function () { return document.body; } : _c, enterClassName = _a.enterClassName, leaveClassName = _a.leaveClassName, _d = _a.prefixCls, prefixCls = _d === void 0 ? index.PREFIX_CLASS : _d, offset = _a.offset, stretch = _a.stretch;
+    var children = _a.children, placement = _a.placement, _b = _a.destroyPopupOnHide, destroyPopupOnHide = _b === void 0 ? false : _b, trigger = _a.trigger, popup = _a.popup, _c = _a.getPopupContainer, getPopupContainer = _c === void 0 ? function () { return document.body; } : _c, enterClassName = _a.enterClassName, leaveClassName = _a.leaveClassName, _d = _a.prefixCls, prefixCls = _d === void 0 ? index.PREFIX_CLASS : _d, offset = _a.offset, stretch = _a.stretch, zIndex = _a.zIndex;
     var _e = React__default.useState(false), innerVisible = _e[0], setVisible = _e[1];
     var _f = React__default.useState(false), showOverlay = _f[0], setShowOverlay = _f[1];
     var childrenRef = React__default.useRef(null);
@@ -168,7 +168,7 @@ var Trigger = function (_a) {
                 onMouseEnter: onMouseEnter,
                 onMouseLeave: onMouseLeave,
             }),
-            showPortal ? (jsxRuntime.jsx(Portal, _tslib.__assign({ getContainer: function () { return container; } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-trigger-portal" }, { children: jsxRuntime.jsx("div", _tslib.__assign({ onClick: onClick, onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, ref: popupRef, style: triggerStyle, className: prefixCls + "-trigger-container" }, { children: popup }), void 0) }), void 0) }), void 0)) : null] }, void 0));
+            showPortal ? (jsxRuntime.jsx(Portal, _tslib.__assign({ getContainer: function () { return container; } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-trigger-portal", style: { zIndex: zIndex } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ onClick: onClick, onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, ref: popupRef, style: triggerStyle, className: prefixCls + "-trigger-container" }, { children: popup }), void 0) }), void 0) }), void 0)) : null] }, void 0));
 };
 
 module.exports = Trigger;

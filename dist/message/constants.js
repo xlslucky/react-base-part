@@ -27,6 +27,10 @@ var IconCloseCircleFilled = require('../components/Icons/components/IconCloseCir
 var IconExclamationCircleFilled = require('../components/Icons/components/IconExclamationCircleFilled.js');
 require('../components/Icons/components/IconClose.js');
 require('../components/Icons/components/IconArrowBottom.js');
+require('../components/Icons/components/IconArrowLeftLine.js');
+require('../components/Icons/components/IconArrowRightLine.js');
+require('../components/Icons/components/IconDoubleLeft.js');
+require('../components/Icons/components/IconDoubleRight.js');
 var message_types = require('./message.types.js');
 
 var _a, _b;

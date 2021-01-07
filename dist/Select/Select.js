@@ -32,6 +32,10 @@ require('../components/Icons/components/IconCloseCircleFilled.js');
 require('../components/Icons/components/IconExclamationCircleFilled.js');
 require('../components/Icons/components/IconClose.js');
 var IconArrowBottom = require('../components/Icons/components/IconArrowBottom.js');
+require('../components/Icons/components/IconArrowLeftLine.js');
+require('../components/Icons/components/IconArrowRightLine.js');
+require('../components/Icons/components/IconDoubleLeft.js');
+require('../components/Icons/components/IconDoubleRight.js');
 var trigger = require('../utils/trigger.js');
 var index$1 = require('../Trigger/index.js');
 require('./Select.scss.js');
@@ -66,14 +70,14 @@ var Select = function (_a) {
         }
         setInnerValue(value);
     }; };
-    return (jsxRuntime.jsx(index$1, _tslib.__assign({ trigger: ['click'], placement: "bottomLeft", stretch: "width", enterClassName: enterClassName, leaveClassName: leaveClassName, offset: trigger.getOffsetByPlacement('bottomLeft', 4), popup: jsxRuntime.jsx("div", _tslib.__assign({ className: classnames(prefixCls + "-select-selection", className) }, { children: React__default.Children.map(children, function (option) {
+    return (jsxRuntime.jsx(index$1, _tslib.__assign({ trigger: ['click'], placement: "bottomLeft", stretch: "width", enterClassName: enterClassName, leaveClassName: leaveClassName, offset: trigger.getOffsetByPlacement('bottomLeft', 4), popup: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-select-selection" }, { children: React__default.Children.map(children, function (option) {
                 var _a;
                 var props = option.props;
                 var checked = innerValue === props.value;
                 return React__default.cloneElement(option, _tslib.__assign(_tslib.__assign({}, props), { className: classnames(props.className, (_a = {},
                         _a[prefixCls + "-select-selection-item-active"] = checked,
                         _a)), onClick: handleItem(props.value) }));
-            }) }), void 0) }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: classnames(prefixCls + "-select-selector"), style: style }, { children: [jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-value" }, { children: selected || (jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-placeholder" }, { children: placeholder }), void 0)) }), void 0),
+            }) }), void 0) }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: classnames(prefixCls + "-select-selector", className), style: style }, { children: [jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-value" }, { children: selected || (jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-placeholder" }, { children: placeholder }), void 0)) }), void 0),
                 jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-opts" }, { children: jsxRuntime.jsx(IconArrowBottom, { className: prefixCls + "-select-arrow-icon" }, void 0) }), void 0)] }), void 0) }), void 0));
 };
 

@@ -4,3 +4,7 @@ export { default as IconCloseCircleFilled } from './components/IconCloseCircleFi
 export { default as IconExclamationCircleFilled } from './components/IconExclamationCircleFilled';
 export { default as IconClose } from './components/IconClose';
 export { default as IconArrowBottom } from './components/IconArrowBottom';
+export { default as IconArrowLeftLine } from './components/IconArrowLeftLine';
+export { default as IconArrowRightLine } from './components/IconArrowRightLine';
+export { default as IconDoubleLeft } from './components/IconDoubleLeft';
+export { default as IconDoubleRight } from './components/IconDoubleRight';

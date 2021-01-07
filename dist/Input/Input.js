@@ -32,8 +32,8 @@ var Input = function (_a) {
     var _e = _a.bordered, bordered = _e === void 0 ? true : _e, 
     // TODO 禁用
     // disabled,
-    className = _a.className, suffix = _a.suffix, prefix = _a.prefix, _f = _a.prefixCls, prefixCls = _f === void 0 ? index.PREFIX_CLASS : _f, _g = _a.type, type = _g === void 0 ? 'text' : _g, onPressEnter = _a.onPressEnter, _h = _a.size, size = _h === void 0 ? 'default' : _h, restProps = _tslib.__rest(_a, ["bordered", "className", "suffix", "prefix", "prefixCls", "type", "onPressEnter", "size"]);
-    return (jsxRuntime.jsxs("div", _tslib.__assign({ className: classnames(prefixCls + "-input-wrapper", (_b = {}, _b[prefixCls + "-input-border"] = bordered, _b), (_c = {}, _c[prefixCls + "-input-size-lg"] = size === 'large', _c), (_d = {}, _d[prefixCls + "-input-size-sm"] = size === 'small', _d), className) }, { children: [jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-input-prefix" }, { children: prefix }), void 0),
+    className = _a.className, suffix = _a.suffix, prefix = _a.prefix, _f = _a.prefixCls, prefixCls = _f === void 0 ? index.PREFIX_CLASS : _f, _g = _a.type, type = _g === void 0 ? 'text' : _g, onPressEnter = _a.onPressEnter, _h = _a.size, size = _h === void 0 ? 'default' : _h, style = _a.style, restProps = _tslib.__rest(_a, ["bordered", "className", "suffix", "prefix", "prefixCls", "type", "onPressEnter", "size", "style"]);
+    return (jsxRuntime.jsxs("div", _tslib.__assign({ className: classnames(prefixCls + "-input-wrapper", (_b = {}, _b[prefixCls + "-input-border"] = bordered, _b), (_c = {}, _c[prefixCls + "-input-size-lg"] = size === 'large', _c), (_d = {}, _d[prefixCls + "-input-size-sm"] = size === 'small', _d), className), style: style }, { children: [jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-input-prefix" }, { children: prefix }), void 0),
             jsxRuntime.jsx("input", _tslib.__assign({ onKeyDown: function (event) {
                     if (event.key === Input_types.UiEventsKey.Enter) {
                         if (typeof onPressEnter === 'function') {

@@ -19,5 +19,6 @@ export interface TriggerProps {
     prefixCls?: string;
     offset?: OffsetType;
     stretch?: StretchType;
+    zIndex?: number;
 }
 export {};

@@ -26,23 +26,10 @@ var React = require('react');
 var React__default = _interopDefault(React);
 var classnames = _interopDefault(require('classnames'));
 var index = require('../constants/index.js');
-require('../Button/index.js');
-require('../message/index.js');
-require('../Tooltip/index.js');
-require('../Modal/index.js');
-require('../Dropdown/index.js');
-require('../Input/index.js');
-require('../Pagination/index.js');
 var Checkbox$1 = require('../Checkbox/Checkbox.js');
-require('../Checkbox/index.js');
-require('../Radio/index.js');
-require('../Empty/index.js');
-var index$9 = require('../Spin/index.js');
+var index$1 = require('../Spin/index.js');
 require('./Table.scss.js');
 var context = require('./context.js');
-require('./index.js');
-require('../Select/index.js');
-require('../ConfigProvider/index.js');
 
 // 格式化 columns
 var formatColumns = function (columns) {
@@ -176,7 +163,7 @@ function Table(props) {
                             return jsxRuntime.jsx(SortableItem, { itemIndex: index, item: item }, key);
                         }) }, void 0)] }), void 0) }), void 0));
     };
-    return (jsxRuntime.jsx(index$9, _tslib.__assign({ loading: loading, empty: !dataSource.length, description: description, pagination: pagination }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: classnames(prefixCls + "-table-container", className) }, { children: renderTable() }), void 0) }), void 0));
+    return (jsxRuntime.jsx(index$1, _tslib.__assign({ loading: loading, empty: !dataSource.length, description: description, pagination: pagination }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: classnames(prefixCls + "-table-container", className) }, { children: renderTable() }), void 0) }), void 0));
 }
 
 module.exports = Table;
