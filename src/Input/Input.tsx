@@ -18,6 +18,7 @@ const Input: React.FC<InputProps> = ({
   type = 'text',
   onPressEnter,
   size = 'default',
+  style,
   ...restProps
 }) => {
   return (
@@ -29,6 +30,7 @@ const Input: React.FC<InputProps> = ({
         { [`${prefixCls}-input-size-sm`]: size === 'small' },
         className
       )}
+      style={style}
     >
       <span className={`${prefixCls}-input-prefix`}>{prefix}</span>
       <input

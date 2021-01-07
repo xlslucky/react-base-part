@@ -18,5 +18,6 @@ export interface InputProps
   prefix?: React.ReactNode
   prefixCls?: string
   size?: InputSizeType
+  style?: React.CSSProperties
   onPressEnter?: (event: React.KeyboardEvent<HTMLInputElement>) => void
 }
