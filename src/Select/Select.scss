@@ -17,9 +17,7 @@ $select-prefix-cls: '#{$prefix-class}-select';
   }
 }
 
-.#{$select-prefix-cls}-selection {
-  background-color: #fff;
-  padding: 2px 0;
+.#{$select-prefix-cls}-selection-wrapper {
   box-shadow: 
     0 3px 6px -4px rgba(0, 0, 0, .1),
     0 6px 16px 0 rgba(0, 0, 0, .08),
@@ -28,16 +26,21 @@ $select-prefix-cls: '#{$prefix-class}-select';
   &::before {
     position: absolute;
     z-index: -9999;
-    opacity: .0001;
-    content: " ";
-  }
-
-  &::before {
+    opacity: 0;
+    content: "";
     top: -4px;
     right: -4px;
     bottom: -4px;
     left: -4px;
   }
+}
+
+.#{$select-prefix-cls}-selection {
+  background-color: #fff;
+  padding: 2px 0;
+  max-height: calc(32px * 8 + 4px);
+  border-radius: 2px;
+  overflow: auto;
 }
 
 .#{$select-prefix-cls}-value {
@@ -48,6 +51,7 @@ $select-prefix-cls: '#{$prefix-class}-select';
 
 .#{$select-prefix-cls}-placeholder {
   color: $text-third;
+  user-select: none;
 }
 
 .#{$select-prefix-cls}-arrow-icon {

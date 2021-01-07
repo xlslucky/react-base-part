@@ -6,6 +6,7 @@ import { SelectProps } from './Select.types'
 import Trigger from '../Trigger'
 
 import './Select.scss'
+import '../style/animation/slide.scss'
 import { PREFIX_CLASS } from '../constants'
 import {
   getOffsetByPlacement,
@@ -21,11 +22,12 @@ const Select: React.FC<SelectProps> = ({
   children,
   placeholder,
   // TODO allowClear
-  allowClear,
+  // allowClear,
   // TODO size
-  size,
+  // size,
   prefixCls = PREFIX_CLASS,
 }) => {
+  const prefixClass = `${prefixCls}-select`
   const [enterClassName, leaveClassName] = getSlideAnimationClassNames(
     'bottomLeft'
   )
@@ -69,34 +71,34 @@ const Select: React.FC<SelectProps> = ({
       leaveClassName={leaveClassName}
       offset={getOffsetByPlacement('bottomLeft', 4)}
       popup={
-        <div className={`${prefixCls}-select-selection`}>
-          {React.Children.map(children, (option: React.ReactElement) => {
-            const { props } = option
-            const checked = innerValue === props.value
-            return React.cloneElement(option as React.ReactElement, {
-              ...props,
-              className: classnames(props.className, {
-                [`${prefixCls}-select-selection-item-active`]: checked,
-              }),
-              onClick: handleItem(props.value),
-            })
-          })}
+        <div className={`${prefixClass}-selection-wrapper`}>
+          <div className={`${prefixClass}-selection`}>
+            {React.Children.map(children, (option: React.ReactElement) => {
+              const { props } = option
+              const checked = innerValue === props.value
+              return React.cloneElement(option as React.ReactElement, {
+                ...props,
+                className: classnames(props.className, {
+                  [`${prefixClass}-selection-item-active`]: checked,
+                }),
+                onClick: handleItem(props.value),
+              })
+            })}
+          </div>
         </div>
       }
     >
       <div
-        className={classnames(`${prefixCls}-select-selector`, className)}
+        className={classnames(`${prefixClass}-selector`, className)}
         style={style}
       >
-        <span className={`${prefixCls}-select-value`}>
+        <span className={`${prefixClass}-value`}>
           {selected || (
-            <span className={`${prefixCls}-select-placeholder`}>
-              {placeholder}
-            </span>
+            <span className={`${prefixClass}-placeholder`}>{placeholder}</span>
           )}
         </span>
-        <span className={`${prefixCls}-select-opts`}>
-          <IconArrowBottom className={`${prefixCls}-select-arrow-icon`} />
+        <span className={`${prefixClass}-opts`}>
+          <IconArrowBottom className={`${prefixClass}-arrow-icon`} />
         </span>
       </div>
     </Trigger>
