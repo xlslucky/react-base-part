@@ -28,4 +28,8 @@ $pagination-prefix-cls: '#{$prefix-class}-pagination';
 .#{$pagination-prefix-cls} {
   text-align: center;
   padding: 32px 0;
+
+  &.#{$pagination-prefix-cls}-size-sm {
+    padding: 16px 0;
+  }
 }
