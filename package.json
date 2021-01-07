@@ -12,7 +12,8 @@
     "storybook": "start-storybook -p 8888",
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "build:push": "node ./scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -72,6 +73,7 @@
     "rollup-plugin-typescript2": "^0.27.0",
     "sass": "^1.32.0",
     "sass-loader": "^8.0.0",
+    "shelljs": "^0.8.4",
     "typescript": "^4.1.3"
   },
   "lint-staged": {
