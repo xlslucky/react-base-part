@@ -7,7 +7,8 @@ $trigger-prefix-cls: '#{$prefix-class}-trigger';
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 999;
+  // modal 1000 要比modal高
+  z-index: 1001;
 }
 
 .#{$trigger-prefix-cls}-container {

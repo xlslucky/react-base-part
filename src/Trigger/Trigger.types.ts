@@ -40,4 +40,5 @@ export interface TriggerProps {
   offset?: OffsetType
   // 拉伸
   stretch?: StretchType
+  zIndex?: number
 }

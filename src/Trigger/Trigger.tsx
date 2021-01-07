@@ -21,6 +21,7 @@ const Trigger: React.FC<TriggerProps> = ({
   prefixCls = PREFIX_CLASS,
   offset,
   stretch,
+  zIndex,
 }) => {
   const [innerVisible, setVisible] = React.useState(false)
   const [showOverlay, setShowOverlay] = React.useState(false)
@@ -179,7 +180,7 @@ const Trigger: React.FC<TriggerProps> = ({
       })}
       {showPortal ? (
         <Portal getContainer={() => container}>
-          <div className={`${prefixCls}-trigger-portal`}>
+          <div className={`${prefixCls}-trigger-portal`} style={{ zIndex }}>
             <div
               onClick={onClick}
               onMouseEnter={onMouseEnter}
