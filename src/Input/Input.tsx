@@ -9,8 +9,8 @@ import { PREFIX_CLASS } from '../constants'
 
 const Input: React.FC<InputProps> = ({
   bordered = true,
-  // TODO 禁用
-  // disabled,
+  // TODO 禁用样式
+  disabled,
   className,
   suffix,
   prefix,
@@ -21,6 +21,14 @@ const Input: React.FC<InputProps> = ({
   style,
   ...restProps
 }) => {
+  function onKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === UiEventsKey.Enter) {
+      if (typeof onPressEnter === 'function') {
+        onPressEnter(event)
+      }
+    }
+  }
+
   return (
     <div
       className={classnames(
@@ -34,13 +42,8 @@ const Input: React.FC<InputProps> = ({
     >
       <span className={`${prefixCls}-input-prefix`}>{prefix}</span>
       <input
-        onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
-          if (event.key === UiEventsKey.Enter) {
-            if (typeof onPressEnter === 'function') {
-              onPressEnter(event)
-            }
-          }
-        }}
+        disabled={disabled}
+        onKeyDown={onKeyDown}
         className={`${prefixCls}-input`}
         type={type}
         {...restProps}

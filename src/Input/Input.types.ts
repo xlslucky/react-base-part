@@ -1,4 +1,4 @@
-type InputSizeType = 'default' | 'large' | 'small'
+export type InputSizeType = 'default' | 'large' | 'small'
 
 export enum UiEventsKey {
   ArrowUp = 'ArrowUp', // 上方向键
@@ -12,8 +12,6 @@ export enum UiEventsKey {
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
   bordered?: boolean
-  disabled?: boolean
-  className?: string
   suffix?: React.ReactNode
   prefix?: React.ReactNode
   prefixCls?: string

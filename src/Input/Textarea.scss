@@ -1,0 +1,41 @@
+@import "../style/variables.scss";
+
+$input-textarea-prefix-cls: '#{$prefix-class}-input-textarea';
+
+.#{$input-textarea-prefix-cls} {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  resize: vertical;
+
+  &.#{$input-textarea-prefix-cls}-border {
+    border: 1px solid $border-color;
+
+    &:focus-within {
+      border: 1px solid $primary;
+    }
+  }
+}
+
+// 属性 大小
+.#{$input-textarea-prefix-cls} {
+  min-height: $height-base;
+  font-size: $font-size-base;
+  padding: 4px 10px;
+
+  &.#{$input-textarea-prefix-cls}-size-lg {
+    min-height: $height-lg;
+    font-size: $font-size-lg;
+    padding: 6px 10px;
+  }
+  &.#{$input-textarea-prefix-cls}-size-sm {
+    padding: 0 7px;
+    min-height: $height-sm;
+    font-size: $font-size-sm;
+  }
+}
