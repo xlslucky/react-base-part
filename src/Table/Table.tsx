@@ -1,10 +1,10 @@
 import React from 'react'
+import classnames from 'classnames'
 
 import { TableProps, ColumnType } from './Table.types'
 
 import './Table.scss'
-import classnames from 'classnames'
-import { Spin } from '..'
+import Spin from '../Spin'
 import Checkbox from '../Checkbox/Checkbox'
 import TableContext, { useTableContext } from './context'
 import { PREFIX_CLASS } from '../constants'
