@@ -40,7 +40,9 @@ const Input: React.FC<InputProps> = ({
       )}
       style={style}
     >
-      <span className={`${prefixCls}-input-prefix`}>{prefix}</span>
+      {prefix ? (
+        <span className={`${prefixCls}-input-prefix`}>{prefix}</span>
+      ) : null}
       <input
         disabled={disabled}
         onKeyDown={onKeyDown}
@@ -48,7 +50,9 @@ const Input: React.FC<InputProps> = ({
         type={type}
         {...restProps}
       />
-      <span className={`${prefixCls}-input-suffix`}>{suffix}</span>
+      {suffix ? (
+        <span className={`${prefixCls}-input-suffix`}>{suffix}</span>
+      ) : null}
     </div>
   )
 }
