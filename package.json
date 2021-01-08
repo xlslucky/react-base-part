@@ -13,7 +13,8 @@
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build",
-    "build:commit": "node ./scripts/build-commit.js"
+    "commit": "node ./scripts/dist-commit.js",
+    "buildCommit": "npm run build && npm run commit"
   },
   "repository": {
     "type": "git",
