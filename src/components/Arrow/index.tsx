@@ -21,6 +21,6 @@ export default function Arrow({
         `${prefixCls}-arrow-icon-${place}`,
         className
       )}
-    ></span>
+    />
   )
 }

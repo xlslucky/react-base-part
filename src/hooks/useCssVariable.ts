@@ -2,7 +2,7 @@ import React from 'react'
 
 import { isEmpty } from '../utils'
 
-function useCssVarable(dom: HTMLElement = document.body) {
+function useCssVariable(dom: HTMLElement = document.body) {
   // 获取css变量
   const getPropertyValue = React.useCallback(
     (key: string) => {
@@ -32,7 +32,7 @@ function useCssVarable(dom: HTMLElement = document.body) {
   )
 
   // 批量获取css变量
-  const getPropertysValue = React.useCallback(
+  const getPropertiesValue = React.useCallback(
     (keys: string[]) => {
       const data: Record<string, string> = {}
       keys.forEach(key => {
@@ -47,7 +47,7 @@ function useCssVarable(dom: HTMLElement = document.body) {
   )
 
   // 批量设置css变量
-  const setPropertysValue = React.useCallback(
+  const setPropertiesValue = React.useCallback(
     (data: Record<string, string>) => {
       Object.keys(data).forEach(key => {
         const value = data[key]
@@ -63,9 +63,9 @@ function useCssVarable(dom: HTMLElement = document.body) {
     getPropertyValue,
     setPropertyValue,
     removeProperty,
-    getPropertysValue,
-    setPropertysValue,
+    getPropertiesValue,
+    setPropertiesValue,
   }
 }
 
-export default useCssVarable
+export default useCssVariable

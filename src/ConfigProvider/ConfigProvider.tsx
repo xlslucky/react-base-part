@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ConfigProviderProps } from './ConfigProvider.types'
 
-import useSetVarables from '../hooks/useSetVarables'
+import useSetVarables from '../hooks/useSetVariables'
 
 const ConfigContext = React.createContext({})
 

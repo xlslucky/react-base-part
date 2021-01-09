@@ -1,43 +1,43 @@
 @import '../style/variables.scss';
 
-$tootip-prefix-cls: '#{$prefix-class}-tooltip';
+$tooltip-prefix-cls: '#{$prefix-class}-tooltip';
 
 $bg-color: rgba(0, 0, 0, .75);
 
-.#{$tootip-prefix-cls} {
-  &.#{$tootip-prefix-cls}-top-left,
-  &.#{$tootip-prefix-cls}-top-center,
-  &.#{$tootip-prefix-cls}-top-right {
+.#{$tooltip-prefix-cls} {
+  &.#{$tooltip-prefix-cls}-top-left,
+  &.#{$tooltip-prefix-cls}-top-center,
+  &.#{$tooltip-prefix-cls}-top-right {
     padding-bottom: 8px;
   }
-  &.#{$tootip-prefix-cls}-right-top,
-  &.#{$tootip-prefix-cls}-right-center,
-  &.#{$tootip-prefix-cls}-right-bottom {
+  &.#{$tooltip-prefix-cls}-right-top,
+  &.#{$tooltip-prefix-cls}-right-center,
+  &.#{$tooltip-prefix-cls}-right-bottom {
     padding-left: 8px;
   }
-  &.#{$tootip-prefix-cls}-bottom-left,
-  &.#{$tootip-prefix-cls}-bottom-center,
-  &.#{$tootip-prefix-cls}-bottom-right {
+  &.#{$tooltip-prefix-cls}-bottom-left,
+  &.#{$tooltip-prefix-cls}-bottom-center,
+  &.#{$tooltip-prefix-cls}-bottom-right {
     padding-top: 8px;
   }
-  &.#{$tootip-prefix-cls}-left-top,
-  &.#{$tootip-prefix-cls}-left-center,
-  &.#{$tootip-prefix-cls}-left-bottom {
+  &.#{$tooltip-prefix-cls}-left-top,
+  &.#{$tooltip-prefix-cls}-left-center,
+  &.#{$tooltip-prefix-cls}-left-bottom {
     padding-right: 8px;
   }
 }
 
-.#{$tootip-prefix-cls}-content {
+.#{$tooltip-prefix-cls}-content {
   position: relative;
   max-width: 250px;
 }
 
-.#{$tootip-prefix-cls}-arrow {
+.#{$tooltip-prefix-cls}-arrow {
   color: $bg-color;
   border-width: 3px;
 }
 
-.#{$tootip-prefix-cls}-inner {
+.#{$tooltip-prefix-cls}-inner {
   background-color: $bg-color;
   color: #fff;
   padding: 4px 10px;

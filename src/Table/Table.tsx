@@ -99,11 +99,9 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const getCount = React.useCallback(
     (index: number) => {
       const pageNo = pagination?.pageNo || 1
-      const count =
-        pageNo && pagination?.pageSize
-          ? (pageNo - 1) * pagination?.pageSize + index + 1
-          : index + 1
-      return count
+      return pageNo && pagination?.pageSize
+        ? (pageNo - 1) * pagination?.pageSize + index + 1
+        : index + 1
     },
     [pagination]
   )

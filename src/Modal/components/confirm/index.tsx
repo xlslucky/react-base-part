@@ -6,7 +6,7 @@ import { IconExclamationCircleFilled } from '../../../components/Icons'
 
 import './confirm.scss'
 
-import ModalConetnt from '../ModalContent'
+import ModalContent from '../ModalContent'
 import { PREFIX_CLASS } from '../../../constants'
 import { ConfirmProps } from './confirm.types'
 
@@ -41,7 +41,7 @@ function Modal({
   }
 
   return (
-    <ModalConetnt width={416}>
+    <ModalContent width={416}>
       <div className={`${prefixCls}-modal-confirm`}>
         <div className={`${prefixCls}-modal-confirm-body`}>
           <div className={`${prefixCls}-modal-confirm-body-header`}>
@@ -73,7 +73,7 @@ function Modal({
           </Button>
         </div>
       </div>
-    </ModalConetnt>
+    </ModalContent>
   )
 }
 
