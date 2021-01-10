@@ -28,6 +28,7 @@ export default {
       sourcemap: true,
     },
   ],
+  external: ['classnames'],
   preserveModules: true, // Important if we want to code split
   plugins: [
     peerDepsExternal(),
