@@ -61,10 +61,9 @@ function Table(props) {
     }, [innerCheckedList.length, checkedList]);
     var getCount = React__default.useCallback(function (index) {
         var pageNo = (pagination === null || pagination === void 0 ? void 0 : pagination.pageNo) || 1;
-        var count = pageNo && (pagination === null || pagination === void 0 ? void 0 : pagination.pageSize)
+        return pageNo && (pagination === null || pagination === void 0 ? void 0 : pagination.pageSize)
             ? (pageNo - 1) * (pagination === null || pagination === void 0 ? void 0 : pagination.pageSize) + index + 1
             : index + 1;
-        return count;
     }, [pagination]);
     var showCheckbox = React__default.useMemo(function () {
         return batch && !!rowKey;

@@ -37,15 +37,23 @@ require('../components/Icons/components/IconArrowRightLine.js');
 require('../components/Icons/components/IconDoubleLeft.js');
 require('../components/Icons/components/IconDoubleRight.js');
 var trigger = require('../utils/trigger.js');
+require('../style/animation/slide.scss.js');
 var index$1 = require('../Trigger/index.js');
 require('./Select.scss.js');
 
 var Select = function (_a) {
     var value = _a.value, onChange = _a.onChange, className = _a.className, style = _a.style, children = _a.children, placeholder = _a.placeholder, 
     // TODO allowClear
-    allowClear = _a.allowClear, 
+    // allowClear,
     // TODO size
-    size = _a.size, _b = _a.prefixCls, prefixCls = _b === void 0 ? index.PREFIX_CLASS : _b;
+    // size,
+    _b = _a.prefixCls, 
+    // TODO allowClear
+    // allowClear,
+    // TODO size
+    // size,
+    prefixCls = _b === void 0 ? index.PREFIX_CLASS : _b;
+    var prefixClass = prefixCls + "-select";
     var _c = trigger.getSlideAnimationClassNames('bottomLeft'), enterClassName = _c[0], leaveClassName = _c[1];
     var _d = React__default.useState(), innerValue = _d[0], setInnerValue = _d[1];
     React__default.useEffect(function () {
@@ -70,15 +78,15 @@ var Select = function (_a) {
         }
         setInnerValue(value);
     }; };
-    return (jsxRuntime.jsx(index$1, _tslib.__assign({ trigger: ['click'], placement: "bottomLeft", stretch: "width", enterClassName: enterClassName, leaveClassName: leaveClassName, offset: trigger.getOffsetByPlacement('bottomLeft', 4), popup: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-select-selection" }, { children: React__default.Children.map(children, function (option) {
-                var _a;
-                var props = option.props;
-                var checked = innerValue === props.value;
-                return React__default.cloneElement(option, _tslib.__assign(_tslib.__assign({}, props), { className: classnames(props.className, (_a = {},
-                        _a[prefixCls + "-select-selection-item-active"] = checked,
-                        _a)), onClick: handleItem(props.value) }));
-            }) }), void 0) }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: classnames(prefixCls + "-select-selector", className), style: style }, { children: [jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-value" }, { children: selected || (jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-placeholder" }, { children: placeholder }), void 0)) }), void 0),
-                jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-select-opts" }, { children: jsxRuntime.jsx(IconArrowBottom, { className: prefixCls + "-select-arrow-icon" }, void 0) }), void 0)] }), void 0) }), void 0));
+    return (jsxRuntime.jsx(index$1, _tslib.__assign({ trigger: ['click'], placement: "bottomLeft", stretch: "width", enterClassName: enterClassName, leaveClassName: leaveClassName, offset: trigger.getOffsetByPlacement('bottomLeft', 4), popup: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-selection-wrapper" }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-selection" }, { children: React__default.Children.map(children, function (option) {
+                    var _a;
+                    var props = option.props;
+                    var checked = innerValue === props.value;
+                    return React__default.cloneElement(option, _tslib.__assign(_tslib.__assign({}, props), { className: classnames(props.className, (_a = {},
+                            _a[prefixClass + "-selection-item-active"] = checked,
+                            _a)), onClick: handleItem(props.value) }));
+                }) }), void 0) }), void 0) }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: classnames(prefixClass + "-selector", className), style: style }, { children: [jsxRuntime.jsx("span", _tslib.__assign({ className: prefixClass + "-value" }, { children: selected || (jsxRuntime.jsx("span", _tslib.__assign({ className: prefixClass + "-placeholder" }, { children: placeholder }), void 0)) }), void 0),
+                jsxRuntime.jsx("span", _tslib.__assign({ className: prefixClass + "-opts" }, { children: jsxRuntime.jsx(IconArrowBottom, { className: prefixClass + "-arrow-icon" }, void 0) }), void 0)] }), void 0) }), void 0));
 };
 
 module.exports = Select;

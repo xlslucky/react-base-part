@@ -24,7 +24,7 @@ var React = require('react');
 var React__default = _interopDefault(React);
 var index$1 = require('../utils/index.js');
 
-function useCssVarable(dom) {
+function useCssVariable(dom) {
     if (dom === void 0) { dom = document.body; }
     // 获取css变量
     var getPropertyValue = React__default.useCallback(function (key) {
@@ -43,7 +43,7 @@ function useCssVarable(dom) {
         dom.style.removeProperty(key);
     }, [dom.style]);
     // 批量获取css变量
-    var getPropertysValue = React__default.useCallback(function (keys) {
+    var getPropertiesValue = React__default.useCallback(function (keys) {
         var data = {};
         keys.forEach(function (key) {
             var value = getPropertyValue(key);
@@ -54,7 +54,7 @@ function useCssVarable(dom) {
         return data;
     }, [getPropertyValue]);
     // 批量设置css变量
-    var setPropertysValue = React__default.useCallback(function (data) {
+    var setPropertiesValue = React__default.useCallback(function (data) {
         Object.keys(data).forEach(function (key) {
             var value = data[key];
             if (!index$1.isEmpty(value)) {
@@ -66,10 +66,10 @@ function useCssVarable(dom) {
         getPropertyValue: getPropertyValue,
         setPropertyValue: setPropertyValue,
         removeProperty: removeProperty,
-        getPropertysValue: getPropertysValue,
-        setPropertysValue: setPropertysValue,
+        getPropertiesValue: getPropertiesValue,
+        setPropertiesValue: setPropertiesValue,
     };
 }
 
-module.exports = useCssVarable;
-//# sourceMappingURL=useCssVarable.js.map
+module.exports = useCssVariable;
+//# sourceMappingURL=useCssVariable.js.map

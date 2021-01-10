@@ -18,9 +18,11 @@ function ___$insertStyle(css) {
   return css;
 }
 
-var Input = require('./Input.js');
+var Input$1 = require('./Input.js');
+var Textarea = require('./Textarea.js');
 
-
+var Input = Input$1;
+Input.Textarea = Textarea;
 
 module.exports = Input;
 //# sourceMappingURL=index.js.map

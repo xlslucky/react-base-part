@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;"}
+{"version":3,"file":"index.js","sources":["../../src/Input/index.tsx"],"sourcesContent":["import BaseInput from './Input'\nimport Textarea from './Textarea'\n\ntype InputType = typeof BaseInput & {\n  Textarea: typeof Textarea\n}\n\nconst Input = BaseInput as InputType\n\nInput.Textarea = Textarea\n\nexport default Input\n"],"names":["BaseInput"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;AAOA,IAAM,KAAK,GAAGA,OAAsB,CAAA;AAEpC,KAAK,CAAC,QAAQ,GAAG,QAAQ;;;;"}

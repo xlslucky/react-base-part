@@ -24,12 +24,12 @@ var _tslib = require('../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var React__default = _interopDefault(React);
-var useSetVarables = require('../hooks/useSetVarables.js');
+var useSetVariables = require('../hooks/useSetVariables.js');
 
 var ConfigContext = React__default.createContext({});
 var ConfigProvider = function (_a) {
     var children = _a.children, variables = _a.variables;
-    useSetVarables(variables);
+    useSetVariables(variables);
     return jsxRuntime.jsx(ConfigContext.Provider, _tslib.__assign({ value: {} }, { children: children }), void 0);
 };
 
