@@ -1,0 +1,8 @@
+@import "../style/variables.scss";
+
+$menu-prefix-cls: '#{$prefix-class}-menu';
+
+.#{$menu-prefix-cls} {
+  background-color: #fff;
+  padding: 2px 0;
+}

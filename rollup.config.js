@@ -19,6 +19,7 @@ export default {
     './src/Spin/index.tsx',
     './src/Table/index.tsx',
     './src/Select/index.tsx',
+    './src/Menu/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [
