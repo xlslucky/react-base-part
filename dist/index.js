@@ -33,7 +33,8 @@ var index$3$1 = require('./Empty/index.js');
 var index$1$1 = require('./Spin/index.js');
 var index$8 = require('./Table/index.js');
 var index$9 = require('./Select/index.js');
-var index$a = require('./ConfigProvider/index.js');
+var index$a = require('./Menu/index.js');
+var index$b = require('./ConfigProvider/index.js');
 
 
 
@@ -50,5 +51,6 @@ exports.Empty = index$3$1;
 exports.Spin = index$1$1;
 exports.Table = index$8;
 exports.Select = index$9;
-exports.ConfigProvider = index$a;
+exports.Menu = index$a;
+exports.ConfigProvider = index$b;
 //# sourceMappingURL=index.js.map
