@@ -56,7 +56,12 @@ export const Default = () => (
     <div>
       <Dropdown
         overlay={
-          <Menu>
+          <Menu
+            onClick={({ key, item }) => {
+              console.log(key)
+              console.log(item)
+            }}
+          >
             <Menu.Item key={1}>1</Menu.Item>
             <Menu.Item key={2}>2</Menu.Item>
           </Menu>
