@@ -18,8 +18,8 @@ export default function MenuItem({
   return (
     <div
       onClick={onClick}
-      className={classnames([`${PREFIX_CLASS}-menu-item`], {
-        [`${PREFIX_CLASS}-menu-item-active`]: active,
+      className={classnames([`${prefixCls}-menu-item`], {
+        [`${prefixCls}-menu-item-active`]: active,
       })}
     >
       {children}
