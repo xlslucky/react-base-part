@@ -7,7 +7,7 @@ $message-prefix-cls: '#{$prefix-class}-message';
   left: 0;
   top: 8px;
   z-index: 1001;
-  font-size: 14px;
+  font-size: $font-size-base;
   width: 100%;
   pointer-events: none;
 }

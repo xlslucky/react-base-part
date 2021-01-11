@@ -9,6 +9,7 @@ $table-prefix-cls: '#{$prefix-class}-table';
 
 .#{$table-prefix-cls}-container {
   flex: 1;
+  font-size: $font-size-base;
 
   table {
     width: 100%;

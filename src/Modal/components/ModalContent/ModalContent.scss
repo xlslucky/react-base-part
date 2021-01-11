@@ -26,7 +26,7 @@ $modal-prefix-cls: '#{$prefix-class}-modal';
 
 .#{$modal-prefix-cls} {
   color: rgba(0, 0, 0, .85);
-  font-size: 14px;
+  font-size: $font-size-base;
   font-variant: tabular-nums;
   list-style: none;
   pointer-events: none;
