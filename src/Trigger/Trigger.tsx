@@ -145,9 +145,12 @@ const Trigger: React.FC<TriggerProps> = ({
       }
       children.props.onClick(event)
     }
-    if (trigger.includes('click')) {
-      updateVisible(!finalVisible)
-    }
+    // fix: Dropdown hover触发，点击不取消
+    // 不论 trigger 有没有 click 参数，点击都切换弹窗状态
+    updateVisible(!finalVisible)
+    // if (trigger.includes('click')) {
+    //   updateVisible(!finalVisible)
+    // }
   }
 
   function onMouseEnter(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
