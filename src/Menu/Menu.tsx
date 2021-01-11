@@ -13,6 +13,9 @@ const Menu = ({
 }: MenuProps) => (
   <div className={`${prefixCls}-menu`}>
     {React.Children.map(children, option => {
+      if (!option) {
+        return null
+      }
       const { props } = option
       const itemKey = option.key as React.ReactText
       return React.cloneElement(option, {

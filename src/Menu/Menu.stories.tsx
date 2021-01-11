@@ -10,6 +10,7 @@ export default {
 export const Default = () => (
   <Menu>
     <Menu.Item key="1">1</Menu.Item>
+    {undefined}
     <Menu.Item key="2">2</Menu.Item>
   </Menu>
 )
