@@ -1,0 +1,110 @@
+@import '../style/variables.scss';
+@import '../style/inside-color.scss';
+
+$badge-prefix-cls: '#{$prefix-class}-badge';
+
+$badge-height-base: 20px;
+$badge-height-sm: 14px;
+
+.#{$badge-prefix-cls} {
+  position: relative;
+}
+
+.#{$badge-prefix-cls}-dot {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $danger;
+  transform: translate(50%, -50%);
+}
+
+.#{$badge-prefix-cls}-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: $danger;
+  color: #fff;
+  line-height: 1;
+  height: $badge-height-base;
+  min-width: $badge-height-base;
+  font-size: 12px;
+  border-radius: $badge-height-base;
+  padding: 0 6px;
+  transform: translate(50%, -50%);
+
+  &.#{$badge-prefix-cls}-count-size-small {
+    height: $badge-height-sm;
+    min-width: $badge-height-sm;
+    font-size: 12px;
+    border-radius: $badge-height-sm;
+    padding: 0 4px;
+  }
+}
+
+.#{$badge-prefix-cls}-status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: $border-color;
+}
+
+.#{$badge-prefix-cls}-status-text {
+  vertical-align: middle;
+  margin-left: 7px;
+}
+
+// ========内置颜色========
+.#{$badge-prefix-cls}-status-dot-color-magenta {
+  background-color: $magenta-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-red {
+  background-color: $red-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-volcano {
+  background-color: $volcano-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-orange {
+  background-color: $orange-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-gold {
+  background-color: $gold-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-lime {
+  background-color: $lime-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-green {
+  background-color: $green-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-cyan {
+  background-color: $cyan-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-blue {
+  background-color: $blue-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-geekblue {
+  background-color: $geekblue-color;
+}
+
+.#{$badge-prefix-cls}-status-dot-color-purple {
+  background-color: $purple-color;
+}
+// ========内置颜色========

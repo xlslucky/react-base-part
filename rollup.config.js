@@ -21,6 +21,7 @@ export default {
     './src/Select/index.tsx',
     './src/Menu/index.tsx',
     './src/Tag/index.tsx',
+    './src/Badge/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [
