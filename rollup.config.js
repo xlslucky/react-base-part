@@ -20,6 +20,7 @@ export default {
     './src/Table/index.tsx',
     './src/Select/index.tsx',
     './src/Menu/index.tsx',
+    './src/Tag/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [

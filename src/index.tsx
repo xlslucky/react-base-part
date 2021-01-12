@@ -12,5 +12,6 @@ export { default as Spin } from './Spin'
 export { default as Table } from './Table'
 export { default as Select } from './Select'
 export { default as Menu } from './Menu'
+export { default as Tag } from './Tag'
 
 export { default as ConfigProvider } from './ConfigProvider'

@@ -1,0 +1,72 @@
+@import "../style/variables.scss";
+@import '../style/inside-color.scss';
+
+$tag-prefix-cls: '#{$prefix-class}-tag';
+
+.#{$tag-prefix-cls} {
+  display: inline-block;
+  padding: 0 7px;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  font-size: $font-size-sm;
+  line-height: 20px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.#{$tag-prefix-cls}-has-color {
+  border-color: transparent;
+  color: #fff;
+}
+
+@mixin innerColor($i-color, $i-bg-color) {
+  color: $i-color;
+  border-color: $i-color;
+  background-color: $i-bg-color;
+}
+
+// ========内置颜色========
+.#{$tag-prefix-cls}-color-magenta {
+  @include innerColor($magenta-color, $magenta-light-color);
+}
+
+.#{$tag-prefix-cls}-color-red {
+  @include innerColor($red-color, $red-light-color);
+}
+
+.#{$tag-prefix-cls}-color-volcano {
+  @include innerColor($volcano-color, $volcano-light-color);
+}
+
+.#{$tag-prefix-cls}-color-orange {
+  @include innerColor($orange-color, $orange-light-color);
+}
+
+.#{$tag-prefix-cls}-color-gold {
+  @include innerColor($gold-color, $gold-light-color);
+}
+
+.#{$tag-prefix-cls}-color-lime {
+  @include innerColor($lime-color, $lime-light-color);
+}
+
+.#{$tag-prefix-cls}-color-green {
+  @include innerColor($green-color, $green-light-color);
+}
+
+.#{$tag-prefix-cls}-color-cyan {
+  @include innerColor($cyan-color, $cyan-light-color);
+}
+
+.#{$tag-prefix-cls}-color-blue {
+  @include innerColor($blue-color, $blue-light-color);
+}
+
+.#{$tag-prefix-cls}-color-geekblue {
+  @include innerColor($geekblue-color, $geekblue-light-color);
+}
+
+.#{$tag-prefix-cls}-color-purple {
+  @include innerColor($purple-color, $purple-light-color);
+}
+// ========内置颜色========
