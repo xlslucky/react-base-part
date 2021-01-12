@@ -109,11 +109,19 @@ const Trigger: React.FC<TriggerProps> = ({
   React.useEffect(() => {
     if (finalVisible) {
       const node = popupRef.current
-      node?.classList.remove(HIDDEN_CLASS_NAME)
-      if (enterClassName && leaveClassName && calcStyleEnd) {
-        // 进入、离开是需要删除另外一种样式
-        node?.classList.remove(leaveClassName)
-        node?.classList.add(enterClassName)
+      if (calcStyleEnd) {
+        /**
+         * fix: 设置动画className 第二次显示popup会闪动
+         * 解决：需要在 添加 enterClassName 后显示popup
+         */
+        if (enterClassName && leaveClassName) {
+          // 进入、离开是需要删除另外一种样式
+          node?.classList.remove(leaveClassName)
+          node?.classList.add(enterClassName)
+          node?.classList.remove(HIDDEN_CLASS_NAME)
+        } else {
+          node?.classList.remove(HIDDEN_CLASS_NAME)
+        }
       }
     } else {
       const node = popupRef.current
@@ -145,8 +153,10 @@ const Trigger: React.FC<TriggerProps> = ({
       }
       children.props.onClick(event)
     }
-    // fix: Dropdown hover触发，点击不取消
-    // 不论 trigger 有没有 click 参数，点击都切换弹窗状态
+    /**
+     * fix: Dropdown hover触发，点击不取消
+     * 解决：不论 trigger 有没有 click 参数，点击都切换弹窗状态
+     */
     updateVisible(!finalVisible)
     // if (trigger.includes('click')) {
     //   updateVisible(!finalVisible)
