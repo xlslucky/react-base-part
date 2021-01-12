@@ -30,6 +30,7 @@ const Trigger: React.FC<TriggerProps> = ({
   const popupRef = React.useRef<HTMLDivElement>(null)
 
   const HIDDEN_CLASS_NAME = `${prefixCls}-trigger-hidden`
+  const OPACITY_ZERO_CLASS_NAME = `${prefixCls}-trigger-opacity-zero`
 
   const container = getPopupContainer()
 
@@ -58,13 +59,15 @@ const Trigger: React.FC<TriggerProps> = ({
       if (!enterClassName || !leaveClassName) {
         return
       }
-      // 动画结束删除className
+      // 进入动画结束，删除进入动画className
       if (target.classList.contains(enterClassName)) {
         target.classList.remove(enterClassName)
       }
+      // 离开动画结束，删除离开动画className并添加隐藏className
       if (target.classList.contains(leaveClassName)) {
         target.classList.remove(leaveClassName)
         target.classList.add(HIDDEN_CLASS_NAME)
+        // 销毁dom
         if (destroyPopupOnHide) {
           setShowOverlay(false)
         }
@@ -109,24 +112,24 @@ const Trigger: React.FC<TriggerProps> = ({
   React.useEffect(() => {
     if (finalVisible) {
       const node = popupRef.current
-      if (calcStyleEnd) {
+      node?.classList.remove(HIDDEN_CLASS_NAME)
+      if (enterClassName && leaveClassName) {
         /**
-         * fix: 设置动画className 第二次显示popup会闪动
-         * 解决：需要在 添加 enterClassName 后显示popup
+         * fix: 加动画className 第二次划过会闪动
+         * solve: 如果有动画 加个opacity: 0 的样式 等到动画加载出来再删除
          */
-        if (enterClassName && leaveClassName) {
-          // 进入、离开是需要删除另外一种样式
+        node?.classList.add(OPACITY_ZERO_CLASS_NAME)
+        if (calcStyleEnd) {
+          // 删除离开动画，添加进入动画
           node?.classList.remove(leaveClassName)
           node?.classList.add(enterClassName)
-          node?.classList.remove(HIDDEN_CLASS_NAME)
-        } else {
-          node?.classList.remove(HIDDEN_CLASS_NAME)
+          node?.classList.remove(OPACITY_ZERO_CLASS_NAME)
         }
       }
     } else {
       const node = popupRef.current
       if (leaveClassName && enterClassName) {
-        // 进入、离开是需要删除另外一种样式
+        // 删除进入动画，添加离开动画
         node?.classList.remove(enterClassName)
         node?.classList.add(leaveClassName)
       } else {
@@ -135,19 +138,25 @@ const Trigger: React.FC<TriggerProps> = ({
       }
     }
   }, [
-    enterClassName,
-    leaveClassName,
-    calcStyleEnd,
-    finalVisible,
     HIDDEN_CLASS_NAME,
+    OPACITY_ZERO_CLASS_NAME,
+    calcStyleEnd,
+    enterClassName,
+    finalVisible,
+    leaveClassName,
   ])
 
-  // 点击子元素、浮层都走这个方法 切换显示、隐藏状态
-  // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
+  /**
+   * 点击子元素、浮层都走这个方法 切换显示、隐藏状态
+   * 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
+   */
   function onClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const { props } = children
     if (typeof props.onClick === 'function') {
-      // 解决button loading | disabled 状态 点击问题
+      /**
+       * fix: 子元素loading | disabled 状态不允许点击
+       * solve: loading | disabled 直接return
+       */
       if (props.loading || props.disabled) {
         return
       }
@@ -155,7 +164,7 @@ const Trigger: React.FC<TriggerProps> = ({
     }
     /**
      * fix: Dropdown hover触发，点击不取消
-     * 解决：不论 trigger 有没有 click 参数，点击都切换弹窗状态
+     * solve: 不论 trigger 有没有 click 参数，点击都切换弹窗状态
      */
     updateVisible(!finalVisible)
     // if (trigger.includes('click')) {

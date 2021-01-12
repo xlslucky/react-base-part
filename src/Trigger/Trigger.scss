@@ -18,3 +18,7 @@ $trigger-prefix-cls: '#{$prefix-class}-trigger';
 .#{$trigger-prefix-cls}-hidden {
   display: none;
 }
+
+.#{$trigger-prefix-cls}-opacity-zero {
+  opacity: 0;
+}
