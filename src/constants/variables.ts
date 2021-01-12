@@ -8,6 +8,7 @@ export type VariablesType = {
   success: string
   'success-light': string
   'border-color': string
+  'background-color': string
   'background-disabled': string
   'text-strong': string
   'text-second': string
@@ -32,6 +33,7 @@ const variables: VariablesType = {
   success: '#52c41a',
   'success-light': '#efffe8',
   'border-color': '#d9d9d9',
+  'background-color': '#fafafa',
   'background-disabled': '#f5f5f5',
   'text-strong': '#000',
   'text-second': 'rgba(0, 0, 0, .75)',
