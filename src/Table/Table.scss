@@ -53,9 +53,9 @@ $table-prefix-cls: '#{$prefix-class}-table';
       white-space: nowrap;
       border-bottom: 1px solid $border-color;
 
-      > th {
-        font-weight: normal;
-      }
+      // > th {
+      //   font-weight: normal;
+      // }
     }
   }
 
