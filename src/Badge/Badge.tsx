@@ -15,19 +15,21 @@ const Badge: React.FC<BadgeProps> = ({
   color,
   text,
   dot,
+  status,
   prefixCls = PREFIX_CLASS,
 }) => {
   const prefixClass = `${prefixCls}-badge`
 
   return (
     <span className={classnames(prefixClass, className)} style={style}>
-      {color ? (
+      {color || status ? (
         <span
           className={classnames(`${prefixClass}-status-dot`, {
             [`${prefixClass}-status-dot-color-${color}`]:
               color && INNER_COLOR.includes(color),
+            [`${prefixClass}-status-dot-${status}`]: status,
           })}
-        ></span>
+        />
       ) : null}
       {text ? (
         <span className={`${prefixClass}-status-text`}>{text}</span>
@@ -36,7 +38,7 @@ const Badge: React.FC<BadgeProps> = ({
       {typeof count === 'number' ? (
         <>
           {dot ? (
-            <span className={`${prefixClass}-dot`}></span>
+            <span className={`${prefixClass}-dot`} />
           ) : (
             <span
               className={classnames(`${prefixClass}-count`, {

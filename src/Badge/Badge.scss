@@ -8,6 +8,7 @@ $badge-height-sm: 14px;
 
 .#{$badge-prefix-cls} {
   position: relative;
+  display: inline-block;
 }
 
 .#{$badge-prefix-cls}-dot {
@@ -55,7 +56,6 @@ $badge-height-sm: 14px;
   height: 6px;
   border-radius: 50%;
   vertical-align: middle;
-  background-color: $border-color;
 }
 
 .#{$badge-prefix-cls}-status-text {
@@ -63,48 +63,74 @@ $badge-height-sm: 14px;
   margin-left: 7px;
 }
 
-// ========内置颜色========
-.#{$badge-prefix-cls}-status-dot-color-magenta {
-  background-color: $magenta-color;
-}
+// ========内置状态 start========
+.#{$badge-prefix-cls}-status-dot {
+  &.#{$badge-prefix-cls}-status-dot-default {
+    background-color: $border-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-red {
-  background-color: $red-color;
-}
+  &.#{$badge-prefix-cls}-status-dot-success {
+    background-color: $success-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-volcano {
-  background-color: $volcano-color;
-}
+  &.#{$badge-prefix-cls}-status-dot-error {
+    background-color: $danger-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-orange {
-  background-color: $orange-color;
-}
+  &.#{$badge-prefix-cls}-status-dot-processing {
+    background-color: $primary-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-gold {
-  background-color: $gold-color;
+  &.#{$badge-prefix-cls}-status-dot-warning {
+    background-color: $warn-color;
+  }
 }
+// ========内置状态 end========
 
-.#{$badge-prefix-cls}-status-dot-color-lime {
-  background-color: $lime-color;
-}
+// ========内置颜色 start========
+.#{$badge-prefix-cls}-status-dot {
+  &.#{$badge-prefix-cls}-status-dot-color-magenta {
+    background-color: $magenta-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-green {
-  background-color: $green-color;
-}
+  &.#{$badge-prefix-cls}-status-dot-color-red {
+    background-color: $red-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-cyan {
-  background-color: $cyan-color;
-}
+  &.#{$badge-prefix-cls}-status-dot-color-volcano {
+    background-color: $volcano-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-blue {
-  background-color: $blue-color;
-}
+  &.#{$badge-prefix-cls}-status-dot-color-orange {
+    background-color: $orange-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-geekblue {
-  background-color: $geekblue-color;
-}
+  &.#{$badge-prefix-cls}-status-dot-color-gold {
+    background-color: $gold-color;
+  }
 
-.#{$badge-prefix-cls}-status-dot-color-purple {
-  background-color: $purple-color;
+  &.#{$badge-prefix-cls}-status-dot-color-lime {
+    background-color: $lime-color;
+  }
+
+  &.#{$badge-prefix-cls}-status-dot-color-green {
+    background-color: $green-color;
+  }
+
+  &.#{$badge-prefix-cls}-status-dot-color-cyan {
+    background-color: $cyan-color;
+  }
+
+  &.#{$badge-prefix-cls}-status-dot-color-blue {
+    background-color: $blue-color;
+  }
+
+  &.#{$badge-prefix-cls}-status-dot-color-geekblue {
+    background-color: $geekblue-color;
+  }
+
+  &.#{$badge-prefix-cls}-status-dot-color-purple {
+    background-color: $purple-color;
+  }
 }
-// ========内置颜色========
+// ========内置颜色 end========

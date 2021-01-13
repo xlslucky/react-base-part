@@ -9,53 +9,65 @@ export default {
   title: 'Badge',
 }
 
+function InnerChildren() {
+  return (
+    <span
+      style={{
+        display: 'inline-block',
+        width: 40,
+        height: 40,
+        backgroundColor: '#d8d8d8',
+      }}
+    ></span>
+  )
+}
+
 export const Default = () => {
   return (
     <div>
-      <div>
+      <div style={{ marginBottom: 20 }}>
         <Badge count={20} style={{ marginRight: 10 }}>
-          <span
-            style={{
-              display: 'inline-block',
-              width: 40,
-              height: 40,
-              backgroundColor: '#d8d8d8',
-            }}
-          >
-            哈
-          </span>
+          <InnerChildren />
         </Badge>
         <Badge dot count={20} style={{ marginRight: 10 }}>
-          <span
-            style={{
-              display: 'inline-block',
-              width: 40,
-              height: 40,
-              backgroundColor: '#d8d8d8',
-            }}
-          >
-            哈
-          </span>
+          <InnerChildren />
         </Badge>
         <Badge count={200} size="small">
-          <span
-            style={{
-              display: 'inline-block',
-              width: 40,
-              height: 40,
-              backgroundColor: '#d8d8d8',
-            }}
-          >
-            哈
-          </span>
+          <InnerChildren />
         </Badge>
       </div>
       <div>
-        {INNER_COLOR.map(color => (
-          <div key={color}>
-            <Badge color={color} text={color} />
+        <div style={{ float: 'left', marginRight: 50 }}>
+          {INNER_COLOR.map(color => (
+            <div key={color}>
+              <Badge color={color} text={color} />
+            </div>
+          ))}
+        </div>
+        <div>
+          <div>
+            <Badge style={{ marginRight: 7 }} status="default" />
+            <Badge style={{ marginRight: 7 }} status="error" />
+            <Badge style={{ marginRight: 7 }} status="processing" />
+            <Badge style={{ marginRight: 7 }} status="success" />
+            <Badge style={{ marginRight: 7 }} status="warning" />
+            <div>
+              <Badge status="default" text="Default" />
+            </div>
+            <div>
+              <Badge status="error" text="Error" />
+            </div>
+            <div>
+              <Badge status="processing" text="Processing" />
+            </div>
+            <div>
+              <Badge status="success" text="Success" />
+            </div>
+            <div>
+              <Badge status="warning" text="Warning" />
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   )
