@@ -22,6 +22,7 @@ export default {
     './src/Menu/index.tsx',
     './src/Tag/index.tsx',
     './src/Badge/index.tsx',
+    './src/Switch/index.tsx',
     './src/ConfigProvider/index.tsx',
   ],
   output: [

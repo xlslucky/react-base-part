@@ -1,0 +1,112 @@
+@import "../style/variables.scss";
+
+$switch-prefix-cls: '#{$prefix-class}-switch';
+
+$switch-height-base: 22px;
+$switch-width-base: 44px;
+$switch-handle-height-base: 18px;
+$switch-inner-left-base: 25px;
+$switch-inner-right-base: 7px;
+
+$switch-height-sm: 16px;
+$switch-width-sm: 28px;
+$switch-handle-height-sm: 12px;
+$switch-inner-left-sm: 16px;
+$switch-inner-right-sm: 5px;
+
+.#{$switch-prefix-cls} {
+  position: relative;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  padding: 0;
+  cursor: pointer;
+  background-color: $border-color;
+  vertical-align: middle;
+}
+
+.#{$switch-prefix-cls}-handle {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background-color: #fff;
+  border-radius: 50px;
+  transition: left .2s;
+}
+
+.#{$switch-prefix-cls}-inner {
+  // fix: button内子元素不居中问题
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  transition: margin .2s;
+  line-height: 1;
+}
+
+// 属性 大小
+.#{$switch-prefix-cls} {
+  height: $switch-height-base;
+  min-width: $switch-width-base;
+
+  .#{$switch-prefix-cls}-handle {
+    width: $switch-handle-height-base;
+    height: $switch-handle-height-base;
+  }
+
+  &.#{$switch-prefix-cls}-size-small {
+    height: $switch-height-sm;
+    min-width: $switch-width-sm;
+
+    .#{$switch-prefix-cls}-handle {
+      width: $switch-handle-height-sm;
+      height: $switch-handle-height-sm;
+    }
+  }
+}
+
+// 属性 选中/大小/children
+.#{$switch-prefix-cls} {
+  .#{$switch-prefix-cls}-inner {
+    margin: 0 $switch-inner-right-base 0 $switch-inner-left-base;
+  }
+  &.#{$switch-prefix-cls}-size-small {
+    .#{$switch-prefix-cls}-inner {
+      margin: 0 $switch-inner-right-sm 0 $switch-inner-left-sm;
+    }
+  }
+
+  &.#{$switch-prefix-cls}-checked {
+    .#{$switch-prefix-cls}-inner {
+      margin: 0 $switch-inner-left-base 0 $switch-inner-right-base;
+    }
+    &.#{$switch-prefix-cls}-size-small {
+      .#{$switch-prefix-cls}-inner {
+        margin: 0 $switch-inner-left-sm 0 $switch-inner-right-sm;
+      }
+    }
+  }
+}
+
+// 属性 选中/大小
+.#{$switch-prefix-cls} {
+  &.#{$switch-prefix-cls}-checked {
+    background-color: $primary-color;
+    .#{$switch-prefix-cls}-handle {
+      left: calc(100% - 20px);
+    }
+
+    &.#{$switch-prefix-cls}-size-small {
+      .#{$switch-prefix-cls}-handle {
+      left: calc(100% - 14px);
+    }
+    }
+  }
+}
+
+// 属性 禁用
+.#{$switch-prefix-cls} {
+  &.#{$switch-prefix-cls}-disabled {
+    cursor: not-allowed;
+    opacity: .4;
+  }
+}
