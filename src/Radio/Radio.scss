@@ -47,7 +47,7 @@ $radio-prefix-cls: '#{$prefix-class}-radio';
 
   &:checked {
     & + .#{$radio-prefix-cls}-inner {
-      border-color: $primary;
+      border-color: $primary-color;
 
       &::before {
         display: block;
@@ -75,7 +75,7 @@ $radio-prefix-cls: '#{$prefix-class}-radio';
     content: "";
     width: 9px;
     height: 9px;
-    background-color: $primary;
+    background-color: $primary-color;
     transform: translate(-50%, -50%);
     border-radius: 50%;
   }

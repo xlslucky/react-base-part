@@ -47,8 +47,8 @@ $checkbox-prefix-cls: '#{$prefix-class}-checkbox';
 
   &:checked {
     & + .#{$checkbox-prefix-cls}-inner {
-      border-color: $primary;
-      background-color: $primary;
+      border-color: $primary-color;
+      background-color: $primary-color;
 
       &::before {
         display: block;

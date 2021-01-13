@@ -17,7 +17,7 @@ $input-textarea-prefix-cls: '#{$prefix-class}-input-textarea';
     border: 1px solid $border-color;
 
     &:focus-within {
-      border: 1px solid $primary;
+      border: 1px solid $primary-color;
     }
   }
 }

@@ -13,7 +13,7 @@ export const Default = () => {
     <div>
       <Button
         style={{ marginRight: 10 }}
-        onClick={() => message.info('This is an info message')}
+        onClick={() => message.info('This is an info message', 10000)}
       >
         Info
       </Button>

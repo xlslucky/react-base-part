@@ -21,7 +21,7 @@ $loading-prefix-cls: '#{$prefix-class}-loading';
     float: left;
     width: 4px;
     height: 0;
-    background-color: $primary;
+    background-color: $primary-color;
     animation: load-1 0.7s infinite;
 
     & + span {
@@ -80,7 +80,7 @@ $loading-prefix-cls: '#{$prefix-class}-loading';
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background-color: $primary;
+    background-color: $primary-color;
     animation-duration: 0.6s;
     animation-iteration-count: infinite;
   }

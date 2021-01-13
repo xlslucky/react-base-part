@@ -11,7 +11,7 @@ export default {
 
 export const Default = () => {
   return (
-    <ConfigProvider variables={{ primary: 'blue' }}>
+    <ConfigProvider variables={{ 'primary-color': 'blue' }}>
       <Button type="primary" onClick={() => message.success('保存成功')}>
         确定
       </Button>

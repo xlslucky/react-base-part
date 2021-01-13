@@ -13,10 +13,10 @@ $select-prefix-cls: '#{$prefix-class}-select';
   cursor: pointer;
 
   &.#{$select-prefix-cls}-selection-item-active {
-    background-color: $primary-light;
+    background-color: $primary-light-color;
   
     &:hover {
-      background-color: $primary-light;
+      background-color: $primary-light-color;
     }
   }
 

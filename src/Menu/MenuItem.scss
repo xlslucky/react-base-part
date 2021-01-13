@@ -18,10 +18,10 @@ $menu-item-prefix-cls: '#{$prefix-class}-menu-item';
   }
 
   &.#{$menu-item-prefix-cls}-active {
-    background-color: $primary-light;
+    background-color: $primary-light-color;
   
     &:hover {
-      background-color: $primary-light;
+      background-color: $primary-light-color;
     }
   }
 

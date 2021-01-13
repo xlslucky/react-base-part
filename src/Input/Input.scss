@@ -10,7 +10,7 @@ $input-prefix-cls: '#{$prefix-class}-input';
     border: 1px solid $border-color;
 
     &:focus-within {
-      border: 1px solid $primary;
+      border: 1px solid $primary-color;
     }
   }
 }

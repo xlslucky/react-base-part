@@ -18,7 +18,7 @@ $badge-height-sm: 14px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: $danger;
+  background-color: $danger-color;
   transform: translate(50%, -50%);
 }
 
@@ -30,7 +30,7 @@ $badge-height-sm: 14px;
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: $danger;
+  background-color: $danger-color;
   color: #fff;
   line-height: 1;
   height: $badge-height-base;

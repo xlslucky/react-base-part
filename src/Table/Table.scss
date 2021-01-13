@@ -65,7 +65,7 @@ $table-prefix-cls: '#{$prefix-class}-table';
       color: $text-second;
       
       &:nth-child(2n) {
-        background-color: $primary-light;
+        background-color: $primary-light-color;
       }
     }
   }

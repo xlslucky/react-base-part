@@ -32,8 +32,8 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
   }
 
   &.#{$btn-prefix-cls}-theme-primary {
-    border-color: $primary;
-    background-color: $primary;
+    border-color: $primary-color;
+    background-color: $primary-color;
     color: #fff;
 
     .loading-icon {
@@ -42,18 +42,18 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
   }
 
   &.#{$btn-prefix-cls}-theme-ghost {
-    border-color: $primary;
+    border-color: $primary-color;
     background-color: transparent;
-    color: $primary;
+    color: $primary-color;
 
     .loading-icon {
-      color: $primary;
+      color: $primary-color;
     }
   }
 
   &.#{$btn-prefix-cls}-theme-danger {
-    border-color: $danger;
-    background-color: $danger;
+    border-color: $danger-color;
+    background-color: $danger-color;
     color: #fff;
 
     .loading-icon {

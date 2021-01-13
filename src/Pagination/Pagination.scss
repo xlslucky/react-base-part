@@ -38,15 +38,15 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
 
   &:not(.#{$pagination-prefix-cls}-item-disabled):not(.#{$pagination-prefix-cls}-item-not-allowed) {
     &:hover {
-      border-color: $primary;
-      color: $primary;
+      border-color: $primary-color;
+      color: $primary-color;
       font-weight: 500;
     }
   }
 
   &.#{$pagination-prefix-cls}-item-active {
-    border-color: $primary;
-    color: $primary;
+    border-color: $primary-color;
+    color: $primary-color;
     font-weight: 500;
   }
 
@@ -82,7 +82,7 @@ $btn-prefix-cls: '#{$prefix-class}-btn';
   }
 
   .#{$pagination-prefix-cls}-item-jump-icon {
-    color: $primary;
+    color: $primary-color;
     display: none;
   }
   .#{$pagination-prefix-cls}-item-more {

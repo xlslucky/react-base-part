@@ -1,12 +1,12 @@
 export type VariablesType = {
-  primary: string
-  'primary-light': string
-  danger: string
-  'danger-light': string
-  warn: string
-  'warn-light': string
-  success: string
-  'success-light': string
+  'primary-color': string
+  'primary-light-color': string
+  'danger-color': string
+  'danger-light-color': string
+  'warn-color': string
+  'warn-light-color': string
+  'success-color': string
+  'success-light-color': string
   'border-color': string
   'background-color': string
   'background-disabled': string
@@ -24,14 +24,14 @@ export type VariablesType = {
 }
 
 const variables: VariablesType = {
-  primary: '#13c2c2',
-  'primary-light': '#e6fffb',
-  danger: '#f5222d',
-  'danger-light': '#ffeaea',
-  warn: '#fadb14',
-  'warn-light': '#fefbeb',
-  success: '#52c41a',
-  'success-light': '#efffe8',
+  'primary-color': '#13c2c2',
+  'primary-light-color': '#e6fffb',
+  'danger-color': '#f5222d',
+  'danger-light-color': '#ffeaea',
+  'warn-color': '#fadb14',
+  'warn-light-color': '#fefbeb',
+  'success-color': '#52c41a',
+  'success-light-color': '#efffe8',
   'border-color': '#d9d9d9',
   'background-color': '#fafafa',
   'background-disabled': '#f5f5f5',
