@@ -12,5 +12,6 @@ export interface DropdownProps {
   trigger?: TriggerArrayType
   placement?: DropdownPlacementType
   getPopupContainer?: () => HTMLElement
+  clickPopupClose?: boolean
   prefixCls?: string
 }

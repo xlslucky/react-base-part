@@ -70,6 +70,7 @@ const Select: React.FC<SelectProps> = ({
       enterClassName={enterClassName}
       leaveClassName={leaveClassName}
       offset={getOffsetByPlacement('bottomLeft', 4)}
+      clickPopupClose
       popup={
         <div className={`${prefixClass}-selection-wrapper`}>
           <div className={`${prefixClass}-selection`}>

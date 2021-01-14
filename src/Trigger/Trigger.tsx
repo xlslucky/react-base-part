@@ -18,10 +18,11 @@ const Trigger: React.FC<TriggerProps> = ({
   getPopupContainer = () => document.body,
   enterClassName,
   leaveClassName,
-  prefixCls = PREFIX_CLASS,
   offset,
   stretch,
+  clickPopupClose,
   zIndex,
+  prefixCls = PREFIX_CLASS,
 }) => {
   const [innerVisible, setVisible] = React.useState(false)
   const [showOverlay, setShowOverlay] = React.useState(false)
@@ -147,29 +148,33 @@ const Trigger: React.FC<TriggerProps> = ({
   ])
 
   /**
-   * 点击子元素、浮层都走这个方法 切换显示、隐藏状态
-   * 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
+   * 点击子元素 切换显示、隐藏状态
+   *
+   * 废弃：使用clickPopupClose传参控制
+   * // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
    */
   function onClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const { props } = children
+    /**
+     * fix: 子元素loading | disabled 状态不允许点击
+     * solve: loading | disabled 直接return
+     */
+    if (props.loading || props.disabled) {
+      return
+    }
     if (typeof props.onClick === 'function') {
-      /**
-       * fix: 子元素loading | disabled 状态不允许点击
-       * solve: loading | disabled 直接return
-       */
-      if (props.loading || props.disabled) {
-        return
-      }
       children.props.onClick(event)
     }
-    /**
-     * fix: Dropdown hover触发，点击不取消
-     * solve: 不论 trigger 有没有 click 参数，点击都切换弹窗状态
-     */
-    updateVisible(!finalVisible)
-    // if (trigger.includes('click')) {
-    //   updateVisible(!finalVisible)
-    // }
+    if (trigger.includes('click')) {
+      updateVisible(!finalVisible)
+    }
+  }
+
+  // 点击浮层
+  function onClickPopup() {
+    if (clickPopupClose) {
+      updateVisible(!finalVisible)
+    }
   }
 
   function onMouseEnter(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -204,7 +209,7 @@ const Trigger: React.FC<TriggerProps> = ({
         <Portal getContainer={() => container}>
           <div className={`${prefixCls}-trigger-portal`} style={{ zIndex }}>
             <div
-              onClick={onClick}
+              onClick={onClickPopup}
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
               ref={popupRef}

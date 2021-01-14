@@ -27,6 +27,7 @@ export type OffsetType = [offsetX?: OffsetOneType, offsetY?: OffsetOneType]
 export type StretchType = 'width' | 'minWidth' | 'height' | 'minHeight'
 
 export interface TriggerProps {
+  clickPopupClose?: boolean
   placement: PlacementType
   children: React.ReactElement
   destroyPopupOnHide?: boolean

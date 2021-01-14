@@ -19,6 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   trigger = ['hover'],
   placement = 'bottomLeft',
   getPopupContainer,
+  clickPopupClose = true,
   prefixCls = PREFIX_CLASS,
 }) => {
   const [enterClassName, leaveClassName] = getSlideAnimationClassNames(
@@ -28,6 +29,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <Trigger
       prefixCls={prefixCls}
+      clickPopupClose={clickPopupClose}
       popup={
         <div className={classnames(`${prefixCls}-dropdown`)}>{overlay}</div>
       }
