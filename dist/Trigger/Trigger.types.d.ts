@@ -8,6 +8,7 @@ declare type OffsetOneType = number | undefined;
 export declare type OffsetType = [offsetX?: OffsetOneType, offsetY?: OffsetOneType];
 export declare type StretchType = 'width' | 'minWidth' | 'height' | 'minHeight';
 export interface TriggerProps {
+    clickPopupClose?: boolean;
     placement: PlacementType;
     children: React.ReactElement;
     destroyPopupOnHide?: boolean;

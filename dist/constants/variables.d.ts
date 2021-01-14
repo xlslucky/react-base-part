@@ -1,13 +1,14 @@
 export declare type VariablesType = {
-    primary: string;
-    'primary-light': string;
-    danger: string;
-    'danger-light': string;
-    warn: string;
-    'warn-light': string;
-    success: string;
-    'success-light': string;
+    'primary-color': string;
+    'primary-light-color': string;
+    'danger-color': string;
+    'danger-light-color': string;
+    'warn-color': string;
+    'warn-light-color': string;
+    'success-color': string;
+    'success-light-color': string;
     'border-color': string;
+    'background-color': string;
     'background-disabled': string;
     'text-strong': string;
     'text-second': string;

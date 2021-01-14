@@ -31,12 +31,13 @@ var Portal = require('../utils/Portal.js');
 require('./Trigger.scss.js');
 
 var Trigger = function (_a) {
-    var children = _a.children, placement = _a.placement, _b = _a.destroyPopupOnHide, destroyPopupOnHide = _b === void 0 ? false : _b, trigger = _a.trigger, popup = _a.popup, _c = _a.getPopupContainer, getPopupContainer = _c === void 0 ? function () { return document.body; } : _c, enterClassName = _a.enterClassName, leaveClassName = _a.leaveClassName, _d = _a.prefixCls, prefixCls = _d === void 0 ? index.PREFIX_CLASS : _d, offset = _a.offset, stretch = _a.stretch, zIndex = _a.zIndex;
+    var children = _a.children, placement = _a.placement, _b = _a.destroyPopupOnHide, destroyPopupOnHide = _b === void 0 ? false : _b, trigger = _a.trigger, popup = _a.popup, _c = _a.getPopupContainer, getPopupContainer = _c === void 0 ? function () { return document.body; } : _c, enterClassName = _a.enterClassName, leaveClassName = _a.leaveClassName, offset = _a.offset, stretch = _a.stretch, clickPopupClose = _a.clickPopupClose, zIndex = _a.zIndex, _d = _a.prefixCls, prefixCls = _d === void 0 ? index.PREFIX_CLASS : _d;
     var _e = React__default.useState(false), innerVisible = _e[0], setVisible = _e[1];
     var _f = React__default.useState(false), showOverlay = _f[0], setShowOverlay = _f[1];
     var childrenRef = React__default.useRef(null);
     var popupRef = React__default.useRef(null);
     var HIDDEN_CLASS_NAME = prefixCls + "-trigger-hidden";
+    var OPACITY_ZERO_CLASS_NAME = prefixCls + "-trigger-opacity-zero";
     var container = getPopupContainer();
     var finalVisible = React__default.useMemo(function () {
         return innerVisible;
@@ -60,13 +61,15 @@ var Trigger = function (_a) {
             if (!enterClassName || !leaveClassName) {
                 return;
             }
-            // 动画结束删除className
+            // 进入动画结束，删除进入动画className
             if (target.classList.contains(enterClassName)) {
                 target.classList.remove(enterClassName);
             }
+            // 离开动画结束，删除离开动画className并添加隐藏className
             if (target.classList.contains(leaveClassName)) {
                 target.classList.remove(leaveClassName);
                 target.classList.add(HIDDEN_CLASS_NAME);
+                // 销毁dom
                 if (destroyPopupOnHide) {
                     setShowOverlay(false);
                 }
@@ -105,16 +108,24 @@ var Trigger = function (_a) {
         if (finalVisible) {
             var node = popupRef.current;
             node === null || node === void 0 ? void 0 : node.classList.remove(HIDDEN_CLASS_NAME);
-            if (enterClassName && leaveClassName && calcStyleEnd) {
-                // 进入、离开是需要删除另外一种样式
-                node === null || node === void 0 ? void 0 : node.classList.remove(leaveClassName);
-                node === null || node === void 0 ? void 0 : node.classList.add(enterClassName);
+            if (enterClassName && leaveClassName) {
+                /**
+                 * fix: 加动画className 第二次划过会闪动
+                 * solve: 如果有动画 加个opacity: 0 的样式 等到动画加载出来再删除
+                 */
+                node === null || node === void 0 ? void 0 : node.classList.add(OPACITY_ZERO_CLASS_NAME);
+                if (calcStyleEnd) {
+                    // 删除离开动画，添加进入动画
+                    node === null || node === void 0 ? void 0 : node.classList.remove(leaveClassName);
+                    node === null || node === void 0 ? void 0 : node.classList.add(enterClassName);
+                    node === null || node === void 0 ? void 0 : node.classList.remove(OPACITY_ZERO_CLASS_NAME);
+                }
             }
         }
         else {
             var node = popupRef.current;
             if (leaveClassName && enterClassName) {
-                // 进入、离开是需要删除另外一种样式
+                // 删除进入动画，添加离开动画
                 node === null || node === void 0 ? void 0 : node.classList.remove(enterClassName);
                 node === null || node === void 0 ? void 0 : node.classList.add(leaveClassName);
             }
@@ -124,24 +135,38 @@ var Trigger = function (_a) {
             }
         }
     }, [
-        enterClassName,
-        leaveClassName,
-        calcStyleEnd,
-        finalVisible,
         HIDDEN_CLASS_NAME,
+        OPACITY_ZERO_CLASS_NAME,
+        calcStyleEnd,
+        enterClassName,
+        finalVisible,
+        leaveClassName,
     ]);
-    // 点击子元素、浮层都走这个方法 切换显示、隐藏状态
-    // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
+    /**
+     * 点击子元素 切换显示、隐藏状态
+     *
+     * 废弃：使用clickPopupClose传参控制
+     * // 如需点击浮层不关闭，在 popup 上写 onClick={e => e.stopPropagation()} 即可
+     */
     function onClick(event) {
         var props = children.props;
+        /**
+         * fix: 子元素loading | disabled 状态不允许点击
+         * solve: loading | disabled 直接return
+         */
+        if (props.loading || props.disabled) {
+            return;
+        }
         if (typeof props.onClick === 'function') {
-            // 解决button loading | disabled 状态 点击问题
-            if (props.loading || props.disabled) {
-                return;
-            }
             children.props.onClick(event);
         }
         if (trigger.includes('click')) {
+            updateVisible(!finalVisible);
+        }
+    }
+    // 点击浮层
+    function onClickPopup() {
+        if (clickPopupClose) {
             updateVisible(!finalVisible);
         }
     }
@@ -168,7 +193,7 @@ var Trigger = function (_a) {
                 onMouseEnter: onMouseEnter,
                 onMouseLeave: onMouseLeave,
             }),
-            showPortal ? (jsxRuntime.jsx(Portal, _tslib.__assign({ getContainer: function () { return container; } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-trigger-portal", style: { zIndex: zIndex } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ onClick: onClick, onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, ref: popupRef, style: triggerStyle, className: prefixCls + "-trigger-container" }, { children: popup }), void 0) }), void 0) }), void 0)) : null] }, void 0));
+            showPortal ? (jsxRuntime.jsx(Portal, _tslib.__assign({ getContainer: function () { return container; } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-trigger-portal", style: { zIndex: zIndex } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ onClick: onClickPopup, onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, ref: popupRef, style: triggerStyle, className: prefixCls + "-trigger-container" }, { children: popup }), void 0) }), void 0) }), void 0)) : null] }, void 0));
 };
 
 module.exports = Trigger;

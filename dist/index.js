@@ -34,7 +34,10 @@ var index$1$1 = require('./Spin/index.js');
 var index$8 = require('./Table/index.js');
 var index$9 = require('./Select/index.js');
 var index$a = require('./Menu/index.js');
-var index$b = require('./ConfigProvider/index.js');
+var index$b = require('./Tag/index.js');
+var index$c = require('./Badge/index.js');
+var index$d = require('./Switch/index.js');
+var index$e = require('./ConfigProvider/index.js');
 
 
 
@@ -52,5 +55,8 @@ exports.Spin = index$1$1;
 exports.Table = index$8;
 exports.Select = index$9;
 exports.Menu = index$a;
-exports.ConfigProvider = index$b;
+exports.Tag = index$b;
+exports.Badge = index$c;
+exports.Switch = index$d;
+exports.ConfigProvider = index$e;
 //# sourceMappingURL=index.js.map

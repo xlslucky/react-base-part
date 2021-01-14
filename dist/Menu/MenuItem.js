@@ -28,9 +28,9 @@ require('./MenuItem.scss.js');
 
 function MenuItem(_a) {
     var _b;
-    var children = _a.children, onClick = _a.onClick, active = _a.active, _c = _a.prefixCls;
-    return (jsxRuntime.jsx("div", _tslib.__assign({ onClick: onClick, className: classnames([index.PREFIX_CLASS + "-menu-item"], (_b = {},
-            _b[index.PREFIX_CLASS + "-menu-item-active"] = active,
+    var children = _a.children, onClick = _a.onClick, active = _a.active, _c = _a.prefixCls, prefixCls = _c === void 0 ? index.PREFIX_CLASS : _c;
+    return (jsxRuntime.jsx("div", _tslib.__assign({ onClick: onClick, className: classnames([prefixCls + "-menu-item"], (_b = {},
+            _b[prefixCls + "-menu-item-active"] = active,
             _b)) }, { children: children }), void 0));
 }
 

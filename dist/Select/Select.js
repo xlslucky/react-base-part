@@ -78,7 +78,7 @@ var Select = function (_a) {
         }
         setInnerValue(value);
     }; };
-    return (jsxRuntime.jsx(index$1, _tslib.__assign({ trigger: ['click'], placement: "bottomLeft", stretch: "width", enterClassName: enterClassName, leaveClassName: leaveClassName, offset: trigger.getOffsetByPlacement('bottomLeft', 4), popup: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-selection-wrapper" }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-selection" }, { children: React__default.Children.map(children, function (option) {
+    return (jsxRuntime.jsx(index$1, _tslib.__assign({ trigger: ['click'], placement: "bottomLeft", stretch: "width", enterClassName: enterClassName, leaveClassName: leaveClassName, offset: trigger.getOffsetByPlacement('bottomLeft', 4), clickPopupClose: true, popup: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-selection-wrapper" }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-selection" }, { children: React__default.Children.map(children, function (option) {
                     var _a;
                     var props = option.props;
                     var checked = innerValue === props.value;

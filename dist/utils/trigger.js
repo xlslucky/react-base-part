@@ -66,6 +66,20 @@ var PLACEMENT_MAP = {
     leftCenter: 'left-center',
     leftBottom: 'left-bottom',
 };
+var PLACEMENT_MAP_SUMMARIZE = {
+    topLeft: 'top',
+    topCenter: 'top',
+    topRight: 'top',
+    bottomLeft: 'bottom',
+    bottomCenter: 'bottom',
+    bottomRight: 'bottom',
+    rightTop: 'right',
+    rightCenter: 'right',
+    rightBottom: 'right',
+    leftTop: 'left',
+    leftCenter: 'left',
+    leftBottom: 'left',
+};
 var getOffsetByPlacement = function (placement, offset) {
     if (['topLeft', 'topCenter', 'topRight'].includes(placement)) {
         return [0, -offset];
@@ -83,6 +97,7 @@ var getOffsetByPlacement = function (placement, offset) {
 };
 
 exports.PLACEMENT_MAP = PLACEMENT_MAP;
+exports.PLACEMENT_MAP_SUMMARIZE = PLACEMENT_MAP_SUMMARIZE;
 exports.getArrowPlace = getArrowPlace;
 exports.getOffsetByPlacement = getOffsetByPlacement;
 exports.getSlideAnimationClassNames = getSlideAnimationClassNames;

@@ -29,17 +29,20 @@ require('./Menu.scss.js');
 
 var Menu = function (_a) {
     var children = _a.children, _b = _a.defaultSelectedKeys, defaultSelectedKeys = _b === void 0 ? [] : _b, onClick = _a.onClick, _c = _a.prefixCls, prefixCls = _c === void 0 ? index.PREFIX_CLASS : _c;
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-menu" }, { children: React__default.Children.map(children, function (item) {
-            var itemKey = item.key;
-            return (jsxRuntime.jsx(jsxRuntime.Fragment, { children: React__default.cloneElement(item, {
-                    onClick: function () {
-                        if (typeof onClick === 'function') {
-                            onClick({ item: item, key: itemKey });
-                        }
-                    },
-                    prefixCls: prefixCls,
-                    active: defaultSelectedKeys === null || defaultSelectedKeys === void 0 ? void 0 : defaultSelectedKeys.includes(itemKey),
-                }) }, void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-menu" }, { children: React__default.Children.map(children, function (option) {
+            if (!option) {
+                return null;
+            }
+            var props = option.props;
+            var itemKey = option.key;
+            return React__default.cloneElement(option, _tslib.__assign(_tslib.__assign({}, props), { onClick: function (event) {
+                    if (typeof props.onClick === 'function') {
+                        props.onClick(event);
+                    }
+                    if (typeof onClick === 'function') {
+                        onClick({ item: option, key: itemKey });
+                    }
+                }, prefixCls: prefixCls, active: defaultSelectedKeys === null || defaultSelectedKeys === void 0 ? void 0 : defaultSelectedKeys.includes(itemKey) }));
         }) }), void 0));
 };
 

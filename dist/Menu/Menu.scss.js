@@ -18,5 +18,5 @@ function ___$insertStyle(css) {
   return css;
 }
 
-___$insertStyle(".rbp-menu {\n  background-color: #fff;\n  padding: 2px 0;\n}");
+___$insertStyle(".rbp-menu {\n  background-color: #fff;\n  padding: 2px 0;\n  font-size: var(--font-size-base);\n}");
 //# sourceMappingURL=Menu.scss.js.map

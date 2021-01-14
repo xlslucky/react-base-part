@@ -21,6 +21,20 @@ function ___$insertStyle(css) {
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var PREFIX_CLASS = 'rbp';
+var INNER_COLOR = [
+    'magenta',
+    'red',
+    'volcano',
+    'orange',
+    'gold',
+    'lime',
+    'green',
+    'cyan',
+    'blue',
+    'geekblue',
+    'purple',
+];
 
+exports.INNER_COLOR = INNER_COLOR;
 exports.PREFIX_CLASS = PREFIX_CLASS;
 //# sourceMappingURL=index.js.map

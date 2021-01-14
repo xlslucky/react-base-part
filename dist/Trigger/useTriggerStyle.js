@@ -49,7 +49,16 @@ function useTriggerStyle(_a) {
             return {};
         }
         var _a = childrenRef.current.getBoundingClientRect(), childrenWidth = _a.width, childrenHeight = _a.height;
-        var _b = popupRef.current.getBoundingClientRect(), PopupWidth = _b.width, PopupHeight = _b.height;
+        /**
+         * fix: 快速、多次划过，位置计算错误
+         * cause: 设置放大/缩小动画 DOMRect 返回 height/width 不固定
+         * solve: 获取offsetHeight/offsetWidth
+         */
+        // const {
+        //   width: PopupWidth,
+        //   height: PopupHeight,
+        // } = popupRef.current.getBoundingClientRect()
+        var _b = popupRef.current, PopupHeight = _b.offsetHeight, PopupWidth = _b.offsetWidth;
         var baseStyle = utils.getBaseStyle({
             placement: placement,
             childrenFullLeft: childrenFullLeft,

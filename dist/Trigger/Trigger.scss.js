@@ -18,5 +18,5 @@ function ___$insertStyle(css) {
   return css;
 }
 
-___$insertStyle(".rbp-trigger-portal {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  z-index: 1001;\n}\n\n.rbp-trigger-container {\n  position: absolute;\n}\n\n.rbp-trigger-hidden {\n  display: none;\n}");
+___$insertStyle(".rbp-trigger-portal {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  z-index: 1001;\n}\n\n.rbp-trigger-container {\n  position: absolute;\n}\n\n.rbp-trigger-hidden {\n  display: none;\n}\n\n.rbp-trigger-opacity-zero {\n  opacity: 0;\n}");
 //# sourceMappingURL=Trigger.scss.js.map
