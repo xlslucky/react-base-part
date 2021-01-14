@@ -61,10 +61,19 @@ function useTriggerStyle({
       width: childrenWidth,
       height: childrenHeight,
     } = childrenRef.current.getBoundingClientRect()
+    /**
+     * fix: 快速、多次划过，位置计算错误
+     * cause: 设置放大/缩小动画 DOMRect 返回 height/width 不固定
+     * solve: 获取offsetHeight/offsetWidth
+     */
+    // const {
+    //   width: PopupWidth,
+    //   height: PopupHeight,
+    // } = popupRef.current.getBoundingClientRect()
     const {
-      width: PopupWidth,
-      height: PopupHeight,
-    } = popupRef.current.getBoundingClientRect()
+      offsetHeight: PopupHeight,
+      offsetWidth: PopupWidth,
+    } = popupRef.current
     const baseStyle = getBaseStyle({
       placement,
       childrenFullLeft,
