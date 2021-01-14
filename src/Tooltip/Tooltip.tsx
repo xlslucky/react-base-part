@@ -6,7 +6,10 @@ import { TooltipProps } from './Tooltip.types'
 import Trigger from '../Trigger/Trigger'
 import TriggerArrow from '../components/TriggerArrow'
 
-import { getSlideAnimationClassNames, PLACEMENT_MAP } from '../utils/trigger'
+import {
+  getSlideAnimationClassNames,
+  PLACEMENT_MAP_SUMMARIZE,
+} from '../utils/trigger'
 
 import './Tooltip.scss'
 import '../style/animation/slide.scss'
@@ -35,7 +38,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         <div
           className={classnames(
             `${prefixCls}-tooltip`,
-            `${prefixCls}-tooltip-${PLACEMENT_MAP[placement]}`
+            `${prefixCls}-tooltip-${PLACEMENT_MAP_SUMMARIZE[placement]}`
           )}
         >
           <div className={`${prefixCls}-tooltip-content`}>

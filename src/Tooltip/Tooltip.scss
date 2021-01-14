@@ -5,24 +5,19 @@ $tooltip-prefix-cls: '#{$prefix-class}-tooltip';
 $bg-color: rgba(0, 0, 0, .75);
 
 .#{$tooltip-prefix-cls} {
-  &.#{$tooltip-prefix-cls}-top-left,
-  &.#{$tooltip-prefix-cls}-top-center,
-  &.#{$tooltip-prefix-cls}-top-right {
+  &.#{$tooltip-prefix-cls}-top {
     padding-bottom: 8px;
   }
-  &.#{$tooltip-prefix-cls}-right-top,
-  &.#{$tooltip-prefix-cls}-right-center,
-  &.#{$tooltip-prefix-cls}-right-bottom {
+
+  &.#{$tooltip-prefix-cls}-right {
     padding-left: 8px;
   }
-  &.#{$tooltip-prefix-cls}-bottom-left,
-  &.#{$tooltip-prefix-cls}-bottom-center,
-  &.#{$tooltip-prefix-cls}-bottom-right {
+
+  &.#{$tooltip-prefix-cls}-bottom {
     padding-top: 8px;
   }
-  &.#{$tooltip-prefix-cls}-left-top,
-  &.#{$tooltip-prefix-cls}-left-center,
-  &.#{$tooltip-prefix-cls}-left-bottom {
+
+  &.#{$tooltip-prefix-cls}-left{
     padding-right: 8px;
   }
 }

@@ -51,6 +51,21 @@ export const PLACEMENT_MAP: Record<PlacementType, string> = {
   leftBottom: 'left-bottom',
 }
 
+export const PLACEMENT_MAP_SUMMARIZE: Record<PlacementType, string> = {
+  topLeft: 'top',
+  topCenter: 'top',
+  topRight: 'top',
+  bottomLeft: 'bottom',
+  bottomCenter: 'bottom',
+  bottomRight: 'bottom',
+  rightTop: 'right',
+  rightCenter: 'right',
+  rightBottom: 'right',
+  leftTop: 'left',
+  leftCenter: 'left',
+  leftBottom: 'left',
+}
+
 export const getOffsetByPlacement = (
   placement: PlacementType,
   offset: number
