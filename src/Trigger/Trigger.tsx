@@ -40,9 +40,9 @@ const Trigger: React.FC<TriggerProps> = ({
   // 受外部控制
   const controlled = typeof visible === 'boolean'
 
-  const finalVisible = React.useMemo(() => {
+  const finalVisible = React.useMemo<boolean>(() => {
     if (controlled) {
-      return visible
+      return visible as boolean
     }
     return innerVisible
   }, [controlled, innerVisible, visible])
