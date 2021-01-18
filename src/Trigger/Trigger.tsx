@@ -22,6 +22,8 @@ const Trigger: React.FC<TriggerProps> = ({
   stretch,
   clickPopupClose,
   zIndex,
+  visible,
+  onVisibleChange,
   prefixCls = PREFIX_CLASS,
 }) => {
   const [innerVisible, setVisible] = React.useState(false)
@@ -35,12 +37,21 @@ const Trigger: React.FC<TriggerProps> = ({
 
   const container = getPopupContainer()
 
+  // 受外部控制
+  const controlled = typeof visible === 'boolean'
+
   const finalVisible = React.useMemo(() => {
+    if (controlled) {
+      return visible
+    }
     return innerVisible
-  }, [innerVisible])
+  }, [controlled, innerVisible, visible])
 
   function updateVisible(nextVisible: boolean) {
     setVisible(nextVisible)
+    if (typeof onVisibleChange === 'function') {
+      onVisibleChange(nextVisible)
+    }
   }
 
   // 点击子元素、浮层以外元素 关闭浮层

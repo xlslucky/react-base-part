@@ -42,4 +42,6 @@ export interface TriggerProps {
   // 拉伸
   stretch?: StretchType
   zIndex?: number
+  visible?: boolean
+  onVisibleChange?: (visible: boolean) => void
 }
