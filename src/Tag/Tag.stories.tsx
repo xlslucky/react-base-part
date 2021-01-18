@@ -5,6 +5,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Tag',
+  component: Tag,
 }
 
 export const Default = () => (

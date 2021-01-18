@@ -7,6 +7,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Badge',
+  component: Badge,
 }
 
 function InnerChildren() {

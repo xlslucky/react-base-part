@@ -5,6 +5,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Switch',
+  component: Switch,
 }
 
 export const Default = () => (

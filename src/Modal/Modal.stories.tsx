@@ -1,5 +1,6 @@
 import React from 'react'
 import Modal from '.'
+import confirm from './components/confirm'
 
 import Button from '../Button'
 
@@ -7,6 +8,8 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Modal',
+  component: Modal,
+  subcomponents: { confirm },
 }
 
 export const Default = () => {

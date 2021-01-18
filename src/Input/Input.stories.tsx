@@ -1,10 +1,13 @@
 import React from 'react'
 import Input from '.'
+import Textarea from './Textarea'
 
 import '../style/storybook.scss'
 
 export default {
   title: 'Input',
+  component: Input,
+  subcomponents: { Textarea },
 }
 
 export const Default = () => (

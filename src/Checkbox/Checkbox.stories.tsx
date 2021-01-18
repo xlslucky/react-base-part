@@ -1,10 +1,13 @@
 import React from 'react'
 import Checkbox from '.'
+import CheckboxGroup from './CheckboxGroup'
 
 import '../style/storybook.scss'
 
 export default {
   title: 'Checkbox',
+  component: Checkbox,
+  subcomponents: { CheckboxGroup },
 }
 
 export const Default = () => {

@@ -1,10 +1,13 @@
 import React from 'react'
 import Radio from '.'
+import RadioGroup from './RadioGroup'
 
 import '../style/storybook.scss'
 
 export default {
   title: 'Radio',
+  component: Radio,
+  subcomponents: { RadioGroup },
 }
 
 export const Default = () => (

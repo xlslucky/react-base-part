@@ -5,6 +5,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Pagination',
+  component: Pagination,
 }
 
 export const Default = () => {

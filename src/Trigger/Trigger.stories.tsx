@@ -9,6 +9,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Trigger',
+  component: Trigger,
 }
 
 // const SLIDE_DOWN = {

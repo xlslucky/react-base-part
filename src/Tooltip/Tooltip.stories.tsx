@@ -9,6 +9,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Tooltip',
+  component: Tooltip,
 }
 
 type GroupType = Partial<TooltipProps & { label: string }>[]

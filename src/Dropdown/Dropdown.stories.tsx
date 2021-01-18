@@ -11,6 +11,7 @@ import { TriggerArrayType } from '../Trigger/Trigger.types'
 
 export default {
   title: 'Dropdown',
+  component: Dropdown,
 }
 
 type GroupType = Partial<DropdownProps & { label: string }>[]

@@ -5,6 +5,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Menu',
+  component: Menu,
 }
 
 export const Default = () => (

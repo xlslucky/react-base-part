@@ -7,6 +7,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'ConfigProvider',
+  component: ConfigProvider,
 }
 
 export const Default = () => {

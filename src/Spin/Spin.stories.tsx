@@ -5,6 +5,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Spin',
+  components: Spin,
 }
 
 export const Default = () => (

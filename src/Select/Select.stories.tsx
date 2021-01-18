@@ -1,10 +1,13 @@
 import React from 'react'
 import Select from '.'
+import Option from './Option'
 
 import '../style/storybook.scss'
 
 export default {
   title: 'Select',
+  component: Select,
+  subcomponents: { Option },
 }
 
 export const Default = () => (

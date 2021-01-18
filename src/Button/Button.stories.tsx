@@ -7,6 +7,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Button',
+  component: Button,
 }
 
 type ExampleProps = Array<{
