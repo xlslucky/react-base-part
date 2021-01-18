@@ -20,6 +20,8 @@ const Dropdown: React.FC<DropdownProps> = ({
   placement = 'bottomLeft',
   getPopupContainer,
   clickPopupClose = true,
+  visible,
+  onVisibleChange,
   prefixCls = PREFIX_CLASS,
 }) => {
   const [enterClassName, leaveClassName] = getSlideAnimationClassNames(
@@ -40,6 +42,8 @@ const Dropdown: React.FC<DropdownProps> = ({
       getPopupContainer={getPopupContainer}
       offset={getOffsetByPlacement(placement, 4)}
       stretch="minWidth"
+      visible={visible}
+      onVisibleChange={onVisibleChange}
     >
       {React.cloneElement(children, { disabled })}
     </Trigger>
