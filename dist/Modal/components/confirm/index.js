@@ -40,9 +40,9 @@ var ReactDOM = _interopDefault(require('react-dom'));
 var index$2 = require('../ModalContent/index.js');
 require('./confirm.scss.js');
 
-var prefixCls = index.PREFIX_CLASS;
 function Modal(_a) {
     var title = _a.title, content = _a.content, onCancel = _a.onCancel, onOk = _a.onOk, removeContainer = _a.removeContainer;
+    var prefixClass = index.PREFIX_CLASS + "-modal-confirm";
     var _b = React__default.useState(false), loading = _b[0], setLoading = _b[1];
     function handleOk() {
         return _tslib.__awaiter(this, void 0, void 0, function () {
@@ -74,11 +74,11 @@ function Modal(_a) {
         }
         removeContainer();
     }
-    return (jsxRuntime.jsx(index$2, _tslib.__assign({ width: 416 }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixCls + "-modal-confirm" }, { children: [jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixCls + "-modal-confirm-body" }, { children: [jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixCls + "-modal-confirm-body-header" }, { children: [jsxRuntime.jsx(IconExclamationCircleFilled, { className: prefixCls + "-modal-confirm-exclamation-icon" }, void 0),
-                                jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-modal-confirm-body-title" }, { children: title }), void 0)] }), void 0),
-                        jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-modal-confirm-body-content" }, { children: content }), void 0)] }), void 0),
-                jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixCls + "-modal-confirm-btns" }, { children: [jsxRuntime.jsx(index$1, _tslib.__assign({ className: prefixCls + "-modal-confirm-btn", onClick: handleCancel }, { children: "\u53D6\u6D88" }), void 0),
-                        jsxRuntime.jsx(index$1, _tslib.__assign({ loading: loading, className: prefixCls + "-modal-confirm-btn", type: "primary", onClick: handleOk }, { children: "\u786E\u5B9A" }), void 0)] }), void 0)] }), void 0) }), void 0));
+    return (jsxRuntime.jsx(index$2, _tslib.__assign({ width: 416 }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixClass }, { children: [jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixClass + "-body" }, { children: [jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixClass + "-body-header" }, { children: [jsxRuntime.jsx(IconExclamationCircleFilled, { className: prefixClass + "-exclamation-icon" }, void 0),
+                                jsxRuntime.jsx("span", _tslib.__assign({ className: prefixClass + "-body-title" }, { children: title }), void 0)] }), void 0),
+                        jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-body-content" }, { children: content }), void 0)] }), void 0),
+                jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixClass + "-btns" }, { children: [jsxRuntime.jsx(index$1, _tslib.__assign({ className: prefixClass + "-btn", onClick: handleCancel }, { children: "\u53D6\u6D88" }), void 0),
+                        jsxRuntime.jsx(index$1, _tslib.__assign({ loading: loading, className: prefixClass + "-btn", type: "primary", onClick: handleOk }, { children: "\u786E\u5B9A" }), void 0)] }), void 0)] }), void 0) }), void 0));
 }
 function confirm(_a) {
     var _b = _a.getContainer, getContainer = _b === void 0 ? function () { return document.body; } : _b, props = _tslib.__rest(_a, ["getContainer"]);

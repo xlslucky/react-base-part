@@ -24,7 +24,6 @@ var _tslib = require('../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var React__default = _interopDefault(React);
-var classnames = _interopDefault(require('classnames'));
 var index = require('../constants/index.js');
 require('../components/Icons/components/IconLoading.js');
 require('../components/Icons/components/IconCheckCircleFilled.js');
@@ -42,7 +41,8 @@ var index$2 = require('./components/ModalContent/index.js');
 require('./Modal.scss.js');
 
 var Modal = function (_a) {
-    var title = _a.title, visible = _a.visible, children = _a.children, _b = _a.width, width = _b === void 0 ? 520 : _b, onCancel = _a.onCancel, onOk = _a.onOk, className = _a.className, _c = _a.closable, closable = _c === void 0 ? true : _c, _d = _a.maskClosable, maskClosable = _d === void 0 ? true : _d, confirmLoading = _a.confirmLoading, footer = _a.footer, _e = _a.okText, okText = _e === void 0 ? '确定' : _e, _f = _a.cancelText, cancelText = _f === void 0 ? '取消' : _f, _g = _a.getContainer, getContainer = _g === void 0 ? function () { return document.body; } : _g, _h = _a.prefixCls, prefixCls = _h === void 0 ? index.PREFIX_CLASS : _h, props = _tslib.__rest(_a, ["title", "visible", "children", "width", "onCancel", "onOk", "className", "closable", "maskClosable", "confirmLoading", "footer", "okText", "cancelText", "getContainer", "prefixCls"]);
+    var title = _a.title, visible = _a.visible, children = _a.children, _b = _a.width, width = _b === void 0 ? 520 : _b, onCancel = _a.onCancel, onOk = _a.onOk, _c = _a.closable, closable = _c === void 0 ? true : _c, _d = _a.maskClosable, maskClosable = _d === void 0 ? true : _d, confirmLoading = _a.confirmLoading, footer = _a.footer, _e = _a.okText, okText = _e === void 0 ? '确定' : _e, _f = _a.cancelText, cancelText = _f === void 0 ? '取消' : _f, _g = _a.getContainer, getContainer = _g === void 0 ? function () { return document.body; } : _g, _h = _a.prefixCls, prefixCls = _h === void 0 ? index.PREFIX_CLASS : _h, props = _tslib.__rest(_a, ["title", "visible", "children", "width", "onCancel", "onOk", "closable", "maskClosable", "confirmLoading", "footer", "okText", "cancelText", "getContainer", "prefixCls"]);
+    var prefixClass = prefixCls + "-modal";
     var _j = React__default.useState(false), primaryLoading = _j[0], setPrimaryLoading = _j[1];
     var container = getContainer();
     function handleOk(event) {
@@ -68,11 +68,11 @@ var Modal = function (_a) {
         });
     }
     function renderModal() {
-        return (jsxRuntime.jsxs(index$2, _tslib.__assign({ width: width, onClickMask: onCancel, maskClosable: maskClosable, className: classnames(className, prefixCls + "-modal"), prefixCls: prefixCls }, props, { children: [closable ? (jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-modal-close-btn", onClick: onCancel }, { children: jsxRuntime.jsx("span", _tslib.__assign({ className: prefixCls + "-modal-close" }, { children: jsxRuntime.jsx(IconClose, { className: prefixCls + "-modal-close-icon" }, void 0) }), void 0) }), void 0)) : null,
-                title ? (jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-modal-header" }, { children: title }), void 0)) : null,
-                jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-modal-body" }, { children: children }), void 0),
-                footer === null ? null : (jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-modal-footer" }, { children: footer || (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx(index$1, _tslib.__assign({ onClick: onCancel, className: prefixCls + "-modal-opt-btn" }, { children: cancelText }), void 0),
-                            jsxRuntime.jsx(index$1, _tslib.__assign({ onClick: handleOk, className: prefixCls + "-modal-opt-btn", type: "primary", loading: primaryLoading || confirmLoading }, { children: okText }), void 0)] }, void 0)) }), void 0))] }), void 0));
+        return (jsxRuntime.jsxs(index$2, _tslib.__assign({ width: width, onClickMask: onCancel, maskClosable: maskClosable, prefixCls: prefixCls }, props, { children: [closable ? (jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-close-btn", onClick: onCancel }, { children: jsxRuntime.jsx("span", _tslib.__assign({ className: prefixClass + "-close" }, { children: jsxRuntime.jsx(IconClose, { className: prefixClass + "-close-icon" }, void 0) }), void 0) }), void 0)) : null,
+                title ? jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-header" }, { children: title }), void 0) : null,
+                jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-body" }, { children: children }), void 0),
+                footer === null ? null : (jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-footer" }, { children: footer || (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx(index$1, _tslib.__assign({ onClick: onCancel, className: prefixClass + "-opt-btn" }, { children: cancelText }), void 0),
+                            jsxRuntime.jsx(index$1, _tslib.__assign({ onClick: handleOk, className: prefixClass + "-opt-btn", type: "primary", loading: primaryLoading || confirmLoading }, { children: okText }), void 0)] }, void 0)) }), void 0))] }), void 0));
     }
     if (!visible) {
         return null;

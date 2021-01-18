@@ -29,10 +29,11 @@ require('../../../style/animation/move-10.scss.js');
 
 function ModalContent(_a) {
     var children = _a.children, onClickMask = _a.onClickMask, maskClosable = _a.maskClosable, _b = _a.width, width = _b === void 0 ? 416 : _b, className = _a.className, _c = _a.prefixCls, prefixCls = _c === void 0 ? index.PREFIX_CLASS : _c;
-    return (jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixCls + "-modal-root" }, { children: [jsxRuntime.jsx("div", { className: prefixCls + "-modal-mask" }, void 0),
-            jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-modal-wrap", onClick: maskClosable && typeof onClickMask === 'function'
+    var prefixClass = prefixCls + "-modal";
+    return (jsxRuntime.jsxs("div", _tslib.__assign({ className: prefixClass + "-root" }, { children: [jsxRuntime.jsx("div", { className: prefixClass + "-mask" }, void 0),
+            jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-wrap", onClick: maskClosable && typeof onClickMask === 'function'
                     ? onClickMask
-                    : undefined }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: classnames(prefixCls + "-modal", className, 'move-up-enter-10'), style: { width: width }, onClick: function (e) { return e.stopPropagation(); } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixCls + "-modal-content" }, { children: children }), void 0) }), void 0) }), void 0)] }), void 0));
+                    : undefined }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: classnames(prefixClass, className, 'move-up-enter-10'), style: { width: width }, onClick: function (e) { return e.stopPropagation(); } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: prefixClass + "-content" }, { children: children }), void 0) }), void 0) }), void 0)] }), void 0));
 }
 
 module.exports = ModalContent;
