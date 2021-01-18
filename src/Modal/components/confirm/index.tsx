@@ -10,8 +10,6 @@ import ModalContent from '../ModalContent'
 import { PREFIX_CLASS } from '../../../constants'
 import { ConfirmProps } from './confirm.types'
 
-const prefixCls = PREFIX_CLASS
-
 function Modal({
   title,
   content,
@@ -19,6 +17,7 @@ function Modal({
   onOk,
   removeContainer,
 }: ConfirmProps & { removeContainer: () => void }) {
+  const prefixClass = `${PREFIX_CLASS}-modal-confirm`
   const [loading, setLoading] = React.useState(false)
 
   async function handleOk() {
@@ -42,30 +41,23 @@ function Modal({
 
   return (
     <ModalContent width={416}>
-      <div className={`${prefixCls}-modal-confirm`}>
-        <div className={`${prefixCls}-modal-confirm-body`}>
-          <div className={`${prefixCls}-modal-confirm-body-header`}>
+      <div className={prefixClass}>
+        <div className={`${prefixClass}-body`}>
+          <div className={`${prefixClass}-body-header`}>
             <IconExclamationCircleFilled
-              className={`${prefixCls}-modal-confirm-exclamation-icon`}
+              className={`${prefixClass}-exclamation-icon`}
             />
-            <span className={`${prefixCls}-modal-confirm-body-title`}>
-              {title}
-            </span>
+            <span className={`${prefixClass}-body-title`}>{title}</span>
           </div>
-          <div className={`${prefixCls}-modal-confirm-body-content`}>
-            {content}
-          </div>
+          <div className={`${prefixClass}-body-content`}>{content}</div>
         </div>
-        <div className={`${prefixCls}-modal-confirm-btns`}>
-          <Button
-            className={`${prefixCls}-modal-confirm-btn`}
-            onClick={handleCancel}
-          >
+        <div className={`${prefixClass}-btns`}>
+          <Button className={`${prefixClass}-btn`} onClick={handleCancel}>
             取消
           </Button>
           <Button
             loading={loading}
-            className={`${prefixCls}-modal-confirm-btn`}
+            className={`${prefixClass}-btn`}
             type="primary"
             onClick={handleOk}
           >

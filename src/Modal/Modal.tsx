@@ -7,7 +7,6 @@ import ModalContent from './components/ModalContent'
 import Portal from '../utils/Portal'
 
 import './Modal.scss'
-import classnames from 'classnames'
 import { PREFIX_CLASS } from '../constants'
 import { IconClose } from '../components/Icons'
 
@@ -18,7 +17,6 @@ const Modal: React.FC<ModalProps> = ({
   width = 520,
   onCancel,
   onOk,
-  className,
   closable = true,
   maskClosable = true,
   confirmLoading,
@@ -29,6 +27,7 @@ const Modal: React.FC<ModalProps> = ({
   prefixCls = PREFIX_CLASS,
   ...props
 }) => {
+  const prefixClass = `${prefixCls}-modal`
   const [primaryLoading, setPrimaryLoading] = React.useState(false)
 
   const container = getContainer()
@@ -52,34 +51,28 @@ const Modal: React.FC<ModalProps> = ({
         width={width}
         onClickMask={onCancel}
         maskClosable={maskClosable}
-        className={classnames(className, `${prefixCls}-modal`)}
         prefixCls={prefixCls}
         {...props}
       >
         {closable ? (
-          <div className={`${prefixCls}-modal-close-btn`} onClick={onCancel}>
-            <span className={`${prefixCls}-modal-close`}>
-              <IconClose className={`${prefixCls}-modal-close-icon`} />
+          <div className={`${prefixClass}-close-btn`} onClick={onCancel}>
+            <span className={`${prefixClass}-close`}>
+              <IconClose className={`${prefixClass}-close-icon`} />
             </span>
           </div>
         ) : null}
-        {title ? (
-          <div className={`${prefixCls}-modal-header`}>{title}</div>
-        ) : null}
-        <div className={`${prefixCls}-modal-body`}>{children}</div>
+        {title ? <div className={`${prefixClass}-header`}>{title}</div> : null}
+        <div className={`${prefixClass}-body`}>{children}</div>
         {footer === null ? null : (
-          <div className={`${prefixCls}-modal-footer`}>
+          <div className={`${prefixClass}-footer`}>
             {footer || (
               <>
-                <Button
-                  onClick={onCancel}
-                  className={`${prefixCls}-modal-opt-btn`}
-                >
+                <Button onClick={onCancel} className={`${prefixClass}-opt-btn`}>
                   {cancelText}
                 </Button>
                 <Button
                   onClick={handleOk}
-                  className={`${prefixCls}-modal-opt-btn`}
+                  className={`${prefixClass}-opt-btn`}
                   type="primary"
                   loading={primaryLoading || confirmLoading}
                 >

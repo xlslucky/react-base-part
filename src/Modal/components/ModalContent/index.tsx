@@ -19,11 +19,13 @@ export default function ModalContent({
   className,
   prefixCls = PREFIX_CLASS,
 }: ContentType) {
+  const prefixClass = `${prefixCls}-modal`
+
   return (
-    <div className={`${prefixCls}-modal-root`}>
-      <div className={`${prefixCls}-modal-mask`} />
+    <div className={`${prefixClass}-root`}>
+      <div className={`${prefixClass}-mask`} />
       <div
-        className={`${prefixCls}-modal-wrap`}
+        className={`${prefixClass}-wrap`}
         onClick={
           maskClosable && typeof onClickMask === 'function'
             ? onClickMask
@@ -31,15 +33,11 @@ export default function ModalContent({
         }
       >
         <div
-          className={classnames(
-            `${prefixCls}-modal`,
-            className,
-            'move-up-enter-10'
-          )}
+          className={classnames(prefixClass, className, 'move-up-enter-10')}
           style={{ width }}
           onClick={e => e.stopPropagation()}
         >
-          <div className={`${prefixCls}-modal-content`}>{children}</div>
+          <div className={`${prefixClass}-content`}>{children}</div>
         </div>
       </div>
     </div>
