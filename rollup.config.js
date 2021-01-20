@@ -24,6 +24,7 @@ export default {
     './src/Badge/index.tsx',
     './src/Switch/index.tsx',
     './src/Slider/index.tsx',
+    './src/Rate/index.tsx',
 
     './src/ConfigProvider/index.tsx',
   ],

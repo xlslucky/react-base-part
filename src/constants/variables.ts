@@ -21,6 +21,9 @@ export type VariablesType = {
   'font-size-base': string
   'font-size-lg': string
   'font-size-sm': string
+
+  'rate-star-color': string
+  'rate-star-selected-color': string
 }
 
 const variables: VariablesType = {
@@ -46,6 +49,9 @@ const variables: VariablesType = {
   'font-size-base': '14px',
   'font-size-lg': '16px',
   'font-size-sm': '12px',
+
+  'rate-star-color': '#000',
+  'rate-star-selected-color': '#FCBF39',
 }
 
 export default variables

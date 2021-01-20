@@ -2,31 +2,44 @@
 
 $prefix-class: 'rbp';
 
+// 文字
 $text-strong: var(--text-strong);
 $text-second: var(--text-second);
 $text-third: var(--text-third);
 
+// 主色
 $primary-color: var(--primary-color);
 $primary-light-color: var(--primary-light-color);
 
+// 危险
 $danger-color: var(--danger-color);
 $danger-light-color: var(--danger-light-color);
 
+// 警告
 $warn-color: var(--warn-color);
 $warn-light-color: var(--warn-light-color);
 
+// 成功
 $success-color: var(--success-color);
 $success-light-color: var(--success-light-color);
 
+// 边框
 $border-color: var(--border-color);
 
+// 背景
 $background-color: var(--background-color);
 $background-disabled: var(--background-disabled);
 
+// 高度
 $height-base: var(--height-base);
 $height-lg: var(--height-lg);
 $height-sm: var(--height-sm);
 
+// 文字大小
 $font-size-base: var(--font-size-base);
 $font-size-lg: var(--font-size-lg);
 $font-size-sm: var(--font-size-sm);
+
+// rate
+$rate-star-color: var(--rate-star-color);
+$rate-star-selected-color: var(--rate-star-selected-color);

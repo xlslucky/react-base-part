@@ -1,0 +1,42 @@
+@import "../style/variables.scss";
+
+$rate-prefix-cls: '#{$prefix-class}-rate';
+
+.#{$rate-prefix-cls} {
+  display: inline-block;
+  font-size: 20px;
+  line-height: unset;
+}
+
+.#{$rate-prefix-cls}-star {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 6px;
+  color: $rate-star-color;
+}
+
+.#{$rate-prefix-cls}-star-full {
+  .#{$rate-prefix-cls}-star-second {
+    color: $rate-star-selected-color;
+  }
+}
+
+.#{$rate-prefix-cls}-star-half {
+  .#{$rate-prefix-cls}-star-first {
+    opacity: 1;
+    color: $rate-star-selected-color;
+  }
+}
+
+.#{$rate-prefix-cls}-star-first {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+}
+
+// .#{$rate-prefix-cls}-star-second {}
