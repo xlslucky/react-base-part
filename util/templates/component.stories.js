@@ -6,6 +6,7 @@ import '../style/storybook.scss'
 
 export default {
   title: '${componentName}',
+  component: ${componentName},
 }
 
 export const Default = () => <${componentName} />
