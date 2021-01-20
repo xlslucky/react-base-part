@@ -14,7 +14,7 @@ const Slider: React.FC<SliderProps> = ({
   min = 0,
   max = 100,
   smooth,
-  renderHander,
+  renderHandle,
   className,
   prefixCls = PREFIX_CLASS,
 }) => {
@@ -54,8 +54,8 @@ const Slider: React.FC<SliderProps> = ({
         className={`${prefixClass}-track`}
         style={{ width: left }}
       />
-      {typeof renderHander === 'function' ? (
-        React.cloneElement(renderHander({ left, value: nextValue }), {
+      {typeof renderHandle === 'function' ? (
+        React.cloneElement(renderHandle({ left, value: nextValue }), {
           ref: handleRef,
           onMouseDown,
           onTouchStart,

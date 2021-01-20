@@ -12,7 +12,7 @@ export interface SliderProps {
   min?: number
   max?: number
   smooth?: boolean
-  renderHander?: ({ left, value }: CustomHanderProps) => React.ReactElement
+  renderHandle?: ({ left, value }: CustomHanderProps) => React.ReactElement
   className?: string
   prefixCls?: string
 }
