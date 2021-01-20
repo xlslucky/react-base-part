@@ -23,6 +23,8 @@ export default {
     './src/Tag/index.tsx',
     './src/Badge/index.tsx',
     './src/Switch/index.tsx',
+    './src/Slider/index.tsx',
+
     './src/ConfigProvider/index.tsx',
   ],
   output: [

@@ -15,5 +15,6 @@ export { default as Menu } from './Menu'
 export { default as Tag } from './Tag'
 export { default as Badge } from './Badge'
 export { default as Switch } from './Switch'
+export { default as Slider } from './Slider'
 
 export { default as ConfigProvider } from './ConfigProvider'

@@ -1,0 +1,43 @@
+@import "../style/variables.scss";
+
+$slider-prefix-cls: '#{$prefix-class}-slider';
+
+$slider-height-base: 4px;
+$slider-handle-height-base: 14px;
+
+.#{$slider-prefix-cls} {
+  position: relative;
+  height: $slider-handle-height-base;
+}
+
+.#{$slider-prefix-cls}-rail,
+.#{$slider-prefix-cls}-track {
+  position: absolute;
+  height: $slider-height-base;
+  border-radius: $slider-height-base;
+  cursor: pointer;
+}
+
+.#{$slider-prefix-cls}-rail {
+  width: 100%;
+  background-color: $background-color;
+}
+
+.#{$slider-prefix-cls}-track {
+  background-color: $primary-light-color;
+}
+
+.#{$slider-prefix-cls}-handle-base {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.#{$slider-prefix-cls}-handle {
+  top: -($slider-handle-height-base / 2 - $slider-height-base / 2);
+  width: $slider-handle-height-base;
+  height: $slider-handle-height-base;
+  border-radius: $slider-handle-height-base;
+  background-color: $primary-color;
+  cursor: pointer;
+  user-select: none;
+}
