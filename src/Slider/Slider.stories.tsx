@@ -5,6 +5,7 @@ import '../style/storybook.scss'
 
 export default {
   title: 'Slider',
+  component: Slider,
 }
 
 export const Default = () => {
