@@ -9,5 +9,7 @@ export interface DropdownProps {
     placement?: DropdownPlacementType;
     getPopupContainer?: () => HTMLElement;
     clickPopupClose?: boolean;
+    visible?: boolean;
+    onVisibleChange?: (visible: boolean) => void;
     prefixCls?: string;
 }

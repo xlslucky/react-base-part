@@ -31,7 +31,7 @@ var Portal = require('../utils/Portal.js');
 require('./Trigger.scss.js');
 
 var Trigger = function (_a) {
-    var children = _a.children, placement = _a.placement, _b = _a.destroyPopupOnHide, destroyPopupOnHide = _b === void 0 ? false : _b, trigger = _a.trigger, popup = _a.popup, _c = _a.getPopupContainer, getPopupContainer = _c === void 0 ? function () { return document.body; } : _c, enterClassName = _a.enterClassName, leaveClassName = _a.leaveClassName, offset = _a.offset, stretch = _a.stretch, clickPopupClose = _a.clickPopupClose, zIndex = _a.zIndex, _d = _a.prefixCls, prefixCls = _d === void 0 ? index.PREFIX_CLASS : _d;
+    var children = _a.children, placement = _a.placement, _b = _a.destroyPopupOnHide, destroyPopupOnHide = _b === void 0 ? false : _b, trigger = _a.trigger, popup = _a.popup, _c = _a.getPopupContainer, getPopupContainer = _c === void 0 ? function () { return document.body; } : _c, enterClassName = _a.enterClassName, leaveClassName = _a.leaveClassName, offset = _a.offset, stretch = _a.stretch, clickPopupClose = _a.clickPopupClose, zIndex = _a.zIndex, visible = _a.visible, onVisibleChange = _a.onVisibleChange, _d = _a.prefixCls, prefixCls = _d === void 0 ? index.PREFIX_CLASS : _d;
     var _e = React__default.useState(false), innerVisible = _e[0], setVisible = _e[1];
     var _f = React__default.useState(false), showOverlay = _f[0], setShowOverlay = _f[1];
     var childrenRef = React__default.useRef(null);
@@ -39,11 +39,19 @@ var Trigger = function (_a) {
     var HIDDEN_CLASS_NAME = prefixCls + "-trigger-hidden";
     var OPACITY_ZERO_CLASS_NAME = prefixCls + "-trigger-opacity-zero";
     var container = getPopupContainer();
+    // 受外部控制
+    var controlled = typeof visible === 'boolean';
     var finalVisible = React__default.useMemo(function () {
+        if (controlled) {
+            return visible;
+        }
         return innerVisible;
-    }, [innerVisible]);
+    }, [controlled, innerVisible, visible]);
     function updateVisible(nextVisible) {
         setVisible(nextVisible);
+        if (typeof onVisibleChange === 'function') {
+            onVisibleChange(nextVisible);
+        }
     }
     // 点击子元素、浮层以外元素 关闭浮层
     useClickAway([childrenRef, popupRef], function () {

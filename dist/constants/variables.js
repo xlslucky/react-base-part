@@ -39,6 +39,8 @@ var variables = {
     'font-size-base': '14px',
     'font-size-lg': '16px',
     'font-size-sm': '12px',
+    'rate-star-color': '#000',
+    'rate-star-selected-color': '#FCBF39',
 };
 
 module.exports = variables;

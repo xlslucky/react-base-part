@@ -21,5 +21,7 @@ export interface TriggerProps {
     offset?: OffsetType;
     stretch?: StretchType;
     zIndex?: number;
+    visible?: boolean;
+    onVisibleChange?: (visible: boolean) => void;
 }
 export {};

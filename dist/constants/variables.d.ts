@@ -19,6 +19,8 @@ export declare type VariablesType = {
     'font-size-base': string;
     'font-size-lg': string;
     'font-size-sm': string;
+    'rate-star-color': string;
+    'rate-star-selected-color': string;
 };
 declare const variables: VariablesType;
 export default variables;

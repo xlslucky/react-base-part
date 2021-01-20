@@ -37,7 +37,9 @@ var index$a = require('./Menu/index.js');
 var index$b = require('./Tag/index.js');
 var index$c = require('./Badge/index.js');
 var index$d = require('./Switch/index.js');
-var index$e = require('./ConfigProvider/index.js');
+var index$e = require('./Slider/index.js');
+var index$f = require('./Rate/index.js');
+var index$g = require('./ConfigProvider/index.js');
 
 
 
@@ -58,5 +60,7 @@ exports.Menu = index$a;
 exports.Tag = index$b;
 exports.Badge = index$c;
 exports.Switch = index$d;
-exports.ConfigProvider = index$e;
+exports.Slider = index$e;
+exports.Rate = index$f;
+exports.ConfigProvider = index$g;
 //# sourceMappingURL=index.js.map

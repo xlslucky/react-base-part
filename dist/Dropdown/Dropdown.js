@@ -32,9 +32,9 @@ var index$1 = require('../Trigger/index.js');
 require('./Dropdown.scss.js');
 
 var Dropdown = function (_a) {
-    var disabled = _a.disabled, children = _a.children, overlay = _a.overlay, _b = _a.trigger, trigger$1 = _b === void 0 ? ['hover'] : _b, _c = _a.placement, placement = _c === void 0 ? 'bottomLeft' : _c, getPopupContainer = _a.getPopupContainer, _d = _a.clickPopupClose, clickPopupClose = _d === void 0 ? true : _d, _e = _a.prefixCls, prefixCls = _e === void 0 ? index.PREFIX_CLASS : _e;
+    var disabled = _a.disabled, children = _a.children, overlay = _a.overlay, _b = _a.trigger, trigger$1 = _b === void 0 ? ['hover'] : _b, _c = _a.placement, placement = _c === void 0 ? 'bottomLeft' : _c, getPopupContainer = _a.getPopupContainer, _d = _a.clickPopupClose, clickPopupClose = _d === void 0 ? true : _d, visible = _a.visible, onVisibleChange = _a.onVisibleChange, _e = _a.prefixCls, prefixCls = _e === void 0 ? index.PREFIX_CLASS : _e;
     var _f = trigger.getSlideAnimationClassNames(placement), enterClassName = _f[0], leaveClassName = _f[1];
-    return (jsxRuntime.jsx(index$1, _tslib.__assign({ prefixCls: prefixCls, clickPopupClose: clickPopupClose, popup: jsxRuntime.jsx("div", _tslib.__assign({ className: classnames(prefixCls + "-dropdown") }, { children: overlay }), void 0), placement: placement, trigger: trigger$1, enterClassName: enterClassName, leaveClassName: leaveClassName, getPopupContainer: getPopupContainer, offset: trigger.getOffsetByPlacement(placement, 4), stretch: "minWidth" }, { children: React__default.cloneElement(children, { disabled: disabled }) }), void 0));
+    return (jsxRuntime.jsx(index$1, _tslib.__assign({ prefixCls: prefixCls, clickPopupClose: clickPopupClose, popup: jsxRuntime.jsx("div", _tslib.__assign({ className: classnames(prefixCls + "-dropdown") }, { children: overlay }), void 0), placement: placement, trigger: trigger$1, enterClassName: enterClassName, leaveClassName: leaveClassName, getPopupContainer: getPopupContainer, offset: trigger.getOffsetByPlacement(placement, 4), stretch: "minWidth", visible: visible, onVisibleChange: onVisibleChange }, { children: React__default.cloneElement(children, { disabled: disabled }) }), void 0));
 };
 
 module.exports = Dropdown;
